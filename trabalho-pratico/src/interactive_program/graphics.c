@@ -5,3 +5,12 @@
 #include <unistd.h>
 
 #define LARGE_BUFFER 4096
+
+
+
+const char *plane_art[] = {
+"__  _",
+"\\ `/ |",
+" \\__`!",
+" / ,' `-.__________________",
+"'-'\\_____              LI3 `-.",
