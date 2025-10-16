@@ -13,3 +13,12 @@
  */
 int load_line_airports (char *input, Database database);
 
+
+
+// {- Validations -}
+
+/**
+ * @brief Valida uma latitude no formato textual.
+ * @param string Texto a validar.
+ * @return 1 se válido, 0 caso contrário.
+ */
