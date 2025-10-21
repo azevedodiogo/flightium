@@ -22,3 +22,11 @@ int load_line_airports (char *input, Database database);
  * @param string Texto a validar.
  * @return 1 se válido, 0 caso contrário.
  */
+int validate_latitude (const char *string);
+
+/**
+ * @brief Valida uma longitude no formato textual.
+ * @param string Texto a validar.
+ * @return 1 se válido, 0 caso contrário.
+ */
+int validate_longitude (const char *string);
