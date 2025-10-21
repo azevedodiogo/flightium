@@ -12,3 +12,12 @@ typedef struct storage_generic {
 
 // Cria uma estrutura de armazenamento genérica
 StorageGeneric create_storage_generic (int number_elements, void (*destroy_func) (gpointer), int flag) {
+
+    // Aloca memória para a estrutura de armazenamento
+    StorageGeneric storage_generic = g_malloc (sizeof (STORAGE_GENERIC));
+
+    // Define as componentes da estrutura
+    storage_generic -> array = g_malloc (number_elements * sizeof (gpointer));
+    storage_generic -> indexing = g_hash_table_new_full (flag ? g_str_hash : g_direct_hash, flag ? g_str_equal : g_direct_equal, flag ? g_free : NULL, NULL);
+    storage_generic -> destroy_func = destroy_func;
+    storage_generic -> len = 0; storage_generic -> capacity = number_elements;
