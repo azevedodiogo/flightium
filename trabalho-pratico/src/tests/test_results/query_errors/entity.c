@@ -13,3 +13,10 @@ typedef struct query_error {
     char expected_line [BUFFER];   
     char actual_line [BUFFER];    
 } QUERY_ERROR, *QueryError;
+
+
+
+// Cria um registo da entidade erro da query
+QueryError create_query_error (int query_num, int command_num) {
+
+    // Aloca memória para o registo
