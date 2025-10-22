@@ -13,3 +13,11 @@ int main (int argc, char **argv) {
 
     // Verifica se foram dados argumentos
     if (argc != 1) {
+        fprintf (stderr, "Error: There should be no arguments\n");
+        return EXIT_FAILURE;
+    } 
+    // Ignora o argv
+    (void) argv;
+
+    // Inicializa o ncurses
+    initscr(); start_color(); use_default_colors(); cbreak(); noecho(); keypad(stdscr, TRUE);
