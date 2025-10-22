@@ -13,3 +13,11 @@
 
 // Funções de carregamento dos datasets
 static int (*load_line [N_DATASETS]) (char *, Database) = {load_line_aircrafts, load_line_airports, load_line_passengers, load_line_flights, load_line_reservations};
+
+
+
+// Testa as funções de parsers
+int test_load_datasets (Database database, const char *directory, Tests tests) {
+
+    // Declara os ficheiros
+    FILE *read_files [N_DATASETS], *write_files [N_DATASETS];
