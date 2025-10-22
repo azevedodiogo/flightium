@@ -5,3 +5,11 @@
 
 /** @brief Estrutura de armazenamento dos aeroportos. */
 typedef struct storage_airports *StorageAirports;
+
+/** @brief Entidade do aeroporto. */
+typedef struct entity_airport *EntityAirport;
+
+
+
+/**
+ * @brief Cria a estrutura de armazenamento dos aeroportos.
