@@ -21,3 +21,10 @@ StorageFlights create_storage_flights (int inicial_capacity);
 /**
  * @brief Liberta todos os recursos associados aos voos.
  * @param storage_flights Estrutura a eliminar.
+ */
+void destroy_storage_flights (StorageFlights storage_flights);
+
+/**
+ * @brief Obtém um voo a partir do seu identificador.
+ * @param storage_flights Estrutura de armazenamento.
+ * @param flight_id Identificador do voo.
