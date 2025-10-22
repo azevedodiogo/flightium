@@ -5,3 +5,11 @@
 #include "tests/test_results/test_results.h"
 #include "tests/test_results/load_timer.h"
 #include "tests/tests_utils.h"
+#include "parsers/parser_definitions.h"
+
+#include <glib.h>
+
+#define BUFFER 1024
+
+// Funções de carregamento dos datasets
+static int (*load_line [N_DATASETS]) (char *, Database) = {load_line_aircrafts, load_line_airports, load_line_passengers, load_line_flights, load_line_reservations};
