@@ -5,3 +5,11 @@
 
 // Função principal
 int main (int argc, char **argv) {
+
+    // Verifica se não foram dados dois argumentos
+    if (argc != 3) {
+        fprintf (stderr, "Error: There should be two arguments\n");
+        return EXIT_FAILURE;
+    } int dataset;
+
+    // Determina qual é o tipo de dataset
