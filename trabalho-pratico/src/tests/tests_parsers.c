@@ -21,3 +21,11 @@ int test_load_datasets (Database database, const char *directory, Tests tests) {
 
     // Declara os ficheiros
     FILE *read_files [N_DATASETS], *write_files [N_DATASETS];
+
+    // Abre os ficheiros
+    if (open_dataset_files (read_files, write_files, directory)) {
+        destroy_database (database); destroy_tests (tests);
+        return EXIT_FAILURE;
+    }
+
+    // Declara variáveis auxiliares
