@@ -11,3 +11,10 @@
  * @param database Base de dados onde o registo será inserido.
  * @return 0 em caso de sucesso; valor não nulo se ocorrer erro de parsing.
  */
+int load_line_aircrafts (char *input, Database database);
+
+
+
+// {- Validations -}
+
+/**
