@@ -14,3 +14,10 @@ typedef struct entity_airline *EntityAirline;
  * @param inicial_capacity Capacidade inicial pretendida.
  * @return Estrutura inicializada.
  */
+StorageAirlines create_storage_airlines (int inicial_capacity);
+
+/**
+ * @brief Liberta todos os recursos associados à estrutura de companhias.
+ * @param storage_airlines Estrutura a eliminar.
+ */
+void destroy_storage_airlines (StorageAirlines storage_airlines);
