@@ -21,3 +21,10 @@ int main (int argc, char **argv) {
 
     // Inicializa o ncurses
     initscr(); start_color(); use_default_colors(); cbreak(); noecho(); keypad(stdscr, TRUE);
+
+    // Define as cores
+    init_pair(1, COLOR_WHITE, -1);
+    init_pair(2, COLOR_CYAN, -1);
+
+    // Obtém dimensões do terminal
+    int max_y, max_x; getmaxyx(stdscr, max_y, max_x);
