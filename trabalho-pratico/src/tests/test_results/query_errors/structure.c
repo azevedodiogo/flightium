@@ -14,3 +14,11 @@ StorageQueryErrors create_storage_query_errors () {
     StorageQueryErrors storage_query_errors = g_malloc (sizeof (STORAGE_QUERY_ERRORS));
 
     // Cria a sub-estrutura
+    storage_query_errors -> data = g_ptr_array_new ();
+
+    // Retorna a estrutura
+    return storage_query_errors;
+}
+
+// Elimina a estrutura de armazenamento da entidade erro da query
+void destroy_storage_query_errors (StorageQueryErrors storage_query_errors) {
