@@ -12,3 +12,10 @@ void execute_query1 (Database database, char *input, char *output, char del) {
     const struct entity_airport *airport = get_airport_by_id (get_database_airports (database), input);
 
     // Verifica se o aeroporto existe
+    if (airport) {
+
+        // Obtém as componentes do aeroporto
+        const char *name = get_airport_name (airport);
+        const char *city = get_airport_city (airport);
+        const char *country = get_airport_country (airport);
+        const char *type = get_airport_type (airport);
