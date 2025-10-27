@@ -10,3 +10,10 @@ int load_line_airports (char *, Database);
 int load_line_passengers (char *, Database);
 int load_line_flights (char *, Database);
 int load_line_reservations (char *, Database);
+
+/**
+ * @brief Enumeração dos datasets disponibilizados.
+ */
+typedef enum datasets {
+    N_AIRCRAFT,     /**< Dataset das aeronaves. */
+    N_AIRPORT,      /**< Dataset dos aeroportos. */
