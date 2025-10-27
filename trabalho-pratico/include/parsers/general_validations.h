@@ -13,3 +13,11 @@
  * @param string Texto a validar, terminado em '\0'.
  * @return EXIT_SUCCESS quando o código é válido. EXIT_FAILURE em caso contrário.
  */
+int validate_code (const char *string);
+
+/**
+ * @brief Valida a representação textual de um número de documento.
+ * @param string Texto a validar.
+ * @return 1 se válido, 0 caso contrário.
+ */
+int validate_document_number (const char *string);
