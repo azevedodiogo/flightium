@@ -14,3 +14,11 @@ typedef struct entity_passenger *EntityPassenger;   // Protege-se assim a estrut
  * @param first_name Primeiro nome.
  * @param last_name Último nome.
  * @param nationality Nacionalidade.
+ * @param document_number Número do documento de identificação.
+ * @param dob Data de nascimento (formato `date`). O formato está declarado em 'common_types.h'.
+ * @return Nova entidade passageiro.
+ */
+EntityPassenger create_passenger (const char *first_name, const char *last_name, const char *nationality, int document_number, date dob);
+
+/**
+ * @brief Liberta a memória associada a um passageiro.
