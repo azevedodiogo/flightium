@@ -6,3 +6,11 @@
 #include "tests/tests_parsers.h"
 #include "tests/tests_queries.h"
 #include "tests/tests_utils.h"
+
+#include <sys/resource.h>
+#include <stdio.h>
+
+// Função principal
+int main (int argc, char **argv) {
+
+    // Declara variáveis de teste
