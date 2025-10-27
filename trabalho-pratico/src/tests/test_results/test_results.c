@@ -6,3 +6,11 @@
 
 // Estrutura de armazenamento dos testes
 typedef struct tests {
+    LoadTimer load_timer;
+    StorageQueryErrors errors;
+    StorageQueryResults results;
+} TESTS, *Tests;
+
+
+
+// Cria a estrutura de armazenamento dos testes
