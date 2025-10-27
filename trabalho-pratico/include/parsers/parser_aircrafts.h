@@ -18,3 +18,10 @@ int load_line_aircrafts (char *input, Database database);
 // {- Validations -}
 
 /**
+ * @brief Verifica se a string representa corretamente um ano.
+ * @param string Texto a validar.
+ * @return 1 se válido, 0 caso contrário.
+ */
+int validate_year (const char *string);
+
+#endif
