@@ -13,3 +13,10 @@ typedef struct query_result {
 
 // Cria um registo da entidade resultado da query
 QueryResult create_query_result () {
+
+    // Aloca memória para o registo
+    QueryResult query_result = g_malloc0 (sizeof (QUERY_RESULT));
+
+    // Retorna o registo
+    return query_result;
+}
