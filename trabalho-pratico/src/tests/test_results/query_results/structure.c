@@ -21,3 +21,12 @@ StorageQueryResults create_storage_query_results (char *expected_results) {
     // Define as componentes da estrutura
     for (int i = 0; i < NUMBER_QUERIES; i++) storage_query_results -> results [i] = create_query_result ();
     storage_query_results -> expected_results = g_strdup (expected_results);
+
+    // Retorna a estrutura
+    return storage_query_results;
+}
+
+// Elimina a estrutura de armazenamento da entidade resultado de query
+void destroy_storage_query_results (StorageQueryResults storage_query_results) {
+
+    // Elimina as componentes da estrutura
