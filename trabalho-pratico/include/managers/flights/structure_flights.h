@@ -28,3 +28,11 @@ void destroy_storage_flights (StorageFlights storage_flights);
  * @brief Obtém um voo a partir do seu identificador.
  * @param storage_flights Estrutura de armazenamento.
  * @param flight_id Identificador do voo.
+ * @return Registo correspondente ou NULL se não existir.
+ */
+const struct entity_flight *get_flight_by_id (StorageFlights storage_flights, const char *flight_id);
+
+/**
+ * @brief Regista um novo voo na estrutura.
+ * @param storage_flights Estrutura de armazenamento.
+ * @param flight_id Identificador do voo.
