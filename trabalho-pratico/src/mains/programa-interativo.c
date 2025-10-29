@@ -28,3 +28,11 @@ int main (int argc, char **argv) {
 
     // Obtém dimensões do terminal
     int max_y, max_x; getmaxyx(stdscr, max_y, max_x);
+
+    // Apresenta uma mensagem inicial
+    draw_plane_with_clouds ();
+    modal_start ("Welcome to Travel Database", "START", 40, max_y, max_x);
+
+    clear(); refresh();
+
+    // Cria e carrega a base de dados
