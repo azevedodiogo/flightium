@@ -30,3 +30,11 @@ StorageQueryResults create_storage_query_results (char *expected_results) {
 void destroy_storage_query_results (StorageQueryResults storage_query_results) {
 
     // Elimina as componentes da estrutura
+    for (int i = 0; i < NUMBER_QUERIES; i++) destroy_query_result (storage_query_results -> results [i]);
+    g_free (storage_query_results -> expected_results);
+
+    // Elimina a estrutura
+    g_free (storage_query_results);
+}
+
+// Devolve o ficheiro de resultados esperados
