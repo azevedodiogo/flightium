@@ -20,3 +20,11 @@ int main (int argc, char **argv) {
 
     // Cria a base de dados
     Database database = create_database (dataset);
+
+    // Carrega os datasets
+    if (load_datasets (database, argv [1])) return EXIT_FAILURE;
+
+    // Prepara a base de dados para as queries
+    prepare_database (database);
+
+    // Executa as queries
