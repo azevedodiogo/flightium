@@ -20,3 +20,10 @@ int open_dataset_files (FILE *read_files [], FILE *write_files [], const char *d
  * @brief Carrega todos os datasets para a base de dados.
  * @param database Estrutura de base de dados a preencher.
  * @param directory Diretório base onde se encontram os ficheiros.
+ * @return 0 em caso de sucesso. Caso contrário, devolve-se um valor não nulo se ocorrerem erros de parsing.
+ */
+int load_datasets (Database database, const char *directory);
+
+/**
+ * @brief Carrega um dataset genérico linha a linha.
+ * @param read_file Ficheiro de origem.
