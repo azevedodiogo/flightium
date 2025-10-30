@@ -11,3 +11,11 @@
  * @warning Requer que a biblioteca ncurses esteja inicializada. Bloqueia até a leitura/validação do caminho e carregamento dos datasets.
  */
 Database setup_database (int max_y, int max_x);
+
+/**
+ * @brief Apresenta o menu das queries e devolve a escolha.
+ * @param max_y Altura do ecrã.
+ * @param max_x Largura do ecrã.
+ * @return Número da query (1-6) ou 0 se cancelado.
+ */
+int menu_select_queries (int max_y, int max_x);
