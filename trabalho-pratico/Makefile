@@ -14,3 +14,11 @@ COMMON_SRC := $(shell find src -type f -name "*.c" ! -path "src/mains/*.c")
 COMMON_OBJ := $(COMMON_SRC:.c=.o)
 
 # Programa principal
+MAIN_SRC := src/mains/programa-principal.c
+MAIN_OBJ := $(MAIN_SRC:.c=.o)
+TARGET := programa-principal
+
+# Programa de testes
+TEST_SRC := src/mains/programa-testes.c
+TEST_OBJ := $(TEST_SRC:.c=.o)
+TEST_TARGET := programa-testes
