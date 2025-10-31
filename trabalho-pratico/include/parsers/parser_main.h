@@ -27,3 +27,11 @@ int load_datasets (Database database, const char *directory);
 /**
  * @brief Carrega um dataset genérico linha a linha.
  * @param read_file Ficheiro de origem.
+ * @param write_file Ficheiro de destino para registos inválidos.
+ * @param input Zona de memória reutilizada para leitura.
+ * @param database Base de dados de destino.
+ * @param load_line Função específica de parsing para cada linha.
+ */
+void generic_load_dataset (FILE *read_file, FILE *write_file, char *input, Database database, int (*load_line) (char *, Database));
+
+#endif
