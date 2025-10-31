@@ -21,3 +21,11 @@ StorageAirlines create_storage_airlines (int inicial_capacity);
  * @param storage_airlines Estrutura a eliminar.
  */
 void destroy_storage_airlines (StorageAirlines storage_airlines);
+
+/**
+ * @brief Obtém uma companhia aérea a partir do seu nome.
+ * @param storage_airlines Estrutura de armazenamento.
+ * @param name Nome da companhia.
+ * @return Registo encontrado ou NULL se não existir.
+ */
+const struct entity_airline *get_airline_by_id (StorageAirlines storage_airlines, const char *name);
