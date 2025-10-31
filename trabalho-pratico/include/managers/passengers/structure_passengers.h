@@ -20,3 +20,11 @@ typedef struct entity_passenger *EntityPassenger;
  * @return Estrutura inicializada.
  */
 StoragePassengers create_storage_passengers (int inicial_capacity);
+
+/**
+ * @brief Liberta todos os recursos associados aos passageiros.
+ * @param storage_passengers Estrutura a eliminar.
+ */
+void destroy_storage_passengers (StoragePassengers storage_passengers);
+
+/**
