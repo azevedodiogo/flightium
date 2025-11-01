@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "includes.h": "c",
+        "defines.h": "c",
+        "stdio.h": "c",
+        "data.h": "c",
+        "aeronaves.h": "c",
+        "ler_ficheiros.h": "c",
