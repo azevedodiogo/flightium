@@ -22,3 +22,11 @@ EntityPassenger create_passenger (const char *first_name, const char *last_name,
 
 /**
  * @brief Liberta a memória associada a um passageiro.
+ * @param passenger Ponteiro para a entidade.
+ */
+void destroy_passenger (gpointer passenger);
+
+/**
+ * @brief Obtém o primeiro nome do passageiro.
+ * @param passenger Registo alvo.
+ * @return String com o primeiro nome.
