@@ -6,3 +6,11 @@
         "data.h": "c",
         "aeronaves.h": "c",
         "ler_ficheiros.h": "c",
+        "voos.h": "c",
+        "auxiliares.h": "c",
+        "validacao_sintatica.h": "c",
+        "aeroportos.h": "c",
+        "validacao_logica.h": "c",
+        "query_2.h": "c"
+    }
+}
