@@ -6,3 +6,10 @@
 
 // Entidade do voo
 typedef struct entity_flight {
+	char origin [SIZE_AIRPORT_PK + 1];
+	char destination [SIZE_AIRPORT_PK + 1];
+	week_index week;
+	char status;
+} ENTITY_FLIGHT, *EntityFlight;
+
+
