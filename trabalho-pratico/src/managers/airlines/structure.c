@@ -20,3 +20,10 @@ StorageAirlines create_storage_airlines (int inicial_capacity) {
 
     // Retorna a estrutura
     return storage_airlines;
+}
+
+// Elimina a estrutura de armazenamento das companhias aéreas
+void destroy_storage_airlines (StorageAirlines storage_airlines) {
+
+    // Elimina a sub-estrutura
+    destroy_storage_generic (storage_airlines -> data);
