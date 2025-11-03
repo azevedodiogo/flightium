@@ -36,3 +36,11 @@ const struct entity_flight *get_flight_by_id (StorageFlights storage_flights, co
  * @brief Regista um novo voo na estrutura.
  * @param storage_flights Estrutura de armazenamento.
  * @param flight_id Identificador do voo.
+ * @param origin Código do aeroporto de origem.
+ * @param destination Código do aeroporto de destino.
+ * @param week Semana do voo.
+ * @param status Estado do voo.
+ */
+void register_flight (StorageFlights storage_flights, const char *flight_id, const char *origin, const char *destination, week_index week, char status);
+
+#endif
