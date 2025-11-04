@@ -14,3 +14,10 @@ static int determine_arguments_query2 (char *input, char **manufacturer) {
 
     // Avança no input
     while (*input && *input != ' ') input++;
+
+    // Verifica se foi dado um fabricante
+    *manufacturer = *input ? input + 1 : NULL;
+
+    // Retorna o número de aeronaves a encontrar
+    return N;
+}
