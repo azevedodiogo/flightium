@@ -13,3 +13,11 @@ typedef struct entity_airport {
 	unsigned short arrival_count;
 	unsigned short departure_count;
 	char country [SIZE_COUNTRY + 1];
+} ENTITY_AIRPORT, *EntityAirport;
+
+
+
+// Cria um registo da entidade aeroporto
+EntityAirport create_airport (const char *code, const char *name, const char *city, const char *type, const char *country) {
+
+	// Aloca memória para o registo
