@@ -30,3 +30,11 @@ void destroy_passenger (gpointer passenger);
  * @brief Obtém o primeiro nome do passageiro.
  * @param passenger Registo alvo.
  * @return String com o primeiro nome.
+ */
+const char *get_passenger_first_name (const struct entity_passenger *passenger);
+
+/**
+ * @brief Obtém o último nome do passageiro.
+ * @param passenger Registo alvo.
+ * @return String com o último nome.
+ */
