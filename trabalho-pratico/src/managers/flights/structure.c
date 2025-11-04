@@ -5,3 +5,10 @@
 
 // Estrutura de armazenamento dos voos
 typedef struct storage_flights {
+    StorageGeneric data;
+} STORAGE_FLIGHTS, *StorageFlights;
+
+
+
+// Cria a estrutura de armazenamento dos voos
+StorageFlights create_storage_flights (int inicial_capacity) {
