@@ -36,3 +36,10 @@ int main (int argc, char **argv) {
     clear(); refresh();
 
     // Cria e carrega a base de dados
+    Database database = setup_database (max_y, max_x);
+
+    if (!database) {
+        endwin(); return EXIT_FAILURE;
+    }
+
+    while (1) {
