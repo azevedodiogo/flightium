@@ -6,3 +6,11 @@
 #include "managers/flights/structure_flights.h"
 #include "managers/passengers/structure_passengers.h"
 #include "managers/reservations/structure_reservations.h"
+
+#include <glib.h>
+
+// Base de dados
+typedef struct database {
+    StorageAircrafts aircrafts;
+    StorageAirlines airlines;
+    StorageAirports airports;
