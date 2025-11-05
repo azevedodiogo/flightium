@@ -6,3 +6,11 @@
  * @details Data será representada no formato.
  */
 typedef unsigned int date;
+
+
+/**
+ * @brief Índice de uma semana.
+ */
+typedef short week_index;
+
+/**
