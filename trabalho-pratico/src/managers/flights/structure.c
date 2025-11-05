@@ -12,3 +12,11 @@ typedef struct storage_flights {
 
 // Cria a estrutura de armazenamento dos voos
 StorageFlights create_storage_flights (int inicial_capacity) {
+
+    // Aloca memória para a estrutura
+    StorageFlights storage_flights = g_malloc (sizeof (STORAGE_FLIGHTS));
+
+    // Cria a sub-estrutura
+    storage_flights -> data = create_storage_generic (inicial_capacity, destroy_flight, 1);
+
+    // Retorna a estrutura
