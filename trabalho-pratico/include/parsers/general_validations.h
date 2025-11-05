@@ -21,3 +21,10 @@ int validate_code (const char *string);
  * @return 1 se válido, 0 caso contrário.
  */
 int validate_document_number (const char *string);
+
+/**
+ * @brief Valida o identificador de um voo.
+ * @param string Texto a validar.
+ * @return EXIT_SUCCESS quando o identificador é válido. EXIT_FAILURE em caso contrário.
+ */
+int validate_flight_id (const char *string);
