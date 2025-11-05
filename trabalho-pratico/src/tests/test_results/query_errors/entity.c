@@ -20,3 +20,10 @@ typedef struct query_error {
 QueryError create_query_error (int query_num, int command_num) {
 
     // Aloca memória para o registo
+    QueryError query_error = g_malloc (sizeof (QUERY_ERROR));
+
+    // Define as componentes do registo
+    query_error -> query_num = query_num;
+    query_error -> command_num = command_num;
+    query_error -> error_line = NO_VALUE;
+    query_error -> expected_line [0] = query_error -> actual_line [0] = 0;
