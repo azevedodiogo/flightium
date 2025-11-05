@@ -28,3 +28,12 @@ int validate_document_number (const char *string);
  * @return EXIT_SUCCESS quando o identificador é válido. EXIT_FAILURE em caso contrário.
  */
 int validate_flight_id (const char *string);
+
+/**
+ * @brief Valida e codifica uma data (yyyy-mm-dd) ou datetime (yyyy-mm-dd hh:mm).
+ * @param string Texto a validar, terminado corretamente.
+ * @param datetime Valor booleano (1 valida hora/minutos. 0 valida apenas a data).
+ * @return Valor codificado do tipo `date` quando válido. `INVALID_DATE` em caso de invalidação.
+ * @warning Assume ano <= 2025 e que `string` é não nula e termina em '\0'. A função não valida ponteiros NULL.
+ */
+date validate_date (const char *string, int datetime);
