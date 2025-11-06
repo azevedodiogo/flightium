@@ -37,3 +37,10 @@ int validate_flight_id (const char *string);
  * @warning Assume ano <= 2025 e que `string` é não nula e termina em '\0'. A função não valida ponteiros NULL.
  */
 date validate_date (const char *string, int datetime);
+
+/**
+ * @brief Verifica se o texto é composto exclusivamente por dígitos.
+ * @param string Texto a validar.
+ * @return EXIT_SUCCESS quando apenas dígitos estão presentes. EXIT_FAILURE em caso contrário.
+ */
+int validate_digits (const char *string);
