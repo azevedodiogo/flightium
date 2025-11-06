@@ -11,3 +11,10 @@ typedef struct query_result {
 
 // Atualiza um resultado de query
 void update_query_result (QueryResult query_result, double elapsed) {
+
+    // Incrementa o número de queries executadas
+    query_result -> number_executed++;
+
+    // Atualiza o tempo total de execução
+    query_result -> total_time += elapsed;
+}
