@@ -27,3 +27,11 @@ QueryError create_query_error (int query_num, int command_num) {
     query_error -> command_num = command_num;
     query_error -> error_line = NO_VALUE;
     query_error -> expected_line [0] = query_error -> actual_line [0] = 0;
+
+    // Retorna o registo
+    return query_error;
+}
+
+// Elimina um registo da entidade erro da query
+void destroy_query_error (QueryError query_error) {
+    g_free (query_error);
