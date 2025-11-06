@@ -43,3 +43,12 @@ int main (int argc, char **argv) {
     }
 
     while (1) {
+
+        clear(); refresh();
+
+        // Apresenta o menu das queries e retorna a escolha do utilizador
+        int choice = menu_select_queries (max_y, max_x);
+
+        // Se o utilizador carregar no ESC, encerra o programa
+        if (choice == 0) {
+            destroy_database (database); endwin (); return EXIT_FAILURE;
