@@ -4,3 +4,10 @@
 typedef struct query_result {
     int number_correct;
     int number_executed;
+    double total_time;
+} QUERY_RESULT, *QueryResult;
+
+
+
+// Atualiza um resultado de query
+void update_query_result (QueryResult query_result, double elapsed) {
