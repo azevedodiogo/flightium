@@ -20,3 +20,12 @@ QueryResult create_query_result () {
     // Retorna o registo
     return query_result;
 }
+
+// Elimina um registo da entidade resultado da query
+void destroy_query_result (QueryResult query_result) {
+    g_free (query_result);
+}
+
+// Devolve o número de queries corretas de um resultado de query
+int get_query_result_correct (QueryResult query_result) {
+    return query_result -> number_correct;
