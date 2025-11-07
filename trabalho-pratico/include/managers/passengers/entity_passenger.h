@@ -38,3 +38,11 @@ const char *get_passenger_first_name (const struct entity_passenger *passenger);
  * @param passenger Registo alvo.
  * @return String com o último nome.
  */
+const char *get_passenger_last_name (const struct entity_passenger *passenger);
+
+/**
+ * @brief Obtém a nacionalidade do passageiro.
+ * @param passenger Registo alvo.
+ * @return String com a nacionalidade.
+ */
+const char *get_passenger_nationality (const struct entity_passenger *passenger);
