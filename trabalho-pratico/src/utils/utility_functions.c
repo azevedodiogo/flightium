@@ -13,3 +13,9 @@ char *our_strsep (char **str, char stop_character) {
 
     // Avança na string até ao caractere de paragem ou ao fim da string
     while ((*str) [0] && (*str) [0] != stop_character) (*str)++;
+
+    // Avança o caractere de paragem
+    if ((*str) [0] == stop_character) {
+        (*str) [0] = 0;
+        (*str)++;
+    }
