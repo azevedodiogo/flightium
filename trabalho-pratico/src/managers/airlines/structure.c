@@ -27,3 +27,11 @@ void destroy_storage_airlines (StorageAirlines storage_airlines) {
 
     // Elimina a sub-estrutura
     destroy_storage_generic (storage_airlines -> data);
+
+    // Elimina a estrutura
+    g_free (storage_airlines);
+}
+
+// Devolve uma companhia aérea a partir do seu nome
+const struct entity_airline *get_airline_by_id (StorageAirlines storage_airlines, const char *name) {
+    return get_generic_by_id (storage_airlines -> data, name);
