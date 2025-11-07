@@ -5,3 +5,12 @@
 
 #include <stdlib.h>
 #include <string.h>
+
+#define BUFFER 1024
+
+// Obtém os argumentos para a query
+int get_query_arguments (int query_number, char *input, int max_y, int max_x) {
+
+    // Seleciona a função de acordo com o número da query
+    switch (query_number) {
+        case 1: if (get_query1_arguments(max_y, max_x, input)) return EXIT_FAILURE; break;
