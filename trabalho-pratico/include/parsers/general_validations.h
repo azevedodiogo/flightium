@@ -44,3 +44,12 @@ date validate_date (const char *string, int datetime);
  * @return EXIT_SUCCESS quando apenas dígitos estão presentes. EXIT_FAILURE em caso contrário.
  */
 int validate_digits (const char *string);
+
+/**
+ * @brief Valida uma nacionalidade, permitindo letras, espaços e hífen.
+ * @param string Texto a validar.
+ * @return EXIT_SUCCESS quando válido. EXIT_FAILURE em caso contrário.
+ */
+int validate_nacionality (const char *string);
+
+#endif
