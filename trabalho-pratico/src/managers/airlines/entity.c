@@ -13,3 +13,11 @@ typedef struct entity_airline {
 
 // Cria um registo da entidade companhia aérea
 EntityAirline create_airline (const char *name, int delay) {
+
+    // Aloca memória para o registo
+    EntityAirline airline = g_malloc (sizeof (ENTITY_AIRLINE));
+
+    // Define as componentes do registo
+    airline -> name = g_strdup (name);
+    airline -> delay_count = 1;
+    airline -> total_delay = delay;
