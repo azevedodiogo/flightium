@@ -14,3 +14,11 @@ typedef struct tests {
 
 
 // Cria a estrutura de armazenamento dos testes
+Tests create_tests (char *expected_results) {
+
+    // Aloca memória para a estrutura
+    Tests tests = g_malloc (sizeof (TESTS));
+
+    // Cria as sub-estruturas
+    tests -> load_timer = create_load_timer ();
+    tests -> errors = create_storage_query_errors ();
