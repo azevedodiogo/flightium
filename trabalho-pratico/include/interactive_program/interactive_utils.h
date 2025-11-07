@@ -27,3 +27,10 @@ int menu_select_queries (int max_y, int max_x);
  * @return 0 para ';', 1 para '='; devolve -1 se cancelado.
  */
 int menu_select_delimiters (int max_y, int max_x); 
+
+/**
+ * @brief Executa a query selecionada e mostra o resultado num modo navegável.
+ * @param query_number Número da query (1-6).
+ * @param delimiter Índice do delimitador escolhido (0 -> ';', 1 -> '=').
+ * @param database Base de dados já preparada.
+ * @param input Argumentos formatados para a query.
