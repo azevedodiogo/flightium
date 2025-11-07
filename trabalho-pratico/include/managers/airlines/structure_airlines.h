@@ -29,3 +29,11 @@ void destroy_storage_airlines (StorageAirlines storage_airlines);
  * @return Registo encontrado ou NULL se não existir.
  */
 const struct entity_airline *get_airline_by_id (StorageAirlines storage_airlines, const char *name);
+
+/**
+ * @brief Regista uma nova companhia ou atualiza uma existente.
+ * @param storage_airlines Estrutura de armazenamento.
+ * @param name Nome da companhia aérea.
+ * @param delay Atraso inicial associado.
+ */
+void register_airline (StorageAirlines storage_airlines, const char *name, int delay);
