@@ -21,3 +21,11 @@ EntityPassenger create_passenger (const char *first_name, const char *last_name,
     passenger -> first_name = g_strdup (first_name);
     passenger -> last_name = g_strdup (last_name);
     passenger -> nationality = g_strdup (nationality);
+    passenger -> document_number = document_number;
+    passenger -> dob = dob;
+
+    // Retorna o registo
+    return passenger;
+}
+
+// Elimina aum registo da entidade passageiro
