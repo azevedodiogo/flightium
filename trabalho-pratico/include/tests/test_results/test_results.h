@@ -5,3 +5,11 @@
 
 /** @brief Estrutura de armazenamento dos testes e respetivos resultados. */
 typedef struct tests *Tests;
+
+/** @brief Estrutura para medir os tempos de leitura. */
+typedef struct load_timer *LoadTimer;
+
+/** @brief Estrutura de armazenamento da entidade erro da query. */
+typedef struct storage_query_errors *StorageQueryErrors;
+
+/** @brief Estrutura de armazenamento da entidade resultado de query. */
