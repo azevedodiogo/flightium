@@ -12,3 +12,11 @@
 
 // Carrega uma linha do dataset dos voos
 int load_line_flights (char *input, Database database) {
+
+    // Carrega o id de voo
+    char *flight_id = separate_block (&input, '"');
+    if (validate_flight_id (flight_id)) return EXIT_FAILURE;
+
+    // Carrega a data de partida
+    date departure = validate_date (separate_block (&input, '"'), 1);
+    if (departure == INVALID_DATE) return EXIT_FAILURE;
