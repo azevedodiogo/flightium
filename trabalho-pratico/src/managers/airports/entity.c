@@ -21,3 +21,10 @@ typedef struct entity_airport {
 EntityAirport create_airport (const char *code, const char *name, const char *city, const char *type, const char *country) {
 
 	// Aloca memória para o registo
+	EntityAirport airport = g_malloc (sizeof (ENTITY_AIRPORT));
+
+	// Define as componentes do registo
+	airport -> code = g_strdup (code);
+	airport -> name = g_strdup (name);
+	airport -> city = g_strdup (city);
+	airport -> type = g_strdup (type);
