@@ -11,3 +11,9 @@ int load_line_aircrafts (char *input, Database database) {
 
     // Carrega o fabricante
     char *manufacturer = separate_block (&input, '"');
+
+    // Carrega o modelo
+    char *model = separate_block (&input, '"');
+
+    // Carrega o ano
+    if (validate_year (separate_block (&input, '"'))) return EXIT_FAILURE;
