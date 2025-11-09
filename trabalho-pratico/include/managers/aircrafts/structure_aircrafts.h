@@ -6,3 +6,11 @@ typedef struct storage_aircrafts *StorageAircrafts;
 
 /** @brief Entidade da aeronave. */
 typedef struct entity_aircraft *EntityAircraft;
+
+
+
+/**
+ * @brief Cria a estrutura de armazenamento das aeronaves.
+ * @param inicial_capacity Capacidade inicial pretendida para alocação.
+ * @return Estrutura inicializada.
+ */
