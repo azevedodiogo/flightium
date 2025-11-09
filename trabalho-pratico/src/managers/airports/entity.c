@@ -35,3 +35,12 @@ EntityAirport create_airport (const char *code, const char *name, const char *ci
 	// Retorna o registo
 	return airport;
 }
+
+// Elimina um registo da entidade aeroporto
+void destroy_airport (gpointer airport) {
+	EntityAirport temp = airport;
+	g_free (temp -> code);
+	g_free (temp -> name);
+	g_free (temp -> city);
+	g_free (temp -> type);
+	g_free (temp);
