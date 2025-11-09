@@ -28,3 +28,10 @@ EntityAirport create_airport (const char *code, const char *name, const char *ci
 	airport -> name = g_strdup (name);
 	airport -> city = g_strdup (city);
 	airport -> type = g_strdup (type);
+	airport -> arrival_count = 0;
+	airport -> departure_count = 0;
+	strcpy (airport -> country, country);
+
+	// Retorna o registo
+	return airport;
+}
