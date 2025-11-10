@@ -22,3 +22,11 @@ TARGET := programa-principal
 TEST_SRC := src/mains/programa-testes.c
 TEST_OBJ := $(TEST_SRC:.c=.o)
 TEST_TARGET := programa-testes
+
+# Programa interativo
+INTERACTIVE_SRC := src/mains/programa-interativo.c
+INTERACTIVE_OBJ := $(INTERACTIVE_SRC:.c=.o)
+INTERACTIVE_TARGET := programa-interativo
+
+# ------------------------------
+# Alvo principal: compila ambos
