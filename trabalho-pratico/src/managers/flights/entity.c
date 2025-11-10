@@ -13,3 +13,12 @@ typedef struct entity_flight {
 } ENTITY_FLIGHT, *EntityFlight;
 
 
+
+// Cria um registo da entidade voo
+EntityFlight create_flight (const char *origin, const char *destination, week_index week, char status) {
+
+	// Aloca memória para o registo
+	EntityFlight flight = g_malloc (sizeof (ENTITY_FLIGHT));
+
+	// Define as componentes do registo
+	strcpy (flight -> origin, origin);
