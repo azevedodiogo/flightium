@@ -22,3 +22,11 @@ StorageQueryErrors create_storage_query_errors () {
 
 // Elimina a estrutura de armazenamento da entidade erro da query
 void destroy_storage_query_errors (StorageQueryErrors storage_query_errors) {
+
+    // Elimina os elementos do array
+    for (guint i = 0; i < storage_query_errors -> data -> len; i++) destroy_query_error (storage_query_errors -> data -> pdata [i]);
+
+    // Elimina a sub-estrutura
+    g_ptr_array_free (storage_query_errors -> data, TRUE);
+
+    // Elimina a estrutura
