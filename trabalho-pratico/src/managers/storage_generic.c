@@ -29,3 +29,11 @@ StorageGeneric create_storage_generic (int number_elements, void (*destroy_func)
 // Elimina uma estrutura de armazenamento genérica
 void destroy_storage_generic (StorageGeneric storage_generic) {
     
+    // Liberta as sub-estruturas de armazenamento
+    for (int i = 0; i < storage_generic -> len; i++) storage_generic -> destroy_func (storage_generic -> array [i]);
+    g_free (storage_generic -> array);
+    g_hash_table_destroy (storage_generic -> indexing);
+
+    // Liberta a estrutura de armazenamento
+    g_free (storage_generic);
+}
