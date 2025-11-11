@@ -38,3 +38,11 @@ void destroy_storage_query_results (StorageQueryResults storage_query_results) {
 }
 
 // Devolve o ficheiro de resultados esperados
+const char *get_expected_results (StorageQueryResults storage_query_results) {
+    return storage_query_results -> expected_results;
+}
+
+// Obtém os resultados de uma query pelo índice
+QueryResult get_query_result_by_index (StorageQueryResults storage_query_results, int index) {
+    return storage_query_results -> results [index];
+}
