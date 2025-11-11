@@ -12,3 +12,12 @@ int validate_code (const char *string) {
 
 // Verifica se uma string representa corretamente um número de documento
 int validate_document_number (const char *string) {
+
+    // Verifica se o formato é válido
+    for (int i = 0; i < 9; i++) if (!isdigit (string [i])) return NO_VALUE;
+
+    // Verifica se a string terminou
+    return string [9] ? NO_VALUE : atoi (string);
+}
+
+// Verifica se uma string representa corretamente o identificador de um voo
