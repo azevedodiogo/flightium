@@ -22,3 +22,10 @@ EntityFlight create_flight (const char *origin, const char *destination, week_in
 
 	// Define as componentes do registo
 	strcpy (flight -> origin, origin);
+	strcpy (flight -> destination, destination);
+	flight -> week = week;
+	flight -> status = status;
+
+	// Retorna o registo
+	return flight;
+}
