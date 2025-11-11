@@ -35,3 +35,10 @@ void destroy_storage_airlines (StorageAirlines storage_airlines) {
 // Devolve uma companhia aérea a partir do seu nome
 const struct entity_airline *get_airline_by_id (StorageAirlines storage_airlines, const char *name) {
     return get_generic_by_id (storage_airlines -> data, name);
+}
+
+// Adiciona um novo registo de uma companhia
+void register_airline (StorageAirlines storage_airlines, const char *name, int delay) {
+
+    // Obtém a data
+    StorageGeneric data = storage_airlines -> data;
