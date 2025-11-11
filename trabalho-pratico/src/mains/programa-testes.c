@@ -22,3 +22,11 @@ int main (int argc, char **argv) {
     // Verifica se não foram dados três argumentos
     if (argc != 4) {
         fprintf (stderr, "Error: There should be three arguments\n");
+        return EXIT_FAILURE;
+    } int dataset;
+
+    // Determina qual é o tipo de dataset
+    if (determine_dataset (argv [1], &dataset)) {
+        fprintf (stderr, "Error: invalid directory\n");
+        return EXIT_FAILURE;
+    }
