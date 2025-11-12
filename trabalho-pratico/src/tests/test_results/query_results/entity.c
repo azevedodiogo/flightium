@@ -29,3 +29,11 @@ void destroy_query_result (QueryResult query_result) {
 // Devolve o número de queries corretas de um resultado de query
 int get_query_result_correct (QueryResult query_result) {
     return query_result -> number_correct;
+}
+
+// Devolve o número de queries executadas de um resultado de query
+int get_query_result_executed (QueryResult query_result) {
+    return query_result -> number_executed;
+}
+
+// Devolve o tempo total de execução de um resultado de query
