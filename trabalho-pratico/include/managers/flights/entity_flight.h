@@ -22,3 +22,11 @@ EntityFlight create_flight (const char *origin, const char *destination, week_in
 
 /**
  * @brief Liberta a memória associada a um voo.
+ * @param flight Ponteiro para a entidade.
+ */
+void destroy_flight (gpointer flight);
+
+/**
+ * @brief Obtém o aeroporto de origem.
+ * @param flight Registo alvo.
+ * @return String com o código de origem.
