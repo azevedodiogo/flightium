@@ -13,3 +13,10 @@ int open_input_file (FILE **read_file, const char *read_file_name) {
 
     // Verifica se o ficheiro não existe
     if (*read_file == NULL) {
+        fprintf (stderr, "Error: invalid file\n");
+        return EXIT_FAILURE;
+    }
+
+    // Indica que o ficheiro foi aberto corretamente
+    return EXIT_SUCCESS;
+}
