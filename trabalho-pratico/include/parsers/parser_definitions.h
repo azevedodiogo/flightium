@@ -17,3 +17,10 @@ int load_line_reservations (char *, Database);
 typedef enum datasets {
     N_AIRCRAFT,     /**< Dataset das aeronaves. */
     N_AIRPORT,      /**< Dataset dos aeroportos. */
+    N_PASSENGER,    /**< Dataset dos passageiros. */
+    N_FLIGHT,       /**< Dataset dos voos. */
+    N_RESERVATION,  /**< Dataset das reservas. */
+    N_DATASETS      /**< Número total de datasets. */
+} Datasets;
+
+#endif
