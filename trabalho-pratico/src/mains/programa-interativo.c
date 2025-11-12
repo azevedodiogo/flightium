@@ -52,3 +52,10 @@ int main (int argc, char **argv) {
         // Se o utilizador carregar no ESC, encerra o programa
         if (choice == 0) {
             destroy_database (database); endwin (); return EXIT_FAILURE;
+        }
+        // Apresenta o menu dos delimiters e retorna a escolha do utilizador
+        int delimiter = menu_select_delimiters (max_y, max_x);
+
+        // Se o utilizador carregar no ESC, encerra o programa
+        if (delimiter == -1) {
+            destroy_database (database); endwin (); return EXIT_FAILURE;
