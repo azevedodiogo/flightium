@@ -22,3 +22,11 @@ int validate_latitude (const char *string) {
     for (int j = 1; string [i + j]; j++) if (j == 9 || !isdigit (string [i + j])) return EXIT_FAILURE;
 
     // Verifica a validade do valor
+    return atof (string) > 90 ? EXIT_FAILURE : EXIT_SUCCESS;
+}
+
+// Verifica se uma string representa corretamente uma longitude
+int validate_longitude (const char *string) {
+
+    // Verifica se é negativo
+    if (string [0] == '-') string++;
