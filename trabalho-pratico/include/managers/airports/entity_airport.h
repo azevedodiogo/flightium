@@ -14,3 +14,11 @@ typedef struct entity_airport *EntityAirport;
  * @param name Nome completo.
  * @param city Cidade onde se insere.
  * @param type Tipo de aeroporto. Tipo pode ser "large_airport", "medium_airport", "small_airport", etc.
+ * @param country País associado.
+ * @return Nova entidade aeroporto.
+ */
+EntityAirport create_airport (const char *code, const char *name, const char *city, const char *type, const char *country);
+
+/**
+ * @brief Liberta a memória associada a um aeroporto.
+ * @param airport Ponteiro para a entidade.
