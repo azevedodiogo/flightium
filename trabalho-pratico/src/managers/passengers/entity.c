@@ -29,3 +29,10 @@ EntityPassenger create_passenger (const char *first_name, const char *last_name,
 }
 
 // Elimina aum registo da entidade passageiro
+void destroy_passenger (gpointer passenger) {
+    EntityPassenger temp = passenger;
+    g_free (temp -> first_name);
+    g_free (temp -> last_name);
+    g_free (temp -> nationality);
+    g_free (temp);
+}
