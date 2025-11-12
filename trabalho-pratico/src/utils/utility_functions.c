@@ -19,3 +19,12 @@ char *our_strsep (char **str, char stop_character) {
         (*str) [0] = 0;
         (*str)++;
     }
+
+    // Retorna o endereço inicial
+    return r;
+}
+
+// Separa uma string por um caractere e avança até à próxima ocorrência do mesmo
+char* separate_block (char **str, char stop_character) {
+
+    // Avança a primeira vez
