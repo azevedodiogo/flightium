@@ -42,3 +42,11 @@ void register_airline (StorageAirlines storage_airlines, const char *name, int d
 
     // Obtém a data
     StorageGeneric data = storage_airlines -> data;
+
+    // Procura o índice da companhia aérea
+    int index = get_index (data, name);
+
+    // Verifica se a companhia aérea ainda não existia
+    if (index == INVALID_INDEX) register_generic (data, g_strdup (name), create_airline (name, delay));
+
+    // Atualiza a companhia aérea
