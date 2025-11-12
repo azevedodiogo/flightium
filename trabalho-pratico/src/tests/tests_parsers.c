@@ -29,3 +29,10 @@ int test_load_datasets (Database database, const char *directory, Tests tests) {
     }
 
     // Declara variáveis auxiliares
+    char input [BUFFER]; double total_load_time = 0.0f;
+    clock_t start, end;
+
+    // Indica o início da leitura
+    print_start_text_parsers ();
+
+    // Processa cada dataset
