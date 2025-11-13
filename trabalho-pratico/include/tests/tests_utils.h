@@ -13,3 +13,12 @@ typedef struct storage_query_errors *StorageQueryErrors;
 /** @brief Estrutura de armazenamento da entidade resultado de query. */
 typedef struct storage_query_results *StorageQueryResults;
 
+
+
+/**
+ * @brief Imprime o cabeçalho inicial dos testes de parsing.
+ */
+void print_start_text_parsers ();
+
+/**
+ * @brief Imprime o texto final dos testes de parsing.
