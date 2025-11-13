@@ -37,3 +37,11 @@ void destroy_storage_generic (StorageGeneric storage_generic) {
     // Liberta a estrutura de armazenamento
     g_free (storage_generic);
 }
+
+// Devolve o comprimento do array da estrutura de armazenamento genérica
+int get_generic_len (StorageGeneric storage_generic) {
+    return storage_generic -> len;
+}
+
+// Determina o índice do array a partir da sua indexação
+int get_index (StorageGeneric storage_generic, gconstpointer key) {
