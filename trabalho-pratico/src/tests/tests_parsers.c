@@ -36,3 +36,10 @@ int test_load_datasets (Database database, const char *directory, Tests tests) {
     print_start_text_parsers ();
 
     // Processa cada dataset
+    for (int i = 0; i < N_DATASETS; i++) {
+
+        // Inicializa a contabilização do tempo
+        start = clock ();
+
+        // Processa o dataset
+        generic_load_dataset (read_files [i], write_files [i], input, database, load_line [i]);
