@@ -1,0 +1,7 @@
+# Configuração Doxygen
+PROJECT_NAME           = "Projeto LI3"
+INPUT                  = include src
+RECURSIVE              = YES
+EXTRACT_ALL            = YES
+FILE_PATTERNS          = *.h *.c
+OUTPUT_DIRECTORY       = docs
