@@ -12,3 +12,11 @@ typedef struct storage_query_errors *StorageQueryErrors;
 
 
 // {- Entity -}
+
+/**
+ * @brief Cria um registo de erro de query.
+ * @param query_num Número da query.
+ * @param command_num Número sequencial do comando.
+ * @return Nova entidade erro ou NULL em caso de falha.
+ */
+QueryError create_query_error (int query_num, int command_num);
