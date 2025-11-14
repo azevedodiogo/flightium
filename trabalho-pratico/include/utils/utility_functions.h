@@ -14,3 +14,11 @@ char *our_strsep (char **str, char stop_character);
 /**
  * @brief Separa uma string e avança para além do próximo delimitador encontrado.
  * @param str Ponteiro para a string a processar. É atualizado para o segmento restante.
+ * @param stop_character Delimitador usado para a separação.
+ * @return Ponteiro para o bloco extraído ou NULL se não existir.
+ */
+char* separate_block (char **str, char stop_character);
+
+/**
+ * @brief Determina o tipo de dataset presente num diretório.
+ * @param directory Caminho fornecido pelo utilizador.
