@@ -35,3 +35,11 @@ QueryError create_query_error (int query_num, int command_num) {
 // Elimina um registo da entidade erro da query
 void destroy_query_error (QueryError query_error) {
     g_free (query_error);
+}
+
+// Devolve o número da query de um erro
+int get_query_error_number (QueryError query_error) {
+    return query_error -> query_num;
+}
+
+// Devolve o número do comando de um erro
