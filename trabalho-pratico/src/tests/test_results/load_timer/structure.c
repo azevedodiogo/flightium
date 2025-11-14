@@ -5,3 +5,10 @@
 // Estrutura para medir os tempos de leitura
 typedef struct load_timer {
     double timers [N_DATASETS];
+} LOAD_TIMER, *LoadTimer;
+
+
+
+// Cria os tempos de leitura
+LoadTimer create_load_timer () {
+    
