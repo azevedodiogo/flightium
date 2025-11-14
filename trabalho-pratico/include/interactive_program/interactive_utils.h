@@ -34,3 +34,11 @@ int menu_select_delimiters (int max_y, int max_x);
  * @param delimiter Índice do delimitador escolhido (0 -> ';', 1 -> '=').
  * @param database Base de dados já preparada.
  * @param input Argumentos formatados para a query.
+ * @param max_y Altura do ecrã.
+ * @param max_x Largura do ecrã.
+ * @return EXIT_SUCCESS em caso de execução. EXIT_FAILURE em caso de erro.
+ * @warning Espera que a base de dados esteja carregada e que `input` seja válido. Bloqueia até o utilizador fechar o output.
+ */
+int execute_query (int query_number, int delimiter, Database database, char *input, int max_y, int max_x); 
+
+#endif
