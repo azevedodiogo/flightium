@@ -37,3 +37,11 @@ int get_query_result_executed (QueryResult query_result) {
 }
 
 // Devolve o tempo total de execução de um resultado de query
+double get_query_result_total_time (QueryResult query_result) {
+    return query_result -> total_time;
+}
+
+// Define o número de queries corretas de um resultado de query
+void set_query_result_correct (QueryResult query_result, int number_correct) {
+    query_result -> number_correct = number_correct;
+}
