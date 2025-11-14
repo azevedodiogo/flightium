@@ -21,3 +21,10 @@ int validate_document_number (const char *string) {
 }
 
 // Verifica se uma string representa corretamente o identificador de um voo
+int validate_flight_id (const char *string) {
+
+    // Verifica se os dois primeiros caracteres não são letras maiúsculas
+    if (!isupper (string [0]) || !isupper (string [1])) return EXIT_FAILURE;
+
+    // Conta o número de dígitos
+    int i = 2; while (isdigit (string [i])) i++;
