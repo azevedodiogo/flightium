@@ -6,3 +6,11 @@ typedef struct query_result *QueryResult;
 
 /** @brief Estrutura de armazenamento da entidade resultado de query. */
 typedef struct storage_query_results *StorageQueryResults;
+
+
+
+// {- Entity -}
+
+/**
+ * @brief Cria um registo de resultado de query.
+ * @return Nova entidade resultado ou NULL em caso de falha.
