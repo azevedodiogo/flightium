@@ -22,3 +22,11 @@ char* separate_block (char **str, char stop_character);
 /**
  * @brief Determina o tipo de dataset presente num diretório.
  * @param directory Caminho fornecido pelo utilizador.
+ * @param dataset Ponteiro onde é devolvido o identificador do dataset.
+ * @return 0 em caso de sucesso. Caso contrário, devolve-se um valor não nulo se o dataset não for reconhecido.
+ */
+int determine_dataset (const char *directory, int *dataset);
+
+/**
+ * @brief Ajusta índices limitantes garantindo que permanecem dentro dos limites válidos.
+ * @param len Comprimento total do vetor de destino.
