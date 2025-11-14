@@ -13,3 +13,11 @@
  * @return 0 em caso de sucesso. Caso contrário, devolve-se um valor não nulo se ocorrer erro de parsing.
  */
 int load_line_flights (char *input, Database database);
+
+
+
+// {- Validations -}
+
+/**
+ * @brief Valida se a string corresponde à entrada 'N/A'.
+ * @param string Texto a validar.
