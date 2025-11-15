@@ -14,3 +14,10 @@ typedef struct entity_aircraft *EntityAircraft;
  * @param inicial_capacity Capacidade inicial pretendida para alocação.
  * @return Estrutura inicializada.
  */
+StorageAircrafts create_storage_aircrafts (int inicial_capacity);
+
+/**
+ * @brief Liberta todos os recursos associados às aeronaves.
+ * @param storage_aircrafts Estrutura a eliminar.
+ */
+void destroy_storage_aircrafts (StorageAircrafts storage_aircrafts);
