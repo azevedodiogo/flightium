@@ -59,3 +59,10 @@ int main (int argc, char **argv) {
         // Se o utilizador carregar no ESC, encerra o programa
         if (delimiter == -1) {
             destroy_database (database); endwin (); return EXIT_FAILURE;
+        }
+
+        // Buffer para armazenar os argumentos da query
+        char query_arguments [BUFFER] = {0};
+
+        // Lê os argumentos da query selecionada
+        int result = get_query_arguments (choice, query_arguments, max_y, max_x);
