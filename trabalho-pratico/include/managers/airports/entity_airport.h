@@ -22,3 +22,11 @@ EntityAirport create_airport (const char *code, const char *name, const char *ci
 /**
  * @brief Liberta a memória associada a um aeroporto.
  * @param airport Ponteiro para a entidade.
+ */
+void destroy_airport (gpointer airport);
+
+/**
+ * @brief Obtém o código do aeroporto.
+ * @param airport Registo alvo.
+ * @return String com o código.
+ */
