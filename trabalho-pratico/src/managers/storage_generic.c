@@ -45,3 +45,10 @@ int get_generic_len (StorageGeneric storage_generic) {
 
 // Determina o índice do array a partir da sua indexação
 int get_index (StorageGeneric storage_generic, gconstpointer key) {
+
+    // Procura o registo
+    gpointer index = g_hash_table_lookup (storage_generic -> indexing, key);
+
+    // Retorna o índice
+    return index ? GPOINTER_TO_INT (index) - 1 : INVALID_INDEX;
+}
