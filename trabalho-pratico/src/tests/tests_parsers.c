@@ -43,3 +43,12 @@ int test_load_datasets (Database database, const char *directory, Tests tests) {
 
         // Processa o dataset
         generic_load_dataset (read_files [i], write_files [i], input, database, load_line [i]);
+
+        // Termina a contabilização do tempo
+        end = clock ();
+
+        // Atualiza a contabilização do tempo
+        total_load_time += update_load_timer (get_tests_load_timer (tests), i, ((double) end - start) / CLOCKS_PER_SEC);
+
+        // Fecha os ficheiros
+        fclose (read_files [i]); fclose (write_files [i]);
