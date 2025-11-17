@@ -20,3 +20,11 @@ EntityAirline create_airline (const char *name, int delay);
  * @brief Liberta a memória associada a uma companhia aérea.
  * @param airline Ponteiro para a entidade.
  */
+void destroy_airline (gpointer airline);
+
+/**
+ * @brief Obtém o nome da companhia.
+ * @param airline Registo alvo.
+ * @return String com o nome da companhia.
+ */
+const char *get_airline_name (const struct entity_airline *airline);
