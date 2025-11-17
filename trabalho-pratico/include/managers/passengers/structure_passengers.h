@@ -28,3 +28,10 @@ StoragePassengers create_storage_passengers (int inicial_capacity);
 void destroy_storage_passengers (StoragePassengers storage_passengers);
 
 /**
+ * @brief Obtém um passageiro pelo número de documento.
+ * @param storage_passengers Estrutura de armazenamento.
+ * @param document_number Número de documento.
+ * @param index Ponteiro onde é devolvido o índice interno do passageiro.
+ * @return Registo correspondente ou NULL se não existir.
+ */
+const struct entity_passenger *get_passenger_by_id (StoragePassengers storage_passengers, int document_number);
