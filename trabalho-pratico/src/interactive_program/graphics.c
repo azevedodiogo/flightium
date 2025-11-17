@@ -30,3 +30,11 @@ const char *clouds_art[] = {
 "      (_   (_ .  _) _)",
 "",
 "                                     _",
+"                                    (  )",
+"                                 ( `  ) . )",
+"                               (_, _(  ,_)_)",
+NULL
+};
+
+const char *clock_art[] = {
+"     Loading ...",
