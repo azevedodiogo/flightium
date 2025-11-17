@@ -28,3 +28,12 @@ int validate_flight_id (const char *string) {
 
     // Conta o número de dígitos
     int i = 2; while (isdigit (string [i])) i++;
+
+    // Verifica se existem 5 ou 6 dígitos
+    if (i != 7 && i != 8) return EXIT_FAILURE;
+
+    // Verifica o resto da string
+    return string [i] == 0 ? EXIT_SUCCESS : EXIT_FAILURE;
+}
+
+// Verifica se uma string representa um tempo
