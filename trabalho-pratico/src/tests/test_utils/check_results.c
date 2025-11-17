@@ -13,3 +13,12 @@
 
 // Extrai uma linha específica do conteúdo de um ficheiro
 static void extract_line_from_content (const char *content, int line_number, char *buffer) {
+
+    // Contador da linha atual
+    int current_line = 1, i = 0;
+    
+    // Percorre o conteúdo até encontrar a linha desejada ou chegar ao final
+    while (*content && current_line < line_number) {
+        if (*content == '\n') current_line++;
+        content++;
+    }
