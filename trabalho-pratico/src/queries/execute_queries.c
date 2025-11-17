@@ -20,3 +20,11 @@ int open_input_file (FILE **read_file, const char *read_file_name) {
     // Indica que o ficheiro foi aberto corretamente
     return EXIT_SUCCESS;
 }
+
+// Executa as queries dadas
+int execute_queries (Database database, const char *directory) {
+
+    // Declara o ficheiro
+    FILE *read_file;
+
+    // Abre o ficheiro
