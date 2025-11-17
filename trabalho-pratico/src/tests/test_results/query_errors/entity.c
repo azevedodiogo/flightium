@@ -43,3 +43,10 @@ int get_query_error_number (QueryError query_error) {
 }
 
 // Devolve o número do comando de um erro
+int get_query_error_command (QueryError query_error) {
+    return query_error -> command_num;
+}
+
+// Devolve o número da linha de um erro
+int get_query_error_line (QueryError query_error) {
+    return query_error -> error_line;
