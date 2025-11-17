@@ -13,3 +13,10 @@ typedef struct load_timer *LoadTimer;
 typedef struct storage_query_errors *StorageQueryErrors;
 
 /** @brief Estrutura de armazenamento da entidade resultado de query. */
+typedef struct storage_query_results *StorageQueryResults;
+
+
+
+/**
+ * @brief Cria a estrutura agregadora de resultados de testes.
+ * @param expected_results Caminho para o ficheiro de resultados esperados.
