@@ -22,3 +22,11 @@ void print_start_text_parsers ();
 
 /**
  * @brief Imprime o texto final dos testes de parsing.
+ * @param total_load_time Tempo total gasto no carregamento dos datasets.
+ */
+void print_end_text_parsers (double total_load_time);
+
+/**
+ * @brief Atualiza o temporizador de leitura para um dataset.
+ * @param load_timer Estrutura de temporização.
+ * @param index Índice do dataset.
