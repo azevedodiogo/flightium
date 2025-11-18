@@ -28,3 +28,10 @@ void destroy_airline (gpointer airline);
  * @return String com o nome da companhia.
  */
 const char *get_airline_name (const struct entity_airline *airline);
+
+/**
+ * @brief Obtém o número de voos com atraso.
+ * @param airline Registo alvo.
+ * @return Contagem de atrasos.
+ */
+int get_airline_delay_count (const struct entity_airline *airline);
