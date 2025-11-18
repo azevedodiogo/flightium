@@ -20,3 +20,11 @@ EntityAircraft create_aircraft (const char *identifier, const char *manufacturer
     aircraft -> identifier = g_strdup (identifier);
     aircraft -> manufacturer = g_strdup (manufacturer);
     aircraft -> model = g_strdup (model);
+    aircraft -> flight_count = 0;
+
+    // Retorna o registo
+    return aircraft;
+}
+
+// Elimina um registo da entidade aeronave
+void destroy_aircraft (gpointer aircraft) {
