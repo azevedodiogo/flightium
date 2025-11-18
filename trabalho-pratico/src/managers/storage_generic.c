@@ -60,3 +60,10 @@ gpointer get_generic_by_id (StorageGeneric storage_generic, gconstpointer key) {
     int index = get_index (storage_generic, key);
 
     // Retorna o registo
+    return index == INVALID_INDEX ? NULL : ((gpointer *) (storage_generic -> array)) [index];
+}
+
+// Devolve um elemento num índice do array
+gpointer get_generic_by_index (StorageGeneric storage_generic, int index) {
+    return (index < 0 || index >= storage_generic -> len) ? NULL : storage_generic -> array [index];
+}
