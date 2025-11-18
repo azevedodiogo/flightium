@@ -46,3 +46,11 @@ void prepare_airlines (StorageAirlines storage_airlines);
 
 /**
  * @brief Determina as N companhias com maior atraso médio.
+ * @param storage_airlines Estrutura de armazenamento.
+ * @param N Número de companhias pretendidas.
+ * @param found Array de saída com as companhias mais atrasadas.
+ * @return Número de registos colocados em `found`.
+ */
+int most_delayed_airlines (StorageAirlines storage_airlines, int N, const struct entity_airline *found []);
+
+#endif
