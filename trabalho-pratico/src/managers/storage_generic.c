@@ -52,3 +52,11 @@ int get_index (StorageGeneric storage_generic, gconstpointer key) {
     // Retorna o índice
     return index ? GPOINTER_TO_INT (index) - 1 : INVALID_INDEX;
 }
+
+// Devolve um registo a partir do seu identificador
+gpointer get_generic_by_id (StorageGeneric storage_generic, gconstpointer key) {
+
+    // Determina o índice da ocorrência do registo
+    int index = get_index (storage_generic, key);
+
+    // Retorna o registo
