@@ -30,3 +30,10 @@ INTERACTIVE_TARGET := programa-interativo
 
 # ------------------------------
 # Alvo principal: compila ambos
+all: $(TARGET) $(TEST_TARGET) $(INTERACTIVE_TARGET)
+
+# Geração de documentação (Doxygen)
+docs:
+	@echo "[DOCS] Gerando documentação..."
+	@doxygen $(DOXYFILE)
+	@echo "[DOCS] Documentação gerada em $(DOCDIR) (ou no OUTPUT_DIRECTORY configurado no Doxyfile)."
