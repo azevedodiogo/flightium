@@ -37,3 +37,12 @@ const struct entity_airline *get_airline_by_id (StorageAirlines storage_airlines
  * @param delay Atraso inicial associado.
  */
 void register_airline (StorageAirlines storage_airlines, const char *name, int delay);
+
+/**
+ * @brief Prepara a estrutura para execução eficiente das queries.
+ * @param storage_airlines Estrutura a preparar.
+ */
+void prepare_airlines (StorageAirlines storage_airlines);
+
+/**
+ * @brief Determina as N companhias com maior atraso médio.
