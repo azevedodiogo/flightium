@@ -35,3 +35,11 @@ void destroy_storage_passengers (StoragePassengers storage_passengers);
  * @return Registo correspondente ou NULL se não existir.
  */
 const struct entity_passenger *get_passenger_by_id (StoragePassengers storage_passengers, int document_number);
+
+/**
+ * @brief Regista um novo passageiro.
+ * @param storage_passengers Estrutura de armazenamento.
+ * @param document_number Número de documento.
+ * @param first_name Primeiro nome.
+ * @param last_name Último nome.
+ * @param nationality Nacionalidade.
