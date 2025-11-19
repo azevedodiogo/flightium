@@ -30,3 +30,11 @@ void destroy_airport (gpointer airport);
  * @param airport Registo alvo.
  * @return String com o código.
  */
+const char *get_airport_code (const struct entity_airport *airport);
+
+/**
+ * @brief Obtém o nome do aeroporto.
+ * @param airport Registo alvo.
+ * @return String com o nome.
+ */
+const char *get_airport_name (const struct entity_airport *airport);
