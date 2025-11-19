@@ -30,3 +30,11 @@ int validate_longitude (const char *string) {
 
     // Verifica se é negativo
     if (string [0] == '-') string++;
+
+    // Verifica se o primeiro caractere não é um dígito
+    if (!isdigit (string [0])) return EXIT_FAILURE;
+
+    // Verifica se o formato não é válido (antes do ponto)
+    int i; for (i = 1; string [i] && string [i] != '.'; i++) if (i == 3 || !isdigit (string [i])) return EXIT_FAILURE;
+
+    // Verifica se a string terminou
