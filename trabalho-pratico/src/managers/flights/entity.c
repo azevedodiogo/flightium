@@ -29,3 +29,12 @@ EntityFlight create_flight (const char *origin, const char *destination, week_in
 	// Retorna o registo
 	return flight;
 }
+
+// Elimina um registo da entidade voo
+void destroy_flight (gpointer flight) {
+	g_free (flight);
+}
+
+// Devolve a origem de um voo
+const char *get_flight_origin (const struct entity_flight *flight) {
+	return flight -> origin;
