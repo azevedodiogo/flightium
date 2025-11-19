@@ -21,3 +21,11 @@ EntityAirline create_airline (const char *name, int delay) {
     airline -> name = g_strdup (name);
     airline -> delay_count = 1;
     airline -> total_delay = delay;
+
+    // Retorna o registo
+    return airline;
+}
+
+// Elimina um registo da entidade companhia aérea
+void destroy_airline (gpointer airline) {
+    EntityAirline temp = airline;
