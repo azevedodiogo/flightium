@@ -22,3 +22,11 @@ Tests create_tests (char *expected_results) {
     // Cria as sub-estruturas
     tests -> load_timer = create_load_timer ();
     tests -> errors = create_storage_query_errors ();
+    tests -> results = create_storage_query_results (expected_results);
+
+    // Retorna a estrutura
+    return tests;
+}
+
+// Elimina a estrutura de armazenamento dos testes
+void destroy_tests (Tests tests) {
