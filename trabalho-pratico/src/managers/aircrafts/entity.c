@@ -36,3 +36,10 @@ void destroy_aircraft (gpointer aircraft) {
 }
 
 // Devolve o identificador de uma aeronave
+const char *get_aircraft_identifier (const struct entity_aircraft *aircraft) {
+    return aircraft -> identifier;
+}
+
+// Devolve o fabricante de uma aeronave
+const char *get_aircraft_manufacturer (const struct entity_aircraft *aircraft) {
+    return aircraft -> manufacturer;
