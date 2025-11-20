@@ -29,3 +29,10 @@ int get_query1_arguments (int max_y, int max_x, char *input);
  * @warning O fabricante é opcional; o número de aeronaves é obrigatório e validado como dígitos.
  */
 int get_query2_arguments (int max_y, int max_x, char *input);
+
+/**
+ * @brief Solicita um intervalo de datas (formato yyyy-mm-dd) para a query 3.
+ * @param max_y Altura disponível do ecrã.
+ * @param max_x Largura disponível do ecrã.
+ * @param input Área de memória onde são colocados os argumentos concatenados.
+ * @return EXIT_SUCCESS se a validação for concluída. EXIT_FAILURE se o utilizador cancelar.
