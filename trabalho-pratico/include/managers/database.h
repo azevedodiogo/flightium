@@ -14,3 +14,11 @@ typedef struct storage_airlines *StorageAirlines;
 
 /** @brief Estrutura de armazenamento dos aeroportos. */
 typedef struct storage_airports *StorageAirports;
+
+/** @brief Estrutura de armazenamento dos voos. */
+typedef struct storage_flights *StorageFlights;
+
+/** @brief Estrutura de armazenamento dos passageiros. */
+typedef struct storage_passengers *StoragePassengers;
+
+/** @brief Estrutura de armazenamento das reservas. */
