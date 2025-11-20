@@ -28,3 +28,11 @@ EntityAircraft create_aircraft (const char *identifier, const char *manufacturer
 
 // Elimina um registo da entidade aeronave
 void destroy_aircraft (gpointer aircraft) {
+    EntityAircraft temp = aircraft;
+    g_free (temp -> identifier);
+    g_free (temp -> manufacturer);
+    g_free (temp -> model);
+    g_free (temp);
+}
+
+// Devolve o identificador de uma aeronave
