@@ -30,3 +30,11 @@ void destroy_flight (gpointer flight);
  * @brief Obtém o aeroporto de origem.
  * @param flight Registo alvo.
  * @return String com o código de origem.
+ */
+const char *get_flight_origin (const struct entity_flight *flight);
+
+/**
+ * @brief Obtém o aeroporto de destino.
+ * @param flight Registo alvo.
+ * @return String com o código de destino.
+ */
