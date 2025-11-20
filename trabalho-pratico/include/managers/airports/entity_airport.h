@@ -38,3 +38,10 @@ const char *get_airport_code (const struct entity_airport *airport);
  * @return String com o nome.
  */
 const char *get_airport_name (const struct entity_airport *airport);
+
+/**
+ * @brief Obtém a cidade associada ao aeroporto.
+ * @param airport Registo alvo.
+ * @return String com a cidade.
+ */
+const char *get_airport_city (const struct entity_airport *airport);
