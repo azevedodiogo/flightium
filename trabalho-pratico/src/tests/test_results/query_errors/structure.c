@@ -30,3 +30,10 @@ void destroy_storage_query_errors (StorageQueryErrors storage_query_errors) {
     g_ptr_array_free (storage_query_errors -> data, TRUE);
 
     // Elimina a estrutura
+    g_free (storage_query_errors);
+}
+
+// Obtém um erro de uma query pelo índice
+QueryError get_query_error_by_index (StorageQueryErrors storage_query_errors, int index) {
+    return storage_query_errors -> data -> pdata [index];
+}
