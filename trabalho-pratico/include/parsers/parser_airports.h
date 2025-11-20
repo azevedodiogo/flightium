@@ -30,3 +30,12 @@ int validate_latitude (const char *string);
  * @return 1 se válido, 0 caso contrário.
  */
 int validate_longitude (const char *string);
+
+/**
+ * @brief Valida o tipo declarado para um aeroporto.
+ * @param string Texto a validar.
+ * @return 1 se válido, 0 caso contrário.
+ */
+int validate_type (const char *string);
+
+#endif
