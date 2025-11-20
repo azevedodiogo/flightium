@@ -35,3 +35,10 @@ const char *get_airline_name (const struct entity_airline *airline);
  * @return Contagem de atrasos.
  */
 int get_airline_delay_count (const struct entity_airline *airline);
+
+/**
+ * @brief Obtém o atraso total acumulado.
+ * @param airline Registo alvo.
+ * @return Minutos totais de atraso.
+ */
+int get_airline_total_delay (const struct entity_airline *airline);
