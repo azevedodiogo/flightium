@@ -12,3 +12,9 @@ typedef struct load_timer {
 // Cria os tempos de leitura
 LoadTimer create_load_timer () {
     
+    // Aloca memória para a estrutura
+    LoadTimer load_timer = g_malloc0 (sizeof (LOAD_TIMER));
+
+    // Retorna a estrutura
+    return load_timer;
+}
