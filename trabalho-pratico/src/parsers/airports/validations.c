@@ -46,3 +46,12 @@ int validate_longitude (const char *string) {
     // Verifica a validade do valor
     return atof (string) > 180 ? EXIT_FAILURE : EXIT_SUCCESS;
 }
+
+// Verifica se uma string representa corretamente o tipo de um aeroporto
+int validate_type (const char *string) {
+    return (strcmp (string, "small_airport") &&
+            strcmp (string, "medium_airport") &&
+            strcmp (string, "large_airport") &&
+            strcmp (string, "heliport") &&
+            strcmp (string, "seaplane_base")) ? EXIT_FAILURE : EXIT_SUCCESS;
+}
