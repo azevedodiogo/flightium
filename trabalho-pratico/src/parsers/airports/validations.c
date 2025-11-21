@@ -38,3 +38,11 @@ int validate_longitude (const char *string) {
     int i; for (i = 1; string [i] && string [i] != '.'; i++) if (i == 3 || !isdigit (string [i])) return EXIT_FAILURE;
 
     // Verifica se a string terminou
+    if (string [i] == 0) return EXIT_FAILURE;
+
+    // Verifica se o formato não é válido (depois do ponto)
+    for (int j = 1; string [i + j]; j++) if (j == 9 || !isdigit (string [i + j])) return EXIT_FAILURE;
+
+    // Verifica a validade do valor
+    return atof (string) > 180 ? EXIT_FAILURE : EXIT_SUCCESS;
+}
