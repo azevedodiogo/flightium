@@ -6,3 +6,10 @@
 /**
  * @brief Indica um índice inválido.
  */
+#define INVALID_INDEX -1
+
+/**
+ * @brief Estrutura genérica de armazenamento indexado por chave.
+ */
+typedef struct storage_generic *StorageGeneric;
+
