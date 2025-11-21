@@ -21,3 +21,11 @@ int load_line_flights (char *input, Database database);
 /**
  * @brief Valida se a string corresponde à entrada 'N/A'.
  * @param string Texto a validar.
+ * @return 1 se corresponder, 0 caso contrário.
+ */
+int validate_not_applicable (const char *string);
+
+/**
+ * @brief Valida coerência temporal das datas de um voo.
+ * @param status Estado do voo.
+ * @param departure Data/hora de partida programada.
