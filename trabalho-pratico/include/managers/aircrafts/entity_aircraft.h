@@ -21,3 +21,11 @@ EntityAircraft create_aircraft (const char *identifier, const char *manufacturer
 
 /**
  * @brief Liberta a memória associada a uma aeronave.
+ * @param aircraft Ponteiro para a entidade a destruir.
+ */
+void destroy_aircraft (gpointer aircraft);
+
+/**
+ * @brief Obtém o identificador da aeronave.
+ * @param aircraft Registo alvo.
+ * @return String com o código da aeronave.
