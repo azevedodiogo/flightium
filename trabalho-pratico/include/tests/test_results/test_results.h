@@ -28,3 +28,11 @@ Tests create_tests (char *expected_results);
  * @brief Liberta todos os recursos associados à estrutura de testes.
  * @param tests Estrutura a eliminar.
  */
+void destroy_tests (Tests tests);
+
+/**
+ * @brief Obtém a estrutura de temporização de carregamento.
+ * @param tests Estrutura agregadora.
+ * @return Ponteiro para `LoadTimer` associado.
+ */
+LoadTimer get_tests_load_timer (Tests tests);
