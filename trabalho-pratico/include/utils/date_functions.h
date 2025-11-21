@@ -14,3 +14,11 @@ typedef unsigned int date;
 typedef short week_index;
 
 /**
+ * @brief Retorna o minuto de um `date`.
+ */
+#define GET_MINUTE(d) ((d) & 0x3F)
+
+/**
+ * @brief Retorna a hora de um `date`.
+ */
+#define GET_HOUR(d) (((d) >> 6) & 0x1F)
