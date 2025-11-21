@@ -42,3 +42,12 @@ int get_airline_delay_count (const struct entity_airline *airline);
  * @return Minutos totais de atraso.
  */
 int get_airline_total_delay (const struct entity_airline *airline);
+
+/**
+ * @brief Atualiza as estatísticas de atraso da companhia.
+ * @param airline Registo alvo.
+ * @param delay Atraso a adicionar (pode também ser zero ou negativo se aplicável).
+ */
+void update_airline_delay (EntityAirline airline, int delay);
+
+/**
