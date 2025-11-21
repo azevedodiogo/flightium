@@ -20,3 +20,11 @@ typedef struct storage_query_results *StorageQueryResults;
 /**
  * @brief Cria a estrutura agregadora de resultados de testes.
  * @param expected_results Caminho para o ficheiro de resultados esperados.
+ * @return Estrutura inicializada ou NULL em caso de falha.
+ */
+Tests create_tests (char *expected_results);
+
+/**
+ * @brief Liberta todos os recursos associados à estrutura de testes.
+ * @param tests Estrutura a eliminar.
+ */
