@@ -28,3 +28,11 @@ int main (int argc, char **argv) {
     prepare_database (database);
 
     // Executa as queries
+    if (execute_queries (database, argv [2])) return EXIT_FAILURE;
+
+    // Elimina a base de dados
+    destroy_database (database);
+
+    // Termina o programa
+    return EXIT_SUCCESS;
+}
