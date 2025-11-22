@@ -29,3 +29,11 @@ EntityAirline create_airline (const char *name, int delay) {
 // Elimina um registo da entidade companhia aérea
 void destroy_airline (gpointer airline) {
     EntityAirline temp = airline;
+    g_free (temp -> name);
+    g_free (temp);
+}
+
+// Devolve o nome de uma companhia aérea
+const char *get_airline_name (const struct entity_airline *airline) {
+    return airline -> name;
+}
