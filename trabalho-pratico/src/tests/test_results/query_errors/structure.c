@@ -37,3 +37,13 @@ void destroy_storage_query_errors (StorageQueryErrors storage_query_errors) {
 QueryError get_query_error_by_index (StorageQueryErrors storage_query_errors, int index) {
     return storage_query_errors -> data -> pdata [index];
 }
+
+// Devolve o número de erros encontrados
+int get_number_errors (StorageQueryErrors storage_query_errors) {
+    return storage_query_errors -> data -> len;
+}
+
+// Adiciona um registo de um erro
+void register_query_error (StorageQueryErrors storage_query_errors, QueryError error) {
+    g_ptr_array_add (storage_query_errors -> data, error);
+}
