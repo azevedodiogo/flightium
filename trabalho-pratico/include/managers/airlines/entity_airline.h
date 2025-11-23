@@ -51,3 +51,11 @@ int get_airline_total_delay (const struct entity_airline *airline);
 void update_airline_delay (EntityAirline airline, int delay);
 
 /**
+ * @brief Compara duas companhias aéreas com base do seu atraso médio (ou lexicograficamente pelo nome em caso de empate).
+ * @param airline1_pointer Ponteiro para a primeira companhia.
+ * @param airline2_pointer Ponteiro para a segunda companhia.
+ * @return Valor negativo, zero ou positivo segundo a ordenação definida.
+ */
+int compare_airlines (gconstpointer airline1_pointer, gconstpointer airline2_pointer);
+
+#endif
