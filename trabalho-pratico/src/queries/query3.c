@@ -28,3 +28,11 @@ void execute_query3 (Database database, char *input, char *output, char del) {
     date max = convert_date (max_date [0], max_date [1], max_date [2]);
 
     // Determina o aeroporto com mais visitas durante o intervalo de tempo
+    const struct entity_airport *airport = most_visited_airport_by_timespan (get_database_airports (database), min, max, &max_count);
+
+    // Verifica se foi encontrado um aeroporto
+    if (airport) {
+
+        // Obtém as componentes do aeroporto
+        const char *code = get_airport_code (airport);
+        const char *name = get_airport_name (airport);
