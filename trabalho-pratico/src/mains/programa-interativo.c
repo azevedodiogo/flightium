@@ -66,3 +66,12 @@ int main (int argc, char **argv) {
 
         // Lê os argumentos da query selecionada
         int result = get_query_arguments (choice, query_arguments, max_y, max_x);
+
+        // Se houve erro ao ler argumentos, encerra o programa
+        if (result == EXIT_FAILURE) {
+            destroy_database (database); endwin (); return EXIT_FAILURE;
+        }
+        // Executa a query 
+        execute_query (choice, delimiter, database, query_arguments, max_y, max_x);
+    }
+    // Elimina a base de dados
