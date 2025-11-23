@@ -38,3 +38,11 @@ const char *get_flight_origin (const struct entity_flight *flight);
  * @param flight Registo alvo.
  * @return String com o código de destino.
  */
+const char *get_flight_destination (const struct entity_flight *flight);
+
+/**
+ * @brief Devolve a semana em que o voo ocorreu.
+ * @param flight Registo alvo.
+ * @return Índice da semana.
+ */
+week_index get_flight_week (const struct entity_flight *flight);
