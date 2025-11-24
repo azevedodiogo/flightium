@@ -29,3 +29,10 @@ void destroy_aircraft (gpointer aircraft);
  * @brief Obtém o identificador da aeronave.
  * @param aircraft Registo alvo.
  * @return String com o código da aeronave.
+ */
+const char *get_aircraft_identifier (const struct entity_aircraft *aircraft);
+
+/**
+ * @brief Obtém o fabricante da aeronave.
+ * @param aircraft Registo alvo.
+ * @return String com o fabricante.
