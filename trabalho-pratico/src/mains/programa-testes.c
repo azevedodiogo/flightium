@@ -30,3 +30,12 @@ int main (int argc, char **argv) {
         fprintf (stderr, "Error: invalid directory\n");
         return EXIT_FAILURE;
     }
+
+    // Cria as estruturas
+    Database database = create_database (dataset); Tests tests = create_tests (argv [3]);
+
+    // Carrega os datasets
+    if (test_load_datasets (database, argv [1], tests)) return EXIT_FAILURE;
+
+    // Inicia a contabilização do tempo da preparação da base de dados
+    clock_gettime (CLOCK_REALTIME, &prepare_start);
