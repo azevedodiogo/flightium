@@ -36,3 +36,12 @@ void destroy_passenger (gpointer passenger) {
     g_free (temp -> nationality);
     g_free (temp);
 }
+
+// Devolve o primeiro nome de um passageiro
+const char *get_passenger_first_name (const struct entity_passenger *passenger) {
+    return passenger -> first_name;
+}
+
+// Devolve o último nome de um passageiro
+const char *get_passenger_last_name (const struct entity_passenger *passenger) {
+    return passenger -> last_name;
