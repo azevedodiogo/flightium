@@ -37,3 +37,11 @@ docs:
 	@echo "[DOCS] Gerando documentação..."
 	@doxygen $(DOXYFILE)
 	@echo "[DOCS] Documentação gerada em $(DOCDIR) (ou no OUTPUT_DIRECTORY configurado no Doxyfile)."
+
+# Regra para o programa principal
+$(TARGET): $(COMMON_OBJ) $(MAIN_OBJ)
+	$(CC) $(CFLAGS) -o $@ $^ $(LIBS)
+
+# Regra para o programa de testes
+$(TEST_TARGET): $(COMMON_OBJ) $(TEST_OBJ)
+	$(CC) $(CFLAGS) -o $@ $^ $(LIBS)
