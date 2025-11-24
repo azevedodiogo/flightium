@@ -21,3 +21,12 @@ static int determine_arguments_query2 (char *input, char **manufacturer) {
     // Retorna o número de aeronaves a encontrar
     return N;
 }
+
+// Executa a query 2
+void execute_query2 (Database database, char *input, char *output, char del) {
+
+    // Determina os argumentos do input
+    char *arg_manufacturer; int N = determine_arguments_query2 (input, &arg_manufacturer);
+
+    // Declara o array de aeronaves encontradas
+    const struct entity_aircraft *array [N];
