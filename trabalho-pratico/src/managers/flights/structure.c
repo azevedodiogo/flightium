@@ -27,3 +27,10 @@ StorageFlights create_storage_flights (int inicial_capacity) {
 void destroy_storage_flights (StorageFlights storage_flights) {
 
     // Elimina a sub-estrutura
+    destroy_storage_generic (storage_flights -> data);
+
+    // Elimina a estrutura
+    g_free (storage_flights);
+}
+
+// Devolve um voo a partir do seu id
