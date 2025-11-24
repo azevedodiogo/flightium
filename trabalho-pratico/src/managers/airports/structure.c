@@ -6,3 +6,11 @@
 #include "utils/utility_functions.h"
 
 #define N_EXPECTED_NATIONALITIES 55
+#define N_EXPECTED_DAYS 273
+
+// Estrutura de armazenamento dos aeroportos
+typedef struct storage_airports {
+    StorageGeneric data;
+    StorageGeneric matrix_nationalities;
+    int **matrix_flights;
+    int len_flights, offset_flights;
