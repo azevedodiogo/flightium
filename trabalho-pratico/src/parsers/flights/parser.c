@@ -20,3 +20,12 @@ int load_line_flights (char *input, Database database) {
     // Carrega a data de partida
     date departure = validate_date (separate_block (&input, '"'), 1);
     if (departure == INVALID_DATE) return EXIT_FAILURE;
+
+    // Carrega a data de partida real
+    char *block = separate_block (&input, '"');
+    date actual_departure = validate_date (block, 1);
+    if (actual_departure == INVALID_DATE && validate_not_applicable (block)) return EXIT_FAILURE;
+
+    // Carrega a data de chegada
+    date arrival = validate_date (separate_block (&input, '"'), 1);
+    if (arrival == INVALID_DATE) return EXIT_FAILURE;
