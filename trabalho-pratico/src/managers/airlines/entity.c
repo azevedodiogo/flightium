@@ -37,3 +37,10 @@ void destroy_airline (gpointer airline) {
 const char *get_airline_name (const struct entity_airline *airline) {
     return airline -> name;
 }
+
+// Devolve o número de atrasos de uma companhia aérea
+int get_airline_delay_count (const struct entity_airline *airline) {
+    return airline -> delay_count;
+}
+
+// Devolve o atraso total de uma companhia aérea
