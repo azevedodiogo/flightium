@@ -38,3 +38,11 @@ void destroy_flight (gpointer flight) {
 // Devolve a origem de um voo
 const char *get_flight_origin (const struct entity_flight *flight) {
 	return flight -> origin;
+}
+
+// Devolve o destino de um voo
+const char *get_flight_destination (const struct entity_flight *flight) {
+	return flight -> destination;
+}
+
+// Devolve a semana de um voo
