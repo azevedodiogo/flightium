@@ -46,3 +46,12 @@ const char *get_flight_destination (const struct entity_flight *flight);
  * @return Índice da semana.
  */
 week_index get_flight_week (const struct entity_flight *flight);
+
+/**
+ * @brief Obtém o estado do voo.
+ * @param flight Registo alvo.
+ * @return Caracter que representa o estado do voo.
+ */
+char get_flight_status (const struct entity_flight *flight);
+
+#endif
