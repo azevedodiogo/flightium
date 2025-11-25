@@ -20,3 +20,10 @@ StorageAircrafts create_storage_aircrafts (int inicial_capacity) {
 
     // Retorna a estrutura
     return storage_aircrafts;
+}
+
+// Elimina a estrutura de armazenamento das aeronaves
+void destroy_storage_aircrafts (StorageAircrafts storage_aircrafts) {
+
+    // Elimina a sub-estrutura
+    destroy_storage_generic (storage_aircrafts -> data);
