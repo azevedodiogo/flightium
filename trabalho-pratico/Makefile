@@ -45,3 +45,12 @@ $(TARGET): $(COMMON_OBJ) $(MAIN_OBJ)
 # Regra para o programa de testes
 $(TEST_TARGET): $(COMMON_OBJ) $(TEST_OBJ)
 	$(CC) $(CFLAGS) -o $@ $^ $(LIBS)
+
+# Regra para o programa interativo
+$(INTERACTIVE_TARGET): $(COMMON_OBJ) $(INTERACTIVE_OBJ)
+	$(CC) $(CFLAGS) -o $@ $^ $(LIBS)
+
+# ------------------------------
+# Regra genérica para converter .c em .o
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
