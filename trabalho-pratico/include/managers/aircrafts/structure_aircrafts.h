@@ -21,3 +21,11 @@ StorageAircrafts create_storage_aircrafts (int inicial_capacity);
  * @param storage_aircrafts Estrutura a eliminar.
  */
 void destroy_storage_aircrafts (StorageAircrafts storage_aircrafts);
+
+/**
+ * @brief Obtém uma aeronave a partir do seu identificador.
+ * @param storage_aircrafts Estrutura de armazenamento.
+ * @param identifier Código da aeronave.
+ * @return Registo encontrado ou NULL se não existir.
+ */
+const struct entity_aircraft *get_aircraft_by_id (StorageAircrafts storage_aircrafts, const char *identifier);
