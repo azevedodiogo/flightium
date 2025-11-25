@@ -28,3 +28,10 @@ int execute_queries (Database database, const char *directory) {
     FILE *read_file;
 
     // Abre o ficheiro
+    if (open_input_file (&read_file, directory)) {
+        destroy_database (database);
+        return EXIT_FAILURE;
+    }
+
+    // Declara o input da leitura
+    char input [BUFFER], write_file_name [BUFFER] = "resultados/command";
