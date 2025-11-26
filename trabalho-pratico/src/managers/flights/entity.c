@@ -46,3 +46,11 @@ const char *get_flight_destination (const struct entity_flight *flight) {
 }
 
 // Devolve a semana de um voo
+week_index get_flight_week (const struct entity_flight *flight) {
+	return flight -> week;
+}
+
+// Devolve o estado de um voo
+char get_flight_status (const struct entity_flight *flight) {
+	return flight -> status;
+}
