@@ -36,3 +36,11 @@ int get_query2_arguments (int max_y, int max_x, char *input);
  * @param max_x Largura disponível do ecrã.
  * @param input Área de memória onde são colocados os argumentos concatenados.
  * @return EXIT_SUCCESS se a validação for concluída. EXIT_FAILURE se o utilizador cancelar.
+ */
+int get_query3_arguments (int max_y, int max_x, char *input);
+
+/**
+ * @brief Solicita a data inicial e, opcionalmente, a data final para a query 4.
+ * @param max_y Altura disponível do ecrã.
+ * @param max_x Largura disponível do ecrã.
+ * @param input Área de memória onde são colocados os argumentos concatenados.
