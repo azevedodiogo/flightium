@@ -30,3 +30,11 @@ void execute_query2 (Database database, char *input, char *output, char del) {
 
     // Declara o array de aeronaves encontradas
     const struct entity_aircraft *array [N];
+
+    // Determina as N aeronaves com mais voos para o fabricante dados
+    int number_found = determine_most_flown_aircrafts_by_manufacturer (get_database_aircrafts (database), arg_manufacturer, N, array);
+    
+    // Percorre o array para definir o output
+    for (int i = 0; i < number_found; i++) {
+
+        // Determina o tamanho atual do output
