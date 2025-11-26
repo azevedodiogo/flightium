@@ -67,3 +67,12 @@ gpointer get_generic_by_id (StorageGeneric storage_generic, gconstpointer key) {
 gpointer get_generic_by_index (StorageGeneric storage_generic, int index) {
     return (index < 0 || index >= storage_generic -> len) ? NULL : storage_generic -> array [index];
 }
+
+// Adiciona um novo registo na estrutura de armazenamento genérica
+void register_generic (StorageGeneric storage_generic, gpointer key, gpointer value) {
+
+    // Adiciona a indexação
+    g_hash_table_insert (storage_generic -> indexing, key, GINT_TO_POINTER (storage_generic -> len + 1));
+
+    // Verifica se é necessário realizar uma realocação
+    if (storage_generic -> len == storage_generic -> capacity) {
