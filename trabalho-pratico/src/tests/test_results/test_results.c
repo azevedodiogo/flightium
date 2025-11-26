@@ -30,3 +30,11 @@ Tests create_tests (char *expected_results) {
 
 // Elimina a estrutura de armazenamento dos testes
 void destroy_tests (Tests tests) {
+
+    // Verifica se os testes existem
+    if (tests == NULL) return;
+
+    // Elimina as sub-estruturas
+    destroy_load_timer (tests -> load_timer);
+    destroy_storage_query_errors (tests -> errors);
+    destroy_storage_query_results (tests -> results);
