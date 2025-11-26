@@ -43,3 +43,11 @@ const struct entity_passenger *get_passenger_by_id (StoragePassengers storage_pa
  * @param first_name Primeiro nome.
  * @param last_name Último nome.
  * @param nationality Nacionalidade.
+ * @param dob Data de nascimento (formato `date`).
+ */
+void register_passenger (StoragePassengers storage_passengers, int document_number, const char *first_name, const char *last_name, const char *nationality, date dob);
+
+/**
+ * @brief Regista um novo gasto associado a um passageiro.
+ * @param storage_passengers Estrutura de armazenamento.
+ * @param line Índice da linha do dataset.
