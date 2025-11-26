@@ -13,3 +13,12 @@
 #define NUM_QUERIES 6
 #define BUFFER 1024
 #define LARGE_BUFFER 4096
+
+// Prepara a base de dados
+Database setup_database (int max_y, int max_x) {
+
+    // Posições centralizadas da janela de input
+    int pos_y = max_y / 2;
+    int pos_x = max_x / 2 - 30;
+
+    // Buffer para o caminho
