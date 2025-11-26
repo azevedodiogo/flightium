@@ -58,3 +58,11 @@ char *get_query_error_expected (QueryError query_error) {
 }
 
 // Devolve a linha obtida de um erro
+char *get_query_error_actual (QueryError query_error) {
+    return query_error -> actual_line;
+}
+
+// Define o número da linha de um erro
+void set_query_error_line (QueryError query_error, int line) {
+    query_error -> error_line = line;
+}
