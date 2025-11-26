@@ -52,3 +52,11 @@ int test_load_datasets (Database database, const char *directory, Tests tests) {
 
         // Fecha os ficheiros
         fclose (read_files [i]); fclose (write_files [i]);
+    }
+
+    // Indica o fim da leitura
+    print_end_text_parsers (total_load_time);
+
+    // Indica que a função correu corretamente
+    return EXIT_SUCCESS;
+}
