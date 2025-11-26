@@ -23,3 +23,11 @@ StorageReservations create_storage_reservations () {
 }
 
 // Elimina a estrutura de armazenamento da entidade reserva
+void destroy_storage_reservations (StorageReservations storage_reservations) {
+
+    // Elimina a sub-estrutura
+    g_hash_table_destroy (storage_reservations -> data);
+
+    // Elimina a estrutura
+    g_free (storage_reservations);
+}
