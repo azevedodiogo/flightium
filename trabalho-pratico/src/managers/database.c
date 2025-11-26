@@ -23,3 +23,10 @@ typedef struct database {
 static const int size_aircrafts [] = {1000, 5000};
 static const int size_airlines [] = {30, 30};
 static const int size_airports [] = {7355, 7355};
+static const int size_flights [] = {1108700, 5616628};
+static const int size_passengers [] = {200000, 2000000};
+
+
+
+// Cria a base de dados
+Database create_database (int dataset) {
