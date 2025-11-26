@@ -53,3 +53,12 @@ const char *get_passenger_nationality (const struct entity_passenger *passenger)
  * @return Número de documento.
  */
 int get_passenger_document_number (const struct entity_passenger *passenger);
+
+/**
+ * @brief Obtém a data de nascimento do passageiro.
+ * @param passenger Registo alvo.
+ * @return Data de nascimento no formato `date`.
+ */
+date get_passenger_dob (const struct entity_passenger *passenger);
+
+#endif
