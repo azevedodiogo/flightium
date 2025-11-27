@@ -27,3 +27,12 @@ void destroy_storage_aircrafts (StorageAircrafts storage_aircrafts) {
 
     // Elimina a sub-estrutura
     destroy_storage_generic (storage_aircrafts -> data);
+
+    // Elimina a estrutura
+    g_free (storage_aircrafts);
+}
+
+// Devolve uma aeronave a partir do seu código
+const struct entity_aircraft *get_aircraft_by_id (StorageAircrafts storage_aircrafts, const char *identifier) {
+    return get_generic_by_id (storage_aircrafts -> data, identifier);
+}
