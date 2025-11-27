@@ -22,3 +22,10 @@ Database setup_database (int max_y, int max_x) {
     int pos_x = max_x / 2 - 30;
 
     // Buffer para o caminho
+    char input_directory [BUFFER] = {0};
+
+    // Cria a estrutura para armazenar a base de dados
+    Database database = NULL;
+
+    // Indica se o input é válido
+    int valid_input = 0;
