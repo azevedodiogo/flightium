@@ -75,3 +75,11 @@ int main (int argc, char **argv) {
         execute_query (choice, delimiter, database, query_arguments, max_y, max_x);
     }
     // Elimina a base de dados
+    destroy_database (database);
+
+    // Finaliza o ncurses
+    endwin();
+
+    // Termina o programa
+    return EXIT_SUCCESS;
+}
