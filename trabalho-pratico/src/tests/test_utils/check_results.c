@@ -22,3 +22,11 @@ static void extract_line_from_content (const char *content, int line_number, cha
         if (*content == '\n') current_line++;
         content++;
     }
+
+    // Verifica se a linha solicitada existe no conteúdo
+    if (current_line != line_number) {
+        buffer[0] = 0; return;
+    }
+    
+    // Copiar caracteres até encontrar fim da linha
+    while (*content && *content != '\n') buffer [i++] = *content++;
