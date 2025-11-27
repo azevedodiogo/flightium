@@ -17,3 +17,10 @@ int load_line_aircrafts (char *input, Database database) {
 
     // Carrega o ano
     if (validate_year (separate_block (&input, '"'))) return EXIT_FAILURE;
+
+    // Regista a aeronave
+    register_aircraft (get_database_aircrafts (database), identifier, manufacturer, model);
+
+    // A aeronave é válida
+    return EXIT_SUCCESS;
+}
