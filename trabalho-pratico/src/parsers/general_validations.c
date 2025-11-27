@@ -37,3 +37,11 @@ int validate_flight_id (const char *string) {
 }
 
 // Verifica se uma string representa um tempo
+inline static int validate_time (const char *string) {
+
+    // Verifica se a hora não está bem representada
+    if (!isdigit (string [0]) || !isdigit (string [1]) || string [2] != ':') return EXIT_FAILURE;
+
+    // Verifica se o minuto não está bem representado
+    return !isdigit (string [3]) || !isdigit (string [4]) || string [5] ? EXIT_FAILURE : EXIT_SUCCESS;
+}
