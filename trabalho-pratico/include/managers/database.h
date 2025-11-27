@@ -22,3 +22,11 @@ typedef struct storage_flights *StorageFlights;
 typedef struct storage_passengers *StoragePassengers;
 
 /** @brief Estrutura de armazenamento das reservas. */
+typedef struct storage_reservations *StorageReservations;
+
+
+
+/**
+ * @brief Cria e inicializa a base de dados.
+ * @param dataset Identificador do dataset a carregar (pode-se definir capacidades iniciais).
+ * @return Estrutura `Database` pronta a receber dados.
