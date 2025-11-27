@@ -29,3 +29,11 @@ int load_line_flights (char *input, Database database) {
     // Carrega a data de chegada
     date arrival = validate_date (separate_block (&input, '"'), 1);
     if (arrival == INVALID_DATE) return EXIT_FAILURE;
+
+    // Carrega a data de chegada real
+    block = separate_block (&input, '"');
+    date actual_arrival = validate_date (block, 1);
+    if (actual_arrival == INVALID_DATE && validate_not_applicable (block)) return EXIT_FAILURE;
+
+    // Carrega o estado do voo
+    separate_block (&input, '"');
