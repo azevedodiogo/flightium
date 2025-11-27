@@ -30,3 +30,12 @@ static const int size_passengers [] = {200000, 2000000};
 
 // Cria a base de dados
 Database create_database (int dataset) {
+
+    // Aloca memória para a base de dados
+    Database database = g_malloc (sizeof (DATABASE));
+
+    // Cria as estruturas de armazenamento das entidades
+    database -> aircrafts = create_storage_aircrafts (size_aircrafts [dataset]);
+    database -> airlines = create_storage_airlines (size_airlines [dataset]);
+    database -> airports = create_storage_airports (size_airports [dataset]);
+    database -> flights = create_storage_flights (size_flights [dataset]);
