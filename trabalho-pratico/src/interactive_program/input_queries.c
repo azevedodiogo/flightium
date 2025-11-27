@@ -22,3 +22,11 @@ int get_query_arguments (int query_number, char *input, int max_y, int max_x) {
     }
     // Retorna o número da query
     return EXIT_SUCCESS;
+}
+
+// Função de validação das datas
+static int validate_date_no_datetime (const char *s) {
+    return !validate_date (s, 0);
+}
+
+// Função de validação da query 4
