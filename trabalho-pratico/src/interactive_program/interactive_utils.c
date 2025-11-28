@@ -29,3 +29,12 @@ Database setup_database (int max_y, int max_x) {
 
     // Indica se o input é válido
     int valid_input = 0;
+
+    while (!valid_input) {
+
+        clear ();
+
+        // Reseta o input
+        memset (input_directory, 0, sizeof(input_directory));
+
+        // Pede ao utilizador para escrever o caminho
