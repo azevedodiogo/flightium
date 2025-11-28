@@ -11,3 +11,11 @@ typedef struct storage_reservations *StorageReservations;
  * @return Estrutura inicializada.
  */
 StorageReservations create_storage_reservations ();
+
+/**
+ * @brief Liberta todos os recursos associados às reservas.
+ * @param storage_reservations Estrutura a eliminar.
+ */
+void destroy_storage_reservations (StorageReservations storage_reservations);
+
+/**
