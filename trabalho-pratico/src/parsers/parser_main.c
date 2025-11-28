@@ -14,3 +14,11 @@ static int (*load_line [N_DATASETS]) (char *, Database) = {load_line_aircrafts, 
 int open_dataset_files (FILE *read_files [], FILE *write_files [], const char *directory) {
 
     // Declara os nomes dos ficheiros de leitura
+    char read_file_names [N_DATASETS][BUFFER];
+
+    // Define os nomes dos ficheiros de leitura
+    sprintf (read_file_names [N_AIRCRAFT], "%s/aircrafts.csv", directory);
+    sprintf (read_file_names [N_AIRPORT], "%s/airports.csv", directory);
+    sprintf (read_file_names [N_PASSENGER], "%s/passengers.csv", directory);
+    sprintf (read_file_names [N_FLIGHT], "%s/flights.csv", directory);
+    sprintf (read_file_names [N_RESERVATION], "%s/reservations.csv", directory);
