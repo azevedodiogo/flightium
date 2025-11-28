@@ -58,3 +58,11 @@ void register_spending (StoragePassengers storage_passengers, int line, int docu
 
 /**
  * @brief Prepara a estrutura de passageiros para execução eficiente de queries.
+ * @param storage_passengers Estrutura a preparar.
+ */
+void prepare_passengers (StoragePassengers storage_passengers);
+
+/**
+ * @brief Determina o passageiro com maior despesa num intervalo de semanas.
+ *
+ * @param storage_passengers Estrutura de armazenamento de passageiros preparada.
