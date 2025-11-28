@@ -22,3 +22,12 @@ typedef struct storage_generic *StorageGeneric;
  * @param flag Parâmetro de configuração do modo de indexação (0 = hash direto, diferente de zero = hash de strings).
  * @return Estrutura inicializada ou NULL se a alocação falhar.
  * @warning `destroy_func` não pode ser NULL.
+ */
+StorageGeneric create_storage_generic (int number_elements, void (*destroy_func) (gpointer), int flag);
+
+/**
+ * @brief Liberta todos os recursos associados à estrutura genérica.
+ * @param storage_generic Estrutura a destruir.
+ * @warning Depois de invocada, todos os ponteiros obtidos pelos getters deixam de ser válidos. Os elementos são libertados através de `destroy_func`.
+ */
+void destroy_storage_generic (StorageGeneric storage_generic);
