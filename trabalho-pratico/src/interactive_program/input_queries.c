@@ -30,3 +30,11 @@ static int validate_date_no_datetime (const char *s) {
 }
 
 // Função de validação da query 4
+static int validate_args_query4 (const char *s) {
+    return s [0] != 0 && !validate_date (s, 0); 
+}
+
+// Estrutura auxiliar
+typedef struct arg_controler {
+    char *arg;
+    int buffer;
