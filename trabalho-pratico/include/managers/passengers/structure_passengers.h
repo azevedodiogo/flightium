@@ -51,3 +51,10 @@ void register_passenger (StoragePassengers storage_passengers, int document_numb
  * @brief Regista um novo gasto associado a um passageiro.
  * @param storage_passengers Estrutura de armazenamento.
  * @param line Índice da linha do dataset.
+ * @param index Índice interno do passageiro.
+ * @param price Valor gasto a acumular.
+ */
+void register_spending (StoragePassengers storage_passengers, int line, int document_number, int price);
+
+/**
+ * @brief Prepara a estrutura de passageiros para execução eficiente de queries.
