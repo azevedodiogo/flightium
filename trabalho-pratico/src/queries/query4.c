@@ -5,3 +5,10 @@
 #include "managers/passengers/structure_passengers.h"
 
 #define NO_VALUE -1
+#define LARGE_BUFFER 4096
+
+// Determina os argumentos do input da query 4
+static void determine_arguments_query4 (char *input, int min_date [3], int max_date [3]) {
+    min_date [0] = atoi (input);
+    min_date [1] = atoi (input + 5);
+    min_date [2] = atoi (input + 8);
