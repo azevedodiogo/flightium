@@ -60,3 +60,11 @@ int get_query5_arguments (int max_y, int max_x, char *input);
 
 /**
  * @brief Solicita a nacionalidade para a query 6.
+ * @param max_y Altura disponível do ecrã.
+ * @param max_x Largura disponível do ecrã.
+ * @param input Área de memória onde é colocado o argumento.
+ * @return EXIT_SUCCESS se a validação for concluída. EXIT_FAILURE se o utilizador cancelar.
+ */
+int get_query6_arguments (int max_y, int max_x, char *input);
+
+#endif
