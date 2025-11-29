@@ -50,3 +50,10 @@ void register_airline (StorageAirlines storage_airlines, const char *name, int d
     if (index == INVALID_INDEX) register_generic (data, g_strdup (name), create_airline (name, delay));
 
     // Atualiza a companhia aérea
+    else update_airline_delay (get_generic_by_index (storage_airlines -> data, index), delay);
+}
+
+// Prepara a estrutura de armazenamento das companhias aéreas para as queries
+void prepare_airlines (StorageAirlines storage_airlines) {
+    sort_generic_structure (storage_airlines -> data, compare_airlines);
+}
