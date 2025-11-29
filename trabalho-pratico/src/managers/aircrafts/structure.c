@@ -36,3 +36,10 @@ void destroy_storage_aircrafts (StorageAircrafts storage_aircrafts) {
 const struct entity_aircraft *get_aircraft_by_id (StorageAircrafts storage_aircrafts, const char *identifier) {
     return get_generic_by_id (storage_aircrafts -> data, identifier);
 }
+
+// Adiciona um novo registo de uma aeronave
+void register_aircraft (StorageAircrafts storage_aircrafts, const char *identifier, const char *manufacturer, const char *model) {
+    register_generic (storage_aircrafts -> data, g_strdup (identifier), create_aircraft (identifier, manufacturer, model));
+}
+
+// Verifica se uma aeronave está registada
