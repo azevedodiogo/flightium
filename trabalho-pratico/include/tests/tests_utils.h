@@ -38,3 +38,11 @@ double update_load_timer (LoadTimer load_timer, int index, double elapsed);
 /**
  * @brief Imprime o tempo de execução da preparação da base de dados.
  * @param start_time Instante inicial medido.
+ * @param end_time Instante final medido.
+ */
+void print_prepare_time (struct timespec start_time, struct timespec end_time);
+
+/**
+ * @brief Imprime o resumo global dos testes (tempo e memória).
+ * @param start_time Instante inicial.
+ * @param end_time Instante final.
