@@ -18,3 +18,10 @@ int validate_flight_dates (const char status, date departure, date actual_depart
     // Compara as datas previstas
     if (departure > arrival) return EXIT_FAILURE;
     if (actual_departure > actual_arrival) return EXIT_FAILURE;
+
+    // Verifica se o voo foi atrasado
+    if (status == 'D' && (departure > actual_departure || arrival > actual_arrival)) return EXIT_FAILURE;
+
+    // As datas são válidas
+    return EXIT_SUCCESS;
+}
