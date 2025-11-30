@@ -38,3 +38,11 @@ Database setup_database (int max_y, int max_x) {
         memset (input_directory, 0, sizeof(input_directory));
 
         // Pede ao utilizador para escrever o caminho
+        int cancelled = text_input_box (pos_y, pos_x, 60, BUFFER, "Enter path to data files:", input_directory, 1);
+
+        // Se o utilizador carregar no ESC, a janela fecha
+        if (cancelled) {
+            modal_start ("Operation cancelled!", "OK", 40, max_y, max_x); return NULL;
+        }
+        // Se o utilizador não digitar nada, usa o caminho default
+        if (strlen(input_directory) == 0) strcpy (input_directory, DEFAULT_PATH1);
