@@ -22,3 +22,11 @@ int open_dataset_files (FILE *read_files [], FILE *write_files [], const char *d
     sprintf (read_file_names [N_PASSENGER], "%s/passengers.csv", directory);
     sprintf (read_file_names [N_FLIGHT], "%s/flights.csv", directory);
     sprintf (read_file_names [N_RESERVATION], "%s/reservations.csv", directory);
+
+    // Percorre o array de ficheiros de leitura
+    for (int i = 0; i < N_DATASETS; i++) {
+
+        // Abre o ficheiro
+        read_files [i] = fopen (read_file_names [i], "r");
+
+        // Verifica se o ficheiro não existe
