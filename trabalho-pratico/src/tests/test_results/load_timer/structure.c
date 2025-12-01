@@ -18,3 +18,11 @@ LoadTimer create_load_timer () {
     // Retorna a estrutura
     return load_timer;
 }
+
+// Elimina os tempos de leitura
+void destroy_load_timer (LoadTimer load_timer) {
+    if (load_timer) g_free (load_timer); 
+}
+
+// Devolve o tempo de leitura de um dataset
+double get_dataset_time (const LoadTimer load_timer, int index) {
