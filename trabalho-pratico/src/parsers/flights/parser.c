@@ -37,3 +37,10 @@ int load_line_flights (char *input, Database database) {
 
     // Carrega o estado do voo
     separate_block (&input, '"');
+    char status = separate_block (&input, '"') [0];
+
+    // Verifica as restrições associadas às datas
+    if (validate_flight_dates (status, departure, actual_departure, arrival, actual_arrival)) return EXIT_FAILURE;
+
+    // Carrega a origem
+    char *origin = separate_block (&input, '"');
