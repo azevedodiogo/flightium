@@ -29,3 +29,11 @@ int validate_not_applicable (const char *string);
  * @brief Valida coerência temporal das datas de um voo.
  * @param status Estado do voo.
  * @param departure Data/hora de partida programada.
+ * @param actual_departure Data/hora de partida real.
+ * @param arrival Data/hora de chegada programada.
+ * @param actual_arrival Data/hora de chegada real.
+ * @return 1 se todas as datas forem consistentes, 0 caso contrário.
+ */
+int validate_flight_dates (const char status, date departure, date actual_departure, date arrival, date actual_arrival);
+
+#endif
