@@ -45,3 +45,11 @@ inline static int validate_time (const char *string) {
     // Verifica se o minuto não está bem representado
     return !isdigit (string [3]) || !isdigit (string [4]) || string [5] ? EXIT_FAILURE : EXIT_SUCCESS;
 }
+
+// Verifica se uma string representa corretamente uma data
+date validate_date (const char *string, int datetime) {
+
+    // Verifica se o ano não está bem representado
+    if (!isdigit (string [0]) || !isdigit (string [1]) || !isdigit (string [2]) || !isdigit (string [3]) || string [4] != '-') return INVALID_DATE;
+
+    // Verifica se o mês não está bem representado
