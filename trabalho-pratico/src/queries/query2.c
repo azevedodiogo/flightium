@@ -38,3 +38,10 @@ void execute_query2 (Database database, char *input, char *output, char del) {
     for (int i = 0; i < number_found; i++) {
 
         // Determina o tamanho atual do output
+        int len_output = *output == '\n' ? 0 : strlen (output);
+
+        // Obtém as componentes da aeronave
+        const char *identifier = get_aircraft_identifier (array [i]);
+        const char *manufacturer = get_aircraft_manufacturer (array [i]);
+        const char *model = get_aircraft_model (array [i]);
+        int flight_count = get_aircraft_flight_count (array [i]);
