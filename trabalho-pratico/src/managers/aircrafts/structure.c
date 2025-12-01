@@ -43,3 +43,11 @@ void register_aircraft (StorageAircrafts storage_aircrafts, const char *identifi
 }
 
 // Verifica se uma aeronave está registada
+int check_aircraft (StorageAircrafts storage_aircrafts, const char *identifier) {
+    return get_index (storage_aircrafts -> data, identifier);
+}
+
+// Atualiza o número de voos de uma aeronave
+void update_aircraft (StorageAircrafts storage_aircrafts, int index) {
+    inc_aircraft_flight_count (get_generic_by_index (storage_aircrafts -> data, index));
+}
