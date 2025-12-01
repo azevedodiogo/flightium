@@ -18,3 +18,10 @@ int load_line_passengers (char *input, Database database);
 // {- Validations -}
 
 /**
+ * @brief Valida o género de um passageiro.
+ * @param string Texto a validar.
+ * @return 1 se válido, 0 caso contrário.
+ */
+int validate_gender (const char *string);
+
+/**
