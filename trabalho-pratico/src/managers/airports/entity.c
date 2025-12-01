@@ -44,3 +44,9 @@ void destroy_airport (gpointer airport) {
 	g_free (temp -> city);
 	g_free (temp -> type);
 	g_free (temp);
+}
+
+// Devolve o código de um aeroporto
+const char *get_airport_code (const struct entity_airport *airport) {
+	return airport -> code;
+}
