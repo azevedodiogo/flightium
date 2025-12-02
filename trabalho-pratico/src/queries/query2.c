@@ -45,3 +45,12 @@ void execute_query2 (Database database, char *input, char *output, char del) {
         const char *manufacturer = get_aircraft_manufacturer (array [i]);
         const char *model = get_aircraft_model (array [i]);
         int flight_count = get_aircraft_flight_count (array [i]);
+
+        // Armazena a informação da aeronave
+        g_snprintf (output + len_output, LARGE_BUFFER - len_output, "%s%c%s%c%s%c%d\n",
+                    identifier, del, manufacturer, del, model, del, flight_count);
+    }
+
+    // Verifica se não foi encontrada nenhuma aeronave com o fabricante desejado
+    if (number_found == 0) *output = '\n';
+}
