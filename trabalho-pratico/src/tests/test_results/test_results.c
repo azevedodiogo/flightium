@@ -38,3 +38,11 @@ void destroy_tests (Tests tests) {
     destroy_load_timer (tests -> load_timer);
     destroy_storage_query_errors (tests -> errors);
     destroy_storage_query_results (tests -> results);
+
+    // Elimina a estrutura
+    g_free (tests);
+}
+
+// Devolve a estrutura dos tempos de leitura
+LoadTimer get_tests_load_timer (Tests tests) {
+    return tests -> load_timer;
