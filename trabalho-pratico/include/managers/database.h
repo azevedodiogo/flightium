@@ -30,3 +30,11 @@ typedef struct storage_reservations *StorageReservations;
  * @brief Cria e inicializa a base de dados.
  * @param dataset Identificador do dataset a carregar (pode-se definir capacidades iniciais).
  * @return Estrutura `Database` pronta a receber dados.
+ * @warning O chamador deve libertar a estrutura com `destroy_database()`. Qualquer acesso após a destruição é comportamento indefinido.
+ */
+Database create_database (int dataset);
+
+/**
+ * @brief Liberta todos os recursos associados à base de dados.
+ * @param database Estrutura a destruir.
+ * @warning Invalida todos os ponteiros devolvidos pelos getters. A instância não deve ser reutilizada depois de destruída.
