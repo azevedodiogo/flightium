@@ -19,3 +19,11 @@ StorageReservations create_storage_reservations ();
 void destroy_storage_reservations (StorageReservations storage_reservations);
 
 /**
+ * @brief Regista uma nova reserva.
+ * @param storage_reservations Estrutura de armazenamento.
+ * @param reservation_id Identificador numérico da reserva.
+ * @return 0 em caso de sucesso ou valor não nulo se o registo falhar.
+ */
+int register_reservation (StorageReservations storage_reservations, int reservation_id);
+
+#endif
