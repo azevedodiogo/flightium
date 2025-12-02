@@ -76,3 +76,10 @@ void register_generic (StorageGeneric storage_generic, gpointer key, gpointer va
 
     // Verifica se é necessário realizar uma realocação
     if (storage_generic -> len == storage_generic -> capacity) {
+
+        // Duplica a capacidade
+        storage_generic -> capacity *= 1.5;
+
+        // Realoca a memória
+        storage_generic -> array = g_realloc (storage_generic -> array, storage_generic -> capacity * sizeof (gpointer));
+    }
