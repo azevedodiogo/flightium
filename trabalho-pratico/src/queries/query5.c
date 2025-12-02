@@ -22,3 +22,10 @@ void execute_query5 (Database database, char *input, char *output, char del) {
     for (int i = 0; i < number_found; i++) {
 
         // Determina o tamanho do output
+        int len_output = *output == '\n' ? 0 : strlen (output);
+
+        // Obtém as componentes da companhia aérea
+        const char *name = get_airline_name (found [i]);
+        int delay_count = get_airline_delay_count (found [i]);
+        int total_delay = get_airline_total_delay (found [i]);
+        double avg_delay = ((double) (total_delay)) / ((double) delay_count);
