@@ -31,3 +31,10 @@ void destroy_storage_reservations (StorageReservations storage_reservations) {
     // Elimina a estrutura
     g_free (storage_reservations);
 }
+
+// Adiciona um registo da entidade reserva
+int register_reservation (StorageReservations storage_reservations, int reservation_id) {
+
+    // Obtém a data
+    GHashTable *data = storage_reservations -> data;
+    gpointer key = GINT_TO_POINTER (reservation_id);
