@@ -54,3 +54,11 @@ $(INTERACTIVE_TARGET): $(COMMON_OBJ) $(INTERACTIVE_OBJ)
 # Regra genérica para converter .c em .o
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
+
+# ------------------------------
+# Limpeza de ficheiros
+clean:
+	@echo "🧹"
+	@find . -type f \( -name "*.o" -o -name "*.gcda" -o -name "*.gcno" -o -name "*.gcov" \) -delete
+	@rm -f $(TARGET) $(TEST_TARGET) $(INTERACTIVE_TARGET)
+	@find resultados -type f \( -name "*.csv" -o -name "*.txt" \) -delete
