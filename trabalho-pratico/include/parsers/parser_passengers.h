@@ -25,3 +25,10 @@ int load_line_passengers (char *input, Database database);
 int validate_gender (const char *string);
 
 /**
+ * @brief Valida o endereço de email de um passageiro.
+ * @param string Texto a validar.
+ * @return 1 se válido, 0 caso contrário.
+ */
+int validate_email (const char *string);
+
+#endif
