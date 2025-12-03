@@ -31,3 +31,10 @@ StorageGeneric create_storage_generic (int number_elements, void (*destroy_func)
  * @warning Depois de invocada, todos os ponteiros obtidos pelos getters deixam de ser válidos. Os elementos são libertados através de `destroy_func`.
  */
 void destroy_storage_generic (StorageGeneric storage_generic);
+
+/**
+ * @brief Devolve o número de elementos presentes na estrutura.
+ * @param storage_generic Estrutura alvo.
+ * @return Comprimento do array ativo.
+ */
+int get_generic_len (StorageGeneric storage_generic);
