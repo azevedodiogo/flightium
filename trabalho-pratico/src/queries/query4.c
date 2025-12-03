@@ -12,3 +12,10 @@ static void determine_arguments_query4 (char *input, int min_date [3], int max_d
     min_date [0] = atoi (input);
     min_date [1] = atoi (input + 5);
     min_date [2] = atoi (input + 8);
+    max_date [0] = atoi (input + 11);
+    max_date [1] = atoi (input + 16);
+    max_date [2] = atoi (input + 19);
+}
+
+// Executa a query 4
+void execute_query4 (Database database, char *input, char *output, char del) {
