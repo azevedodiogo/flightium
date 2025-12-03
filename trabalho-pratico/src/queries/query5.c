@@ -29,3 +29,12 @@ void execute_query5 (Database database, char *input, char *output, char del) {
         int delay_count = get_airline_delay_count (found [i]);
         int total_delay = get_airline_total_delay (found [i]);
         double avg_delay = ((double) (total_delay)) / ((double) delay_count);
+
+        // Armazena a informação da companhia aérea
+        g_snprintf (output + len_output, LARGE_BUFFER - len_output, "%s%c%d%c%.3f\n",
+                    name, del, delay_count, del, avg_delay);
+    }
+    
+    // Verifica se não foi encontrada nenhuma companhia aérea
+    if (number_found == 0) *output = '\n';
+}
