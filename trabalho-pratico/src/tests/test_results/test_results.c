@@ -46,3 +46,11 @@ void destroy_tests (Tests tests) {
 // Devolve a estrutura dos tempos de leitura
 LoadTimer get_tests_load_timer (Tests tests) {
     return tests -> load_timer;
+}
+
+// Devolve a estrutura dos erros das queries
+StorageQueryErrors get_tests_query_errors (Tests tests) {
+    return tests -> errors;
+}
+
+// Devolve a estrutura dos resultados das queries
