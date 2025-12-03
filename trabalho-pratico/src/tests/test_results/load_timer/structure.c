@@ -26,3 +26,10 @@ void destroy_load_timer (LoadTimer load_timer) {
 
 // Devolve o tempo de leitura de um dataset
 double get_dataset_time (const LoadTimer load_timer, int index) {
+    return load_timer -> timers [index];
+}
+
+// Define o tempo de leitura de um dataset
+void set_dataset_time (LoadTimer load_timer, int index, double time) {
+    load_timer -> timers [index] = time;
+}
