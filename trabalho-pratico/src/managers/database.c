@@ -39,3 +39,12 @@ Database create_database (int dataset) {
     database -> airlines = create_storage_airlines (size_airlines [dataset]);
     database -> airports = create_storage_airports (size_airports [dataset]);
     database -> flights = create_storage_flights (size_flights [dataset]);
+    database -> passengers = create_storage_passengers (size_passengers [dataset]);
+    database -> reservations = create_storage_reservations ();
+
+    // Retorna a base de dados
+    return database;
+}
+
+// Elimina a base de dados
+void destroy_database (Database database) {
