@@ -83,3 +83,12 @@ void register_generic (StorageGeneric storage_generic, gpointer key, gpointer va
         // Realoca a memória
         storage_generic -> array = g_realloc (storage_generic -> array, storage_generic -> capacity * sizeof (gpointer));
     }
+
+    // Adiciona o registo ao array
+    storage_generic -> array [storage_generic -> len++] = value;
+}
+
+// Ordena a estrutura de armazenamento genérica
+void sort_generic_structure (StorageGeneric storage_generic, GCompareFunc compare_func) {
+    qsort (storage_generic -> array, storage_generic -> len, sizeof (gpointer), compare_func);
+}
