@@ -13,3 +13,11 @@ typedef struct load_timer *LoadTimer;
  * @return Estrutura inicializada ou NULL em caso de falha.
  */
 LoadTimer create_load_timer ();
+
+/**
+ * @brief Liberta os recursos associados ao temporizador.
+ * @param load_timer Estrutura a eliminar.
+ */
+void destroy_load_timer (LoadTimer load_timer);
+
+/**
