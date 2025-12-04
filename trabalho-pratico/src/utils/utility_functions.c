@@ -28,3 +28,11 @@ char *our_strsep (char **str, char stop_character) {
 char* separate_block (char **str, char stop_character) {
 
     // Avança a primeira vez
+    our_strsep (str, stop_character);
+
+    // Avança a segunda vez
+    char *r = our_strsep (str, stop_character);
+
+    // Retorna o endereço inicial
+    return r;
+}
