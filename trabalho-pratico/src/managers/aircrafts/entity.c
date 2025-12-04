@@ -43,3 +43,11 @@ const char *get_aircraft_identifier (const struct entity_aircraft *aircraft) {
 // Devolve o fabricante de uma aeronave
 const char *get_aircraft_manufacturer (const struct entity_aircraft *aircraft) {
     return aircraft -> manufacturer;
+}
+
+// Devolve o modelo de uma aeronave
+const char *get_aircraft_model (const struct entity_aircraft *aircraft) {
+    return aircraft -> model;
+}
+
+// Devolve o número de voos de uma aeronave
