@@ -18,3 +18,10 @@ int load_line_reservations (char *input, Database database);
 // {- Validations -}
 
 /**
+ * @brief Verifica se uma string representa corretamente o identificador de uma reserva.
+ * @param string Texto a validar.
+ * @return 1 se válido, 0 caso contrário.
+ */
+int validate_reservation_id (const char *string);
+
+#endif
