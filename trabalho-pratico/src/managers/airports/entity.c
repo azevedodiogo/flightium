@@ -50,3 +50,12 @@ void destroy_airport (gpointer airport) {
 const char *get_airport_code (const struct entity_airport *airport) {
 	return airport -> code;
 }
+
+// Devolve o nome de um aeroporto
+const char *get_airport_name (const struct entity_airport *airport) {
+	return airport -> name;
+}
+
+// Devolve a cidade de um aeroporto
+const char *get_airport_city (const struct entity_airport *airport) {
+	return airport -> city;
