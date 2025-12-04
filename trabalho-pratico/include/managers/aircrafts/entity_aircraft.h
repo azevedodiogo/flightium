@@ -36,3 +36,11 @@ const char *get_aircraft_identifier (const struct entity_aircraft *aircraft);
  * @brief Obtém o fabricante da aeronave.
  * @param aircraft Registo alvo.
  * @return String com o fabricante.
+ */
+const char *get_aircraft_manufacturer (const struct entity_aircraft *aircraft);
+
+/**
+ * @brief Obtém o modelo da aeronave.
+ * @param aircraft Registo alvo.
+ * @return String com o modelo.
+ */
