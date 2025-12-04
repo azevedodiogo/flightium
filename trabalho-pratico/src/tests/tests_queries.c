@@ -14,3 +14,11 @@
 #define LARGE_BUFFER 4096
 
 // Executa as queries dadas
+int test_execute_queries (Database database, const char *directory, Tests tests) {
+
+    // Declara o ficheiro
+    FILE *read_file;
+
+    // Abre o ficheiro
+    if (open_input_file (&read_file, directory)) {
+        destroy_database (database); destroy_tests (tests);
