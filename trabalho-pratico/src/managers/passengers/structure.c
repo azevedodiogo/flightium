@@ -6,3 +6,10 @@
 #include "utils/date_functions.h"
 
 #define EXPECTED_WEEKS 38
+#define EXPECTED_RESERVATIONS_PER_WEEK 600
+
+// Entidade do gasto
+typedef struct spending {
+    int index;
+    int price;
+} Spending;
