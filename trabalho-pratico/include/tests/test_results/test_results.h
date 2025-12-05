@@ -36,3 +36,10 @@ void destroy_tests (Tests tests);
  * @return Ponteiro para `LoadTimer` associado.
  */
 LoadTimer get_tests_load_timer (Tests tests);
+
+/**
+ * @brief Obtém a estrutura de erros das queries.
+ * @param tests Estrutura agregadora.
+ * @return Ponteiro para `StorageQueryErrors` associado.
+ */
+StorageQueryErrors get_tests_query_errors (Tests tests);
