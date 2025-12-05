@@ -21,3 +21,11 @@ int open_input_file (FILE **read_file, const char *read_file_name);
  * @return EXIT_SUCCESS em caso de processamento sem erros. EXIT_FAILURE em caso contrário.
  * @warning Escreve os resultados em `resultados/commandN_output.txt`.
  */
+int execute_queries (Database database, const char *directory);
+
+/**
+ * @brief Executa a query 1 e escreve o resultado formatado.
+ * @param database Base de dados utilizada pela query.
+ * @param input Linha de argumentos recebida (sem newline).
+ * @param output Área de memória onde é construído o resultado.
+ * @param del Delimitador de campos a aplicar à saída.
