@@ -22,3 +22,10 @@ QueryResult create_query_result ();
  * @param query_result Entidade a destruir.
  */
 void destroy_query_result (QueryResult query_result);
+
+/**
+ * @brief Obtém o número de queries corretas registado.
+ * @param query_result Entidade alvo.
+ * @return Número de queries corretas.
+ */
+int get_query_result_correct (QueryResult query_result);
