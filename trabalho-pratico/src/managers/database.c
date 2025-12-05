@@ -48,3 +48,11 @@ Database create_database (int dataset) {
 
 // Elimina a base de dados
 void destroy_database (Database database) {
+
+    // Elimina as estruturas de armazenamento das entidades
+    destroy_storage_aircrafts (database -> aircrafts);
+    destroy_storage_airlines (database -> airlines);
+    destroy_storage_airports (database -> airports);
+    destroy_storage_flights (database -> flights);
+    destroy_storage_passengers (database -> passengers);
+    destroy_storage_reservations (database -> reservations);
