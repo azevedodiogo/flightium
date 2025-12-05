@@ -53,3 +53,10 @@ date validate_date (const char *string, int datetime) {
     if (!isdigit (string [0]) || !isdigit (string [1]) || !isdigit (string [2]) || !isdigit (string [3]) || string [4] != '-') return INVALID_DATE;
 
     // Verifica se o mês não está bem representado
+    if (!isdigit (string [5]) || !isdigit (string [6]) || string [7] != '-') return INVALID_DATE;
+
+    // Verifica se o dia não está bem representado
+    if (!isdigit (string [8]) || !isdigit (string [9]) || (datetime == 0 && string [10]) || (datetime && string [10] != ' ')) return INVALID_DATE;
+
+    // Verifica se o tempo está bem definido
+    if (datetime && validate_time (string + 11)) return INVALID_DATE;
