@@ -21,3 +21,12 @@ static int validate_reservation_flights (char *string, gconstpointer *flight_out
 
     // Carrega o primeiro id de voo
     *flight_outbound = get_flight_by_id (storage_flights, separate_block (&string, 39));
+
+    // Verifica se o primeiro voo não existe
+    if (*flight_outbound == NULL) return EXIT_FAILURE;
+
+    // Verifica se o último caractere do bloco é o fim da lista - ']'
+    if (string [0] == ']') return EXIT_SUCCESS;
+
+    // Lê o segundo id de voo
+    *flight_return = get_flight_by_id (storage_flights, separate_block (&string, 39));
