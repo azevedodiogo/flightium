@@ -57,3 +57,11 @@ void register_airline (StorageAirlines storage_airlines, const char *name, int d
 void prepare_airlines (StorageAirlines storage_airlines) {
     sort_generic_structure (storage_airlines -> data, compare_airlines);
 }
+
+// Determina as N companhias aéreas com maior tempo de atraso médio
+int most_delayed_airlines (StorageAirlines storage_airlines, int N, const struct entity_airline *found []) {
+
+    // Obtém a data
+    StorageGeneric data = storage_airlines -> data;
+
+    // Obtém o número de elementos na estrutura genérica
