@@ -43,3 +43,10 @@ LoadTimer get_tests_load_timer (Tests tests);
  * @return Ponteiro para `StorageQueryErrors` associado.
  */
 StorageQueryErrors get_tests_query_errors (Tests tests);
+
+/**
+ * @brief Obtém a estrutura de resultados das queries.
+ * @param tests Estrutura agregadora.
+ * @return Ponteiro para `StorageQueryResults` associado.
+ */
+StorageQueryResults get_tests_query_results (Tests tests);
