@@ -56,3 +56,11 @@ void destroy_database (Database database) {
     destroy_storage_flights (database -> flights);
     destroy_storage_passengers (database -> passengers);
     destroy_storage_reservations (database -> reservations);
+
+    // Elimina a base de dados
+    g_free (database);
+}
+
+// Devolve a estrutura de armazenamento das aeronaves
+StorageAircrafts get_database_aircrafts (Database database) {
+    return database -> aircrafts;
