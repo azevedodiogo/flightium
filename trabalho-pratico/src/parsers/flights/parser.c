@@ -44,3 +44,11 @@ int load_line_flights (char *input, Database database) {
 
     // Carrega a origem
     char *origin = separate_block (&input, '"');
+    if (validate_code (origin)) return EXIT_FAILURE;
+
+    // Carrega o destino
+    char *destination = separate_block (&input, '"');
+    if (validate_code (destination)) return EXIT_FAILURE;
+
+    // Verifica se a origem e o destino são iguais
+    if (strcmp (origin, destination) == 0) return EXIT_FAILURE;
