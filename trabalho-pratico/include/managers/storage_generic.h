@@ -38,3 +38,11 @@ void destroy_storage_generic (StorageGeneric storage_generic);
  * @return Comprimento do array ativo.
  */
 int get_generic_len (StorageGeneric storage_generic);
+
+/**
+ * @brief Determina o índice interno associado a uma chave.
+ * @param storage_generic Estrutura alvo.
+ * @param key Chave usada para indexação.
+ * @return Índice calculado ou `INVALID_INDEX` caso não exista registo associado.
+ */
+int get_index (StorageGeneric storage_generic, gconstpointer key);
