@@ -34,3 +34,11 @@ void destroy_storage_flights (StorageFlights storage_flights) {
 }
 
 // Devolve um voo a partir do seu id
+const struct entity_flight *get_flight_by_id (StorageFlights storage_flights, const char *flight_id) {
+    return get_generic_by_id (storage_flights -> data, flight_id);
+}
+
+// Adiciona um novo registo de um voo
+void register_flight (StorageFlights storage_flights, const char *flight_id, const char *origin, const char *destination, week_index week, char status) {
+    register_generic (storage_flights -> data, g_strdup (flight_id), create_flight (origin, destination, week, status));
+}
