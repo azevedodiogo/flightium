@@ -46,3 +46,13 @@ int get_generic_len (StorageGeneric storage_generic);
  * @return Índice calculado ou `INVALID_INDEX` caso não exista registo associado.
  */
 int get_index (StorageGeneric storage_generic, gconstpointer key);
+
+/**
+ * @brief Obtém um registo a partir do seu identificador.
+ * @param storage_generic Estrutura alvo.
+ * @param key Chave de pesquisa.
+ * @return Ponteiro para o registo correspondente ou NULL se inexistente.
+ */
+gpointer get_generic_by_id (StorageGeneric storage_generic, gconstpointer key);
+
+/**
