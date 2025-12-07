@@ -30,3 +30,12 @@ static void extract_line_from_content (const char *content, int line_number, cha
     
     // Copiar caracteres até encontrar fim da linha
     while (*content && *content != '\n') buffer [i++] = *content++;
+
+    // Termina a string
+    buffer [i] = 0;
+}
+
+// Encontra, se existir, a primeira linha onde ocorre um erro
+static int find_error_line (char *content_write_file, int len_write_file, char *content_expected, int len_expected, char* expected_line, char* actual_line) {
+    
+    // Define um limite
