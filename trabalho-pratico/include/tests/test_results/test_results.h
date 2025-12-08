@@ -50,3 +50,12 @@ StorageQueryErrors get_tests_query_errors (Tests tests);
  * @return Ponteiro para `StorageQueryResults` associado.
  */
 StorageQueryResults get_tests_query_results (Tests tests);
+
+/**
+ * @brief Obtém o caminho do ficheiro de resultados esperados.
+ * @param tests Estrutura agregadora.
+ * @return String com o caminho configurado.
+ */
+const char *get_tests_expected_results (Tests tests);
+
+#endif
