@@ -44,3 +44,11 @@ const char *get_aircraft_manufacturer (const struct entity_aircraft *aircraft);
  * @param aircraft Registo alvo.
  * @return String com o modelo.
  */
+const char *get_aircraft_model (const struct entity_aircraft *ircraft);
+
+/**
+ * @brief Devolve o número total de voos associados à aeronave.
+ * @param aircraft Registo alvo.
+ * @return Contagem de voos.
+ */
+unsigned short get_aircraft_flight_count (const struct entity_aircraft *aircraft);
