@@ -51,3 +51,10 @@ const char *get_aircraft_model (const struct entity_aircraft *aircraft) {
 }
 
 // Devolve o número de voos de uma aeronave
+unsigned short get_aircraft_flight_count (const struct entity_aircraft *aircraft) {
+    return aircraft -> flight_count;
+}
+
+// Incrementa o número de voos de uma aeronave
+void inc_aircraft_flight_count (EntityAircraft aircraft) {
+    aircraft -> flight_count++;
