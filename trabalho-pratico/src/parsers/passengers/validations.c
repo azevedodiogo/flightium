@@ -11,3 +11,10 @@ int validate_gender (const char *string) {
 
 // Verifica se uma string representa corretamente um email
 int validate_email (const char *string) {
+
+    // Verifica se o username é válido
+    int i; for (i = 0; string [i] && string [i] != '@'; i++)
+        if (!isdigit (string [i]) && !islower (string [i]) && string [i] != '.') return EXIT_FAILURE;
+
+    // Verifica se a string terminou
+    if (i == 0 || string [i++] == 0) return EXIT_FAILURE;
