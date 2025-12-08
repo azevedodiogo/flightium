@@ -14,3 +14,10 @@ void draw_plane_with_clouds ();
  * @warning Destinado a ecrãs de espera.
  */
 void draw_clock ();
+
+/**
+ * @brief Conta o número de quebras de linha numa sequência de texto.
+ * @param text Sequência terminada por '\0' a inspecionar.
+ * @return Número de caracteres '\n' encontrados.
+ */
+int get_newlines (char text[]);
