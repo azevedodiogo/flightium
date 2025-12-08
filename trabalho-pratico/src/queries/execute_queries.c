@@ -35,3 +35,11 @@ int execute_queries (Database database, const char *directory) {
 
     // Declara o input da leitura
     char input [BUFFER], write_file_name [BUFFER] = "resultados/command";
+
+    // Lê o ficheiro linha a linha
+    for (int i = 1; fgets (input, BUFFER * sizeof (char), read_file); i++) {
+
+        // Remove o '\n' no final do input
+        input [strcspn (input, "\n")] = 0;
+
+        // Define o nome do ficheiro
