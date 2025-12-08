@@ -22,3 +22,10 @@ int load_line_passengers (char *input, Database database) {
 
     // Carrega a data de nascimento
     date dob = validate_date (separate_block (&input, '"'), 0);
+    if (dob == INVALID_DATE) return EXIT_FAILURE;
+
+    // Carrega a nacionalidade
+    char *nationality = separate_block (&input, '"');
+
+    // Carrega o género
+    if (validate_gender (separate_block (&input, '"'))) return EXIT_FAILURE;
