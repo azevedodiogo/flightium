@@ -58,3 +58,11 @@ unsigned short get_aircraft_flight_count (const struct entity_aircraft *aircraft
 // Incrementa o número de voos de uma aeronave
 void inc_aircraft_flight_count (EntityAircraft aircraft) {
     aircraft -> flight_count++;
+}
+
+// Compara duas aeronaves
+int compare_aircrafts (gconstpointer aircraft1_pointer, gconstpointer aircraft2_pointer) {
+
+    // Converte os ponteiros
+    const struct entity_aircraft *aircraft1 = *((const struct entity_aircraft **) aircraft1_pointer);
+    const struct entity_aircraft *aircraft2 = *((const struct entity_aircraft **) aircraft2_pointer);
