@@ -66,3 +66,11 @@ void prepare_passengers (StoragePassengers storage_passengers);
  * @brief Determina o passageiro com maior despesa num intervalo de semanas.
  *
  * @param storage_passengers Estrutura de armazenamento de passageiros preparada.
+ * @param min_date Data mínima [ano, mês, dia, hora, minuto] do intervalo (inclusive).
+ * @param max_date Data máxima [ano, mês, dia, hora, minuto] do intervalo (inclusive).
+ * @param n Ponteiro onde é armazenada a contagem de gastos considerados.
+ * @return Passageiro com maior despesa ou NULL se não existir registo válido.
+ */
+const struct entity_passenger *determine_most_expensive_passenger (StoragePassengers storage_passengers, date min_date, date max_date, int *n);
+
+#endif
