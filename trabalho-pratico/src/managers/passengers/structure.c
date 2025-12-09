@@ -13,3 +13,12 @@ typedef struct spending {
     int index;
     int price;
 } Spending;
+
+// Informação sobre os gastos de uma semana
+typedef struct weekly_spendings {
+    GArray *array;
+    int top10 [10];
+    int top10_len;
+} WeeklySpendings;
+
+// Estrutura de armazenamento dos passageiros
