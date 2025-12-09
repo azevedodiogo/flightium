@@ -46,3 +46,10 @@ Database setup_database (int max_y, int max_x) {
         }
         // Se o utilizador não digitar nada, usa o caminho default
         if (strlen(input_directory) == 0) strcpy (input_directory, DEFAULT_PATH1);
+
+        // Cria a base de dados
+        database = create_database (0);
+
+        clear(); refresh();
+
+        draw_clock ();
