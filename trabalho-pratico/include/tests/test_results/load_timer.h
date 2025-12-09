@@ -21,3 +21,11 @@ LoadTimer create_load_timer ();
 void destroy_load_timer (LoadTimer load_timer);
 
 /**
+ * @brief Obtém o tempo registado para um dataset.
+ * @param load_timer Estrutura de temporização.
+ * @param index Índice do dataset.
+ * @return Tempo de leitura em segundos.
+ */
+double get_dataset_time (const LoadTimer load_timer, int index);
+
+/**
