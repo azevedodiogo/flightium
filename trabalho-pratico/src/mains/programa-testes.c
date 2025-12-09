@@ -39,3 +39,11 @@ int main (int argc, char **argv) {
 
     // Inicia a contabilização do tempo da preparação da base de dados
     clock_gettime (CLOCK_REALTIME, &prepare_start);
+
+    // Prepara a base de dados para as queries
+    prepare_database (database); 
+    
+    // Termina a contabilização do tempo da preparação da base de dados
+    clock_gettime (CLOCK_REALTIME, &prepare_end);
+
+    // Imprime o tempo de execução da preparação da base de dados
