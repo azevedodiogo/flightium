@@ -56,3 +56,11 @@ int get_index (StorageGeneric storage_generic, gconstpointer key);
 gpointer get_generic_by_id (StorageGeneric storage_generic, gconstpointer key);
 
 /**
+ * @brief Obtém um registo a partir do seu índice.
+ * @param storage_generic Estrutura alvo.
+ * @param index Índice de pesquisa.
+ * @return NULL caso o índice esteja fora dos limites, o registo no índice dado caso contrário.
+ */
+gpointer get_generic_by_index (StorageGeneric storage_generic, int index);
+
+/**
