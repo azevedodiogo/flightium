@@ -13,3 +13,10 @@ static int is_leap_year (int year) {
 
 // Calcula o número de dias de um mês
 static int n_days_in_month (int year, int month) {
+    return (month == 2 && is_leap_year (year)) ? 29 : days_in_month [month - 1];
+}
+
+// Converte uma data em `date`
+date convert_date (int year, int month, int day) {
+    return (year << 20) | (month << 16) | (day << 11) | 0;
+}
