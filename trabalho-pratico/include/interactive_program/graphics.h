@@ -21,3 +21,12 @@ void draw_clock ();
  * @return Número de caracteres '\n' encontrados.
  */
 int get_newlines (char text[]);
+
+/**
+ * @brief Apresenta uma janela que exige interação do utilizador antes de continuar, centrado com texto e um único botão. Esta janela bloqueia a interface subjacente até o utilizador premir 'ENTER'.
+ * @param text Conteúdo principal a mostrar.
+ * @param button Texto do botão de confirmação.
+ * @param width Largura da janela, em colunas.
+ * @param screen_y_max Altura total disponível.
+ * @param screen_x_max Largura total disponível.
+ * @warning É estática até o utilizador premir 'ENTER'.
