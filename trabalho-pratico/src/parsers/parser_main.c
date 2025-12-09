@@ -30,3 +30,11 @@ int open_dataset_files (FILE *read_files [], FILE *write_files [], const char *d
         read_files [i] = fopen (read_file_names [i], "r");
 
         // Verifica se o ficheiro não existe
+        if (read_files [i] == NULL) {
+            while (i--) fclose (read_files [i]);
+            // fprintf (stderr, "Error: invalid directory\n");
+            return EXIT_FAILURE;
+        }
+    }
+
+    // Abre os ficheiros de escrita
