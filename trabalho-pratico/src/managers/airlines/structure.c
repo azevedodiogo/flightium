@@ -65,3 +65,11 @@ int most_delayed_airlines (StorageAirlines storage_airlines, int N, const struct
     StorageGeneric data = storage_airlines -> data;
 
     // Obtém o número de elementos na estrutura genérica
+    int len = get_generic_len (data), number_found = 0;
+
+    // Percorre o array até encontrar todas as aeronaves pretendidas
+    for (number_found = 0; number_found < N && number_found < len; number_found++) found [number_found] = get_generic_by_index (storage_airlines -> data, number_found);
+
+    // Retorna o número de companhias aéreas encontradas
+    return number_found;
+}
