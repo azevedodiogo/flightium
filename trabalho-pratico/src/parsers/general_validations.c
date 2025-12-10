@@ -60,3 +60,12 @@ date validate_date (const char *string, int datetime) {
 
     // Verifica se o tempo está bem definido
     if (datetime && validate_time (string + 11)) return INVALID_DATE;
+
+    // Calcula as componentes da data
+    int year = (string [0] - '0') * 1000 + (string [1] - '0') * 100 + (string [2] - '0') * 10 + (string [3] - '0') * 1;
+    int month = (string [5] - '0') * 10 + (string [6] - '0') * 1;
+    int day = (string [8] - '0') * 10 + (string [9] - '0') * 1;
+
+    // Verifica se a data é válida
+    if (year > 2025 || (year == 2025 && month > 9) || (year == 2025 && month == 9 && day > 30)) return INVALID_DATE;
+    if (month == 0 || month > 12 || day == 0 || day > 31) return INVALID_DATE;
