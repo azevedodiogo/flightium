@@ -47,3 +47,10 @@ int main (int argc, char **argv) {
     clock_gettime (CLOCK_REALTIME, &prepare_end);
 
     // Imprime o tempo de execução da preparação da base de dados
+    print_prepare_time (prepare_start, prepare_end);
+
+    // Executa as queries
+    if (test_execute_queries (database, argv [2], tests)) return EXIT_FAILURE;
+
+    // Elimina a base de dados
+    destroy_database (database); destroy_tests (tests);
