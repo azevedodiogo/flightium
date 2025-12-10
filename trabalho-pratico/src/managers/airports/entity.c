@@ -59,3 +59,11 @@ const char *get_airport_name (const struct entity_airport *airport) {
 // Devolve a cidade de um aeroporto
 const char *get_airport_city (const struct entity_airport *airport) {
 	return airport -> city;
+}
+
+// Devolve o tipo de um aeroporto
+const char *get_airport_type (const struct entity_airport *airport) {
+	return airport -> type;
+}
+
+// Devolve o número de chegadas de um aeroporto
