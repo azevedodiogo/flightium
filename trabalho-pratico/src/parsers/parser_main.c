@@ -38,3 +38,11 @@ int open_dataset_files (FILE *read_files [], FILE *write_files [], const char *d
     }
 
     // Abre os ficheiros de escrita
+    write_files [N_AIRCRAFT] = fopen ("resultados/aircrafts_errors.csv", "w");
+    write_files [N_AIRPORT] = fopen ("resultados/airports_errors.csv", "w");
+    write_files [N_PASSENGER] = fopen ("resultados/passengers_errors.csv", "w");
+    write_files [N_FLIGHT] = fopen ("resultados/flights_errors.csv", "w");
+    write_files [N_RESERVATION] = fopen ("resultados/reservations_errors.csv", "w");
+
+    // Indica que os ficheiros foram abertos corretamente
+    return EXIT_SUCCESS;
