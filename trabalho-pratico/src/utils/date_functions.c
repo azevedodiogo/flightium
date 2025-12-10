@@ -20,3 +20,11 @@ static int n_days_in_month (int year, int month) {
 date convert_date (int year, int month, int day) {
     return (year << 20) | (month << 16) | (day << 11) | 0;
 }
+
+// Converte uma data e tempo em `date`
+date convert_datetime (int year, int month, int day, int hour, int minute) {
+    return (year << 20) | (month << 16) | (day << 11) | (hour << 6) | minute;
+}
+
+// Converte uma data para o número total de dias desde 01-01-0001
+int days_since_origin (date date) {
