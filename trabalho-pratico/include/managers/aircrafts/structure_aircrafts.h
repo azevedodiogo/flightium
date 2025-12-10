@@ -29,3 +29,12 @@ void destroy_storage_aircrafts (StorageAircrafts storage_aircrafts);
  * @return Registo encontrado ou NULL se não existir.
  */
 const struct entity_aircraft *get_aircraft_by_id (StorageAircrafts storage_aircrafts, const char *identifier);
+
+/**
+ * @brief Regista uma nova aeronave na estrutura.
+ * @param storage_aircrafts Estrutura de armazenamento.
+ * @param identifier Código único da aeronave.
+ * @param manufacturer Fabricante.
+ * @param model Modelo.
+ */
+void register_aircraft (StorageAircrafts storage_aircrafts, const char *identifier, const char *manufacturer, const char *model);
