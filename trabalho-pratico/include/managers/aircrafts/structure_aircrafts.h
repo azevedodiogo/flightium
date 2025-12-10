@@ -38,3 +38,11 @@ const struct entity_aircraft *get_aircraft_by_id (StorageAircrafts storage_aircr
  * @param model Modelo.
  */
 void register_aircraft (StorageAircrafts storage_aircrafts, const char *identifier, const char *manufacturer, const char *model);
+
+/**
+ * @brief Verifica se uma aeronave está registada.
+ * @param storage_aircrafts Estrutura de armazenamento.
+ * @param index Código único da aeronave.
+ * @return Índice da aeronave.
+ */
+int check_aircraft (StorageAircrafts storage_aircrafts, const char *identifier);
