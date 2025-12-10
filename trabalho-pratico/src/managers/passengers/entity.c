@@ -45,3 +45,11 @@ const char *get_passenger_first_name (const struct entity_passenger *passenger) 
 // Devolve o último nome de um passageiro
 const char *get_passenger_last_name (const struct entity_passenger *passenger) {
     return passenger -> last_name;
+}
+
+// Devolve a nacionalidade de um passageiro
+const char *get_passenger_nationality (const struct entity_passenger *passenger) {
+    return passenger -> nationality;
+}
+
+// Devolve o número de documento de um passageiro
