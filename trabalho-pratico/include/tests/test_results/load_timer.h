@@ -29,3 +29,11 @@ void destroy_load_timer (LoadTimer load_timer);
 double get_dataset_time (const LoadTimer load_timer, int index);
 
 /**
+ * @brief Define o tempo de leitura para um dataset específico.
+ * @param load_timer Estrutura de temporização.
+ * @param index Índice do dataset.
+ * @param time Tempo a registar (segundos).
+ */
+void set_dataset_time (LoadTimer load_timer, int index, double time);
+
+#endif
