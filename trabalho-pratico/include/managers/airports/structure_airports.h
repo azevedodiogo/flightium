@@ -29,3 +29,11 @@ void destroy_storage_airports (StorageAirports storage_airports);
  * @param storage_airports Estrutura de armazenamento.
  * @param code Código do aeroporto.
  * @return Registo correspondente ou NULL se não existir.
+ */
+const struct entity_airport *get_airport_by_id (StorageAirports storage_airports, const char *code);
+
+/**
+ * @brief Regista um novo aeroporto na estrutura.
+ * @param storage_airports Estrutura de armazenamento.
+ * @param code Código do aeroporto.
+ * @param name Nome do aeroporto.
