@@ -38,3 +38,13 @@ int register_reservation (StorageReservations storage_reservations, int reservat
     // Obtém a data
     GHashTable *data = storage_reservations -> data;
     gpointer key = GINT_TO_POINTER (reservation_id);
+
+    // Verifica se a reserva já existia
+    if (g_hash_table_contains (data, key)) return EXIT_FAILURE;
+
+    // Regista a reserva
+    g_hash_table_add (storage_reservations -> data, GINT_TO_POINTER (reservation_id));
+
+    // A reserva foi registada
+    return EXIT_SUCCESS;
+}
