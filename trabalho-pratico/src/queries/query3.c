@@ -36,3 +36,11 @@ void execute_query3 (Database database, char *input, char *output, char del) {
         // Obtém as componentes do aeroporto
         const char *code = get_airport_code (airport);
         const char *name = get_airport_name (airport);
+        const char *city = get_airport_city (airport);
+        const char *country = get_airport_country (airport);
+        
+        // Define o output
+        g_snprintf (output, LARGE_BUFFER, "%s%c%s%c%s%c%s%c%d\n", code, del, name, del, city, del ,country, del, max_count);
+
+    } else *output = '\n';
+}
