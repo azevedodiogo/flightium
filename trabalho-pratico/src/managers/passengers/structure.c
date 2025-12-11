@@ -22,3 +22,10 @@ typedef struct weekly_spendings {
 } WeeklySpendings;
 
 // Estrutura de armazenamento dos passageiros
+typedef struct storage_passengers {
+    StorageGeneric data;
+    WeeklySpendings *weekly_spendings;
+    int len, offset;
+} STORAGE_PASSENGERS, *StoragePassengers;
+
+
