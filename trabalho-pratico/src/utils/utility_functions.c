@@ -42,3 +42,12 @@ int determine_dataset (const char *directory, int *dataset) {
 
     // Nome do ficheiro
     char file_name [BUFFER]; snprintf (file_name, BUFFER, "%s/aircrafts.csv", directory);
+
+    // Abre o ficheiro
+    FILE *file = fopen (file_name, "r");
+
+    // Verifica se o ficheiro não foi aberto corretamente
+    if (file == NULL) return NO_VALUE;
+
+    // Número de linhas do ficheiro
+    int lines; char aux [BUFFER];
