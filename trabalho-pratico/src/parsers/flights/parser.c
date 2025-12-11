@@ -59,3 +59,12 @@ int load_line_flights (char *input, Database database) {
 
     // Carrega a companhia aérea
     if (status == 'D') register_airline (get_database_airlines (database), separate_block (&input, '"'), date_diff (departure, actual_departure));
+
+    // Verifica se o voo não foi cancelado
+    if (status != 'C') {
+
+        // Incrementa o número de voos da aeronave
+        update_aircraft (get_database_aircrafts (database), aircraft_index);
+
+        // Incrementa o número de ocorrências do aeroporto para o dia
+        register_airport_matrix_flights (get_database_airports (database), days_since_jan_first (actual_departure), origin);
