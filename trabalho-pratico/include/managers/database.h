@@ -38,3 +38,12 @@ Database create_database (int dataset);
  * @brief Liberta todos os recursos associados à base de dados.
  * @param database Estrutura a destruir.
  * @warning Invalida todos os ponteiros devolvidos pelos getters. A instância não deve ser reutilizada depois de destruída.
+ */
+void destroy_database (Database database);
+
+/**
+ * @brief Obtém a estrutura de armazenamento das aeronaves.
+ * @param database Base de dados em utilização.
+ * @return Ponteiro para a estrutura interna de aeronaves.
+ * @warning O ponteiro refere-se a dados internos da base de dados e deixa de ser válido após `destroy_database()`.
+ */
