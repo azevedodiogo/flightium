@@ -47,3 +47,11 @@ void destroy_database (Database database);
  * @return Ponteiro para a estrutura interna de aeronaves.
  * @warning O ponteiro refere-se a dados internos da base de dados e deixa de ser válido após `destroy_database()`.
  */
+StorageAircrafts get_database_aircrafts (Database database);
+
+/**
+ * @brief Obtém a estrutura de armazenamento das companhias aéreas.
+ * @param database Base de dados em utilização.
+ * @return Ponteiro para a estrutura interna de companhias aéreas.
+ * @warning O ponteiro refere-se a dados internos da base de dados e deixa de ser válido após `destroy_database()`.
+ */
