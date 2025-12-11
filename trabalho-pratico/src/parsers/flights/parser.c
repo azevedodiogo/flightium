@@ -52,3 +52,10 @@ int load_line_flights (char *input, Database database) {
 
     // Verifica se a origem e o destino são iguais
     if (strcmp (origin, destination) == 0) return EXIT_FAILURE;
+
+    // Carrega a aeronave
+    int aircraft_index = check_aircraft (get_database_aircrafts (database), separate_block (&input, '"'));
+    if (aircraft_index == NO_VALUE) return EXIT_FAILURE;
+
+    // Carrega a companhia aérea
+    if (status == 'D') register_airline (get_database_airlines (database), separate_block (&input, '"'), date_diff (departure, actual_departure));
