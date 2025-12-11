@@ -46,3 +46,10 @@ void register_aircraft (StorageAircrafts storage_aircrafts, const char *identifi
  * @return Índice da aeronave.
  */
 int check_aircraft (StorageAircrafts storage_aircrafts, const char *identifier);
+
+/**
+ * @brief Atualiza o número de voos de uma aeronave.
+ * @param storage_aircrafts Estrutura de armazenamento.
+ * @param index Índice da aeronave.
+ */
+void update_aircraft (StorageAircrafts storage_aircrafts, int index);
