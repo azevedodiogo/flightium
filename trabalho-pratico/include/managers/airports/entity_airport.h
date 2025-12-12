@@ -54,3 +54,11 @@ const char *get_airport_city (const struct entity_airport *airport);
 const char *get_airport_type (const struct entity_airport *airport);
 
 /**
+ * @brief Obtém o número de chegadas registadas.
+ * @param airport Registo alvo.
+ * @return Contagem de chegadas.
+ */
+unsigned short get_airport_arrival_count (const struct entity_airport *airport);
+
+/**
+ * @brief Obtém o número de partidas registadas.
