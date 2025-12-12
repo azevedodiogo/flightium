@@ -38,3 +38,11 @@ static int validate_args_query4 (const char *s) {
 typedef struct arg_controler {
     char *arg;
     int buffer;
+    const char *arg_name;
+    int (*validate_func) (const char *);
+    char text1 [BUFFER];
+    char text2 [BUFFER];
+} ArgControler;
+
+// Obtém um argumento obrigatório
+static int get_argument (int n_args, ArgControler ac [], int max_x, int max_y) {
