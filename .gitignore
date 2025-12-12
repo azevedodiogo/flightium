@@ -46,3 +46,11 @@
 *.mod*
 *.cmd
 .tmp_versions/
+modules.order
+Module.symvers
+Mkfile.old
+dkms.conf
+
+# Ignore CSV files
+*.csv
+.vscode/c_cpp_properties.json
