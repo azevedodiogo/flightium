@@ -18,3 +18,11 @@ int validate_email (const char *string) {
 
     // Verifica se a string terminou
     if (i == 0 || string [i++] == 0) return EXIT_FAILURE;
+
+    // Verifica se o primeiro caractere do domínio é válido
+    if (!islower (string [i])) return EXIT_FAILURE;
+
+    // Verifica se o domínio é válido (antes do ponto)
+    for (i++; string [i] && string [i] != '.'; i++) if (!islower (string [i])) return EXIT_FAILURE;
+
+    // Verifica se a string terminou
