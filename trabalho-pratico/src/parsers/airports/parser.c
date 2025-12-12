@@ -22,3 +22,11 @@ int load_line_airports (char *input, Database database) {
 
     // Carrega a latitude
     if (validate_latitude (separate_block (&input, '"'))) return EXIT_FAILURE;
+
+    // Carrega a longitude
+    if (validate_longitude (separate_block (&input, '"'))) return EXIT_FAILURE;
+
+    // Carrega o icao
+    separate_block (&input, '"');
+
+    // Carrega o tipo
