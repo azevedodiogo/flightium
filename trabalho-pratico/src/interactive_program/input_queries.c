@@ -46,3 +46,11 @@ typedef struct arg_controler {
 
 // Obtém um argumento obrigatório
 static int get_argument (int n_args, ArgControler ac [], int max_x, int max_y) {
+
+    // Define as medidas da janela
+    int width = 60, pos_y = max_y / 2, pos_x = max_x / 2 - width / 2, i = 0;
+
+    // Cria os textos
+    for (int i = 0; i < n_args; i++) {
+        sprintf (ac [i].text1, "Enter the %s:", ac [i].arg_name);
+        sprintf (ac [i].text2, "Invalid %s!", ac [i].arg_name);
