@@ -45,3 +45,12 @@ const char *get_airport_name (const struct entity_airport *airport);
  * @return String com a cidade.
  */
 const char *get_airport_city (const struct entity_airport *airport);
+
+/**
+ * @brief Obtém o tipo de aeroporto.
+ * @param airport Registo alvo.
+ * @return String com o tipo.
+ */
+const char *get_airport_type (const struct entity_airport *airport);
+
+/**
