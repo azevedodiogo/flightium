@@ -29,3 +29,11 @@ int execute_queries (Database database, const char *directory);
  * @param input Linha de argumentos recebida (sem newline).
  * @param output Área de memória onde é construído o resultado.
  * @param del Delimitador de campos a aplicar à saída.
+ * @warning `output` deve dispor de espaço suficiente para toda a resposta e terminar em '\0'.
+ */
+void execute_query1 (Database database, char *input, char *output, char del);
+
+/**
+ * @brief Executa a query 2 e escreve o resultado formatado.
+ * @param database Base de dados utilizada pela query.
+ * @param input Linha de argumentos recebida (sem newline).
