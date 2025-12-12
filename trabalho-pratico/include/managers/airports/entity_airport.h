@@ -62,3 +62,11 @@ unsigned short get_airport_arrival_count (const struct entity_airport *airport);
 
 /**
  * @brief Obtém o número de partidas registadas.
+ * @param airport Registo alvo.
+ * @return Contagem de partidas.
+ */
+unsigned short get_airport_departure_count (const struct entity_airport *airport);
+
+/**
+ * @brief Obtém o país do aeroporto.
+ * @param airport Registo alvo.
