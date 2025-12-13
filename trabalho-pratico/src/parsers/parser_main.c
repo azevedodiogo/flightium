@@ -46,3 +46,10 @@ int open_dataset_files (FILE *read_files [], FILE *write_files [], const char *d
 
     // Indica que os ficheiros foram abertos corretamente
     return EXIT_SUCCESS;
+}
+
+// Carrega os datasets
+int load_datasets (Database database, const char *directory) {
+
+    // Declara os ficheiros
+    FILE *read_files [N_DATASETS], *write_files [N_DATASETS];
