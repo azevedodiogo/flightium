@@ -44,3 +44,11 @@ int get_airline_delay_count (const struct entity_airline *airline) {
 }
 
 // Devolve o atraso total de uma companhia aérea
+int get_airline_total_delay (const struct entity_airline *airline) {
+    return airline -> total_delay;
+}
+
+// Atualiza o atraso de uma companhia aérea
+void update_airline_delay (EntityAirline airline, int delay) {
+
+    // Incrementa o número de atrasos
