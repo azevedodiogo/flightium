@@ -29,3 +29,13 @@ int load_line_passengers (char *input, Database database) {
 
     // Carrega o género
     if (validate_gender (separate_block (&input, '"'))) return EXIT_FAILURE;
+
+    // Carrega o email
+    if (validate_email (separate_block (&input, '"'))) return EXIT_FAILURE;
+
+    // Regista o passageiro
+    register_passenger (get_database_passengers (database), document_number, first_name, last_Name, nationality, dob);
+
+    // O aeroporto é válido
+    return EXIT_SUCCESS;
+}
