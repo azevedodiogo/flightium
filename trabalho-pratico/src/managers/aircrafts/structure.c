@@ -51,3 +51,11 @@ int check_aircraft (StorageAircrafts storage_aircrafts, const char *identifier) 
 void update_aircraft (StorageAircrafts storage_aircrafts, int index) {
     inc_aircraft_flight_count (get_generic_by_index (storage_aircrafts -> data, index));
 }
+
+// Prepara a estrutura de armazenamento das aeronaves para as queries
+void prepare_aircrafts (StorageAircrafts storage_aircrafts) {
+    sort_generic_structure (storage_aircrafts -> data, compare_aircrafts);
+}
+
+// Determina as N aeronaves com mais voos para um dado fabricante (opcional)
+int determine_most_flown_aircrafts_by_manufacturer (StorageAircrafts storage_aircrafts, const char *wanted_manufacturer, int N, const struct entity_aircraft *found []) {
