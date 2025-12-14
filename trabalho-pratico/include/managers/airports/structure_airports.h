@@ -37,3 +37,11 @@ const struct entity_airport *get_airport_by_id (StorageAirports storage_airports
  * @param storage_airports Estrutura de armazenamento.
  * @param code Código do aeroporto.
  * @param name Nome do aeroporto.
+ * @param city Cidade.
+ * @param type Tipo de aeroporto.
+ * @param country País.
+ */
+void register_airport (StorageAirports storage_airports, const char *code, const char *name, const char *city, const char *type, const char *country);
+
+/**
+ * @brief Regista uma ocorrência do aeroporto na matriz de voos.
