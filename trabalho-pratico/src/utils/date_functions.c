@@ -28,3 +28,11 @@ date convert_datetime (int year, int month, int day, int hour, int minute) {
 
 // Converte uma data para o número total de dias desde 01-01-0001
 int days_since_origin (date date) {
+
+    // Obtém as componentes necessárias
+    int year = GET_YEAR (date), month = GET_MONTH (date), day = GET_DAY (date);
+
+    // Número de dias
+    int days = 0;
+
+    // Soma dias dos anos anteriores
