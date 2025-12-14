@@ -29,3 +29,13 @@ typedef struct storage_passengers {
 } STORAGE_PASSENGERS, *StoragePassengers;
 
 
+
+// Cria a estrutura de armazenamento dos passageiros
+StoragePassengers create_storage_passengers (int inicial_capacity) {
+
+    // Aloca memória para a estrutura
+    StoragePassengers storage_passengers = g_malloc (sizeof (STORAGE_PASSENGERS));
+
+    // Cria as sub-estruturas
+    storage_passengers -> data = create_storage_generic (inicial_capacity, destroy_passenger, 0);
+    storage_passengers -> weekly_spendings = g_malloc0 (EXPECTED_WEEKS * sizeof (WeeklySpendings));
