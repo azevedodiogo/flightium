@@ -52,3 +52,11 @@ int get_airline_total_delay (const struct entity_airline *airline) {
 void update_airline_delay (EntityAirline airline, int delay) {
 
     // Incrementa o número de atrasos
+    airline -> delay_count++;
+
+    // Atualiza o atraso total
+    airline -> total_delay += delay;
+}
+
+// Compara duas companhias aéreas
+int compare_airlines (gconstpointer airline1_pointer, gconstpointer airline2_pointer) {
