@@ -54,3 +54,10 @@ static int get_argument (int n_args, ArgControler ac [], int max_x, int max_y) {
     for (int i = 0; i < n_args; i++) {
         sprintf (ac [i].text1, "Enter the %s:", ac [i].arg_name);
         sprintf (ac [i].text2, "Invalid %s!", ac [i].arg_name);
+    }
+
+    // Mantém o pedido
+    while (i < n_args) {
+
+        // Pede ao utilizador para inserir o argumento
+        int cancelled = text_input_box(pos_y, pos_x, width, ac [i].buffer * sizeof (char), ac [i].text1, ac [i].arg, 2);
