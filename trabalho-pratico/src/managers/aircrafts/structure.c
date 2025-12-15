@@ -59,3 +59,9 @@ void prepare_aircrafts (StorageAircrafts storage_aircrafts) {
 
 // Determina as N aeronaves com mais voos para um dado fabricante (opcional)
 int determine_most_flown_aircrafts_by_manufacturer (StorageAircrafts storage_aircrafts, const char *wanted_manufacturer, int N, const struct entity_aircraft *found []) {
+
+    // Obtém a data
+    StorageGeneric data = storage_aircrafts -> data;
+
+    // Obtém o número de elementos da estrutura
+    int len = get_generic_len (data), number_found = 0;
