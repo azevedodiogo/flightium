@@ -30,3 +30,12 @@ int load_line_airports (char *input, Database database) {
     separate_block (&input, '"');
 
     // Carrega o tipo
+    char *type = separate_block (&input, '"');
+    if (validate_type (type)) return EXIT_FAILURE;
+
+    // Regista o aeroporto
+    register_airport (get_database_airports (database), code, name, city, type, country);
+
+    // O aeroporto é válido
+    return EXIT_SUCCESS;
+}
