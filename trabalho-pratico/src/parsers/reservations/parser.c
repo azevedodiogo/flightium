@@ -30,3 +30,10 @@ static int validate_reservation_flights (char *string, gconstpointer *flight_out
 
     // Lê o segundo id de voo
     *flight_return = get_flight_by_id (storage_flights, separate_block (&string, 39));
+
+    // Verifica se o último caractere do bloco não é o fim da lista - ']'
+    return (string [0] != ']') ? EXIT_FAILURE : EXIT_SUCCESS;
+}
+
+// Atualiza a base de dados para uma reserva
+static void update_database_reservation (Database database, const struct entity_flight *flight_outbound, const struct entity_flight *flight_return, const char *nationality, int document_number, int price) {
