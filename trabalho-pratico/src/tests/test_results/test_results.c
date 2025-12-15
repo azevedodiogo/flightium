@@ -54,3 +54,11 @@ StorageQueryErrors get_tests_query_errors (Tests tests) {
 }
 
 // Devolve a estrutura dos resultados das queries
+StorageQueryResults get_tests_query_results (Tests tests) {
+    return tests -> results;
+}
+
+// Devolve o ficheiro de resultados esperados dos testes
+const char *get_tests_expected_results (Tests tests) {
+    return get_expected_results (tests -> results);
+}
