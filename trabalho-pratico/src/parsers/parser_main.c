@@ -53,3 +53,12 @@ int load_datasets (Database database, const char *directory) {
 
     // Declara os ficheiros
     FILE *read_files [N_DATASETS], *write_files [N_DATASETS];
+
+    // Abre os ficheiros
+    if (open_dataset_files (read_files, write_files, directory)) {
+        destroy_database (database);
+        return EXIT_FAILURE;
+    }
+
+    // Declara o input
+    char input [BUFFER];
