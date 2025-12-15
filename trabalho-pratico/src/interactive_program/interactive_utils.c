@@ -53,3 +53,12 @@ Database setup_database (int max_y, int max_x) {
         clear(); refresh();
 
         draw_clock ();
+
+        // Carrega os datasets
+        if (load_datasets (database, input_directory)) {
+            clear (); modal_start ("Error: invalid path.", "RETRY", 50, max_y, max_x); continue;  
+        }
+        // Valida o input
+        valid_input = 1;
+    }
+    // Prepara a base de dados para as queries
