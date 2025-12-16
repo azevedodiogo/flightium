@@ -39,3 +39,11 @@ StoragePassengers create_storage_passengers (int inicial_capacity) {
     // Cria as sub-estruturas
     storage_passengers -> data = create_storage_generic (inicial_capacity, destroy_passenger, 0);
     storage_passengers -> weekly_spendings = g_malloc0 (EXPECTED_WEEKS * sizeof (WeeklySpendings));
+    for (int i = 0; i < EXPECTED_WEEKS; i++) storage_passengers -> weekly_spendings [i].array = g_array_sized_new (FALSE, FALSE, sizeof (Spending), (inicial_capacity > 1000000 ? 200 : 1) * EXPECTED_RESERVATIONS_PER_WEEK);
+    storage_passengers -> len = EXPECTED_WEEKS; storage_passengers -> offset = 0;
+
+    // Retorna a estrutura
+    return storage_passengers;
+}
+
+// Elimina a estrutura de armazenamento dos passageiros
