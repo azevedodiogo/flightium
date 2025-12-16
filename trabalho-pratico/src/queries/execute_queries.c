@@ -50,3 +50,11 @@ int execute_queries (Database database, const char *directory) {
 
         // Resultado da query
         char output [LARGE_BUFFER] = "\n", delimiter = input [1] == 'S' ? '=' : ';', skips = 2 + (input [1] == 'S');
+
+        // Realiza a query
+        switch (input [0]) {
+            case '1': execute_query1 (database, input + skips, output, delimiter); break;
+            case '2': execute_query2 (database, input + skips, output, delimiter); break;
+            case '3': execute_query3 (database, input + skips, output, delimiter); break;
+            case '4': execute_query4 (database, input + skips, output, delimiter); break;
+            case '5': execute_query5 (database, input + skips, output, delimiter); break;
