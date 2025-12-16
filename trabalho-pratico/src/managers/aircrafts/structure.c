@@ -65,3 +65,12 @@ int determine_most_flown_aircrafts_by_manufacturer (StorageAircrafts storage_air
 
     // Obtém o número de elementos da estrutura
     int len = get_generic_len (data), number_found = 0;
+
+    // Percorre o array até encontrar todas as aeronaves pretendidas
+    for (int i = 0; number_found < N && i < len; i++) {
+
+        // Obtém o elemento do array
+        const struct entity_aircraft *aircraft = get_generic_by_index (data, i);
+
+        // Obtém o fabricante da aeronave
+        const char *manufacturer = get_aircraft_manufacturer (aircraft);
