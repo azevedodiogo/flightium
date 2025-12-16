@@ -54,3 +54,12 @@ const char *clock_art[] = {
 "    _))       ((_",
 NULL
 };
+
+// Desenha o ecrã inicial
+void draw_plane_with_clouds () {
+
+    // Auxiliares para o avião
+    int plane_y = 10, plane_x = 50;
+
+    // Auxiliares para as nuvens
+    int cloud_y = plane_y - 5, cloud_x = plane_x + 10;
