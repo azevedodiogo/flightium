@@ -53,3 +53,11 @@ const char *get_passenger_nationality (const struct entity_passenger *passenger)
 }
 
 // Devolve o número de documento de um passageiro
+int get_passenger_document_number (const struct entity_passenger *passenger) {
+    return passenger -> document_number;
+}
+
+// Devolve a data de nascimento de um passageiro
+date get_passenger_dob (const struct entity_passenger *passenger) {
+    return passenger -> dob;
+}
