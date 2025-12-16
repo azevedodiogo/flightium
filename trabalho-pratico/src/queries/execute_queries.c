@@ -43,3 +43,10 @@ int execute_queries (Database database, const char *directory) {
         input [strcspn (input, "\n")] = 0;
 
         // Define o nome do ficheiro
+        sprintf (write_file_name + 18, "%d_output.txt", i);
+
+        // Abre o ficheiro de escrita
+        FILE *write_file = fopen (write_file_name, "w");
+
+        // Resultado da query
+        char output [LARGE_BUFFER] = "\n", delimiter = input [1] == 'S' ? '=' : ';', skips = 2 + (input [1] == 'S');
