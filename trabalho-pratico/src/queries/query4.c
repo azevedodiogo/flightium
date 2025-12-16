@@ -19,3 +19,11 @@ static void determine_arguments_query4 (char *input, int min_date [3], int max_d
 
 // Executa a query 4
 void execute_query4 (Database database, char *input, char *output, char del) {
+
+    // Limites das semanas a procurar
+    int min_date [3] = {0}, max_date [3] = {0};
+
+    // Determina os argumentos do input
+    if (*input) determine_arguments_query4 (input, min_date, max_date);
+    else {
+        min_date [0] = 2000;
