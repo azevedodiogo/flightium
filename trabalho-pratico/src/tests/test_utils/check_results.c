@@ -39,3 +39,10 @@ static void extract_line_from_content (const char *content, int line_number, cha
 static int find_error_line (char *content_write_file, int len_write_file, char *content_expected, int len_expected, char* expected_line, char* actual_line) {
     
     // Define um limite
+    int limite = (len_write_file < len_expected) ? len_write_file : len_expected;
+
+    // Inicializa a linha, que vai indicar o erro
+    int linha = 1;
+
+    // Percorre o ficheiro até ao limite
+    for (int i = 0; i < limite; i++) {
