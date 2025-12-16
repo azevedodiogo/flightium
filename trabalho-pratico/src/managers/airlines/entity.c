@@ -60,3 +60,11 @@ void update_airline_delay (EntityAirline airline, int delay) {
 
 // Compara duas companhias aéreas
 int compare_airlines (gconstpointer airline1_pointer, gconstpointer airline2_pointer) {
+
+    // Converte os ponteiros
+    const struct entity_airline *airline1 = *((const struct entity_airline **) airline1_pointer);
+    const struct entity_airline *airline2 = *((const struct entity_airline **) airline2_pointer);
+
+    // Calcula o tempo de atraso médio das companhias aéreas
+    long long avg1 = round (1000.0L * (long double) airline1 -> total_delay / airline1 -> delay_count);
+    long long avg2 = round (1000.0L * (long double) airline2 -> total_delay / airline2 -> delay_count);
