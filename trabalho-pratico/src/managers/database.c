@@ -64,3 +64,12 @@ void destroy_database (Database database) {
 // Devolve a estrutura de armazenamento das aeronaves
 StorageAircrafts get_database_aircrafts (Database database) {
     return database -> aircrafts;
+}
+
+// Devolve a estrutura de armazenamento das companhias
+StorageAirlines get_database_airlines (Database database) {
+    return database -> airlines;
+}
+
+// Devolve a estrutura de armazenamento dos aeroportos
+StorageAirports get_database_airports (Database database) {
