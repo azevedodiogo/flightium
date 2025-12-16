@@ -54,3 +54,13 @@ int main (int argc, char **argv) {
 
     // Elimina a base de dados
     destroy_database (database); destroy_tests (tests);
+
+    // Termina os testes
+    clock_gettime (CLOCK_REALTIME, &end_time); getrusage (RUSAGE_SELF, &r_usage);
+
+    // Imprime o tempo de execução e a utilização de memória
+    print_test_summary (start_time, end_time, r_usage);
+
+    // Termina o programa
+    return EXIT_SUCCESS;
+}
