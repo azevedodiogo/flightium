@@ -61,3 +61,12 @@ static int get_argument (int n_args, ArgControler ac [], int max_x, int max_y) {
 
         // Pede ao utilizador para inserir o argumento
         int cancelled = text_input_box(pos_y, pos_x, width, ac [i].buffer * sizeof (char), ac [i].text1, ac [i].arg, 2);
+
+        // Se o utilizador carregar no ESC, a janela fecha
+        if (cancelled) {
+            modal_start ("Operation cancelled!", "OK", 40, max_y, max_x); return EXIT_FAILURE;
+        }
+
+        // Valida o argumento inserido pelo utilizador
+        if (ac [i].validate_func && ac [i].validate_func (ac [i].arg) == EXIT_FAILURE) {
+            modal_start (ac [i].text2, "Retry", 40, max_y, max_x);
