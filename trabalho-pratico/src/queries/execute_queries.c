@@ -58,3 +58,11 @@ int execute_queries (Database database, const char *directory) {
             case '3': execute_query3 (database, input + skips, output, delimiter); break;
             case '4': execute_query4 (database, input + skips, output, delimiter); break;
             case '5': execute_query5 (database, input + skips, output, delimiter); break;
+            case '6': execute_query6 (database, input + skips, output, delimiter); break;
+        }
+
+        // Escreve o resultado da query
+        fprintf (write_file, "%s", output);
+
+        // Fecha o ficheiro de escrita
+        fclose (write_file);
