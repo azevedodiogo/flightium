@@ -62,3 +62,11 @@ Database setup_database (int max_y, int max_x) {
         valid_input = 1;
     }
     // Prepara a base de dados para as queries
+    if (database) prepare_database (database);
+
+    // Devolve a base de dados 
+    return database;  
+}
+
+// Apresenta o menu das queries e retorna a escolha do utilizador
+int menu_select_queries(int max_y, int max_x) {
