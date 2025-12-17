@@ -37,3 +37,12 @@ static int validate_reservation_flights (char *string, gconstpointer *flight_out
 
 // Atualiza a base de dados para uma reserva
 static void update_database_reservation (Database database, const struct entity_flight *flight_outbound, const struct entity_flight *flight_return, const char *nationality, int document_number, int price) {
+
+    // Adiciona o registo do gasto
+    register_spending (get_database_passengers (database), get_flight_week (flight_outbound), document_number, price);
+
+    // Obtém as estruturas de armazenamento necessárias
+    StorageAirports airports = get_database_airports (database);
+
+    // Atualiza os aeroportos e as nacionalidades
+    if (get_flight_status (flight_outbound) != 'C') {
