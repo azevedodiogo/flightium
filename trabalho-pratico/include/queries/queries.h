@@ -44,3 +44,11 @@ void execute_query1 (Database database, char *input, char *output, char del);
 void execute_query2 (Database database, char *input, char *output, char del);
 
 /**
+ * @brief Executa a query 3 e escreve o resultado formatado.
+ * @param database Base de dados utilizada pela query.
+ * @param input Linha de argumentos recebida (sem newline).
+ * @param output Área de memória onde é construído o resultado.
+ * @param del Delimitador de campos a aplicar à saída.
+ * @warning Se `output` for reutilizado entre chamadas, deve ser limpo pelo chamador antes de cada invocação.
+ */
+void execute_query3 (Database database, char *input, char *output, char del);
