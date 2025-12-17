@@ -27,3 +27,11 @@ void execute_query4 (Database database, char *input, char *output, char del) {
     if (*input) determine_arguments_query4 (input, min_date, max_date);
     else {
         min_date [0] = 2000;
+        max_date [0] = 2026;
+    }
+
+    // Converte as datas
+    date min = convert_date (min_date [0], min_date [1], min_date [2]);
+    date max = convert_date (max_date [0], max_date [1], max_date [2]);
+
+    // Determina o passageiro que mais gastou entre as duas semanas
