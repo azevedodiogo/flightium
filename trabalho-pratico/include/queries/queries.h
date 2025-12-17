@@ -60,3 +60,11 @@ void execute_query3 (Database database, char *input, char *output, char del);
  * @param output Área de memória onde é construído o resultado.
  * @param del Delimitador de campos a aplicar à saída.
  * @warning `output` deve suportar múltiplas linhas. O delimitador influencia o formato final.
+ */
+void execute_query4 (Database database, char *input, char *output, char del);
+
+/**
+ * @brief Executa a query 5 e escreve o resultado formatado.
+ * @param database Base de dados utilizada pela query.
+ * @param input Linha de argumentos recebida (sem newline).
+ * @param output Área de memória onde é construído o resultado.
