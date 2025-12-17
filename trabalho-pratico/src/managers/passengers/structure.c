@@ -47,3 +47,11 @@ StoragePassengers create_storage_passengers (int inicial_capacity) {
 }
 
 // Elimina a estrutura de armazenamento dos passageiros
+void destroy_storage_passengers (StoragePassengers storage_passengers) {
+
+    // Elimina as sub-estruturas
+    for (int i = 0; i < storage_passengers -> len; i++) g_array_free (storage_passengers -> weekly_spendings [i].array, TRUE);
+    g_free (storage_passengers -> weekly_spendings);
+    destroy_storage_generic (storage_passengers -> data);
+
+    // Elimina a estrutura
