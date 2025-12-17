@@ -35,3 +35,10 @@ void execute_query4 (Database database, char *input, char *output, char del) {
     date max = convert_date (max_date [0], max_date [1], max_date [2]);
 
     // Determina o passageiro que mais gastou entre as duas semanas
+    int n = 0; const struct entity_passenger *passenger = determine_most_expensive_passenger (get_database_passengers (database), min, max, &n);
+
+    // Verifica se foi encontrado um passageiro
+    if (passenger) {
+
+        // Obtém a data de nascimento do passageiro
+        date dob = get_passenger_dob (passenger);
