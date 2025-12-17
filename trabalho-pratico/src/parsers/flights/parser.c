@@ -68,3 +68,11 @@ int load_line_flights (char *input, Database database) {
 
         // Incrementa o número de ocorrências do aeroporto para o dia
         register_airport_matrix_flights (get_database_airports (database), days_since_jan_first (actual_departure), origin);
+    }
+
+    // Regista o voo
+    register_flight (get_database_flights (database), flight_id, origin, destination, date_to_week (departure), status);
+
+    // A aeronave é válida
+    return EXIT_SUCCESS;
+}
