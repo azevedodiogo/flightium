@@ -52,3 +52,11 @@ const char *get_aircraft_model (const struct entity_aircraft *ircraft);
  * @return Contagem de voos.
  */
 unsigned short get_aircraft_flight_count (const struct entity_aircraft *aircraft);
+
+/**
+ * @brief Incrementa o contador de voos da aeronave.
+ * @param aircraft Registo alvo a atualizar.
+ */
+void inc_aircraft_flight_count (EntityAircraft aircraft);
+
+/**
