@@ -42,3 +42,11 @@ void execute_query4 (Database database, char *input, char *output, char del) {
 
         // Obtém a data de nascimento do passageiro
         date dob = get_passenger_dob (passenger);
+
+        // Define o output
+        g_snprintf (output, LARGE_BUFFER, "%09d%c%s%c%s%c%04d-%02d-%02d%c%s%c%d\n",
+                    get_passenger_document_number (passenger), del, get_passenger_first_name (passenger), del, get_passenger_last_name (passenger), del,
+                    (dob >> 20) & 0xFFF, (dob >> 16) & 0xF, (dob >> 11) & 0x1F, del, get_passenger_nationality (passenger), del, n);
+
+    } else *output = '\n';
+}
