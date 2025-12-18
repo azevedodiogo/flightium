@@ -66,3 +66,11 @@ int execute_queries (Database database, const char *directory) {
 
         // Fecha o ficheiro de escrita
         fclose (write_file);
+    }
+
+    // Fecha o ficheiro
+    fclose (read_file);
+
+    // Indica que a função correu corretamente
+    return EXIT_SUCCESS;
+}
