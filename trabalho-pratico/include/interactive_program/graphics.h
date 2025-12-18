@@ -30,3 +30,12 @@ int get_newlines (char text[]);
  * @param screen_y_max Altura total disponível.
  * @param screen_x_max Largura total disponível.
  * @warning É estática até o utilizador premir 'ENTER'.
+ */
+void modal_start (char text[], const char button[], int width, int screen_y_max, int screen_x_max);
+
+/**
+ * @brief Apresenta uma caixa para introdução de texto e lê a entrada do utilizador.
+ * @param pos_y Coordenada Y usada para centrar a caixa.
+ * @param pos_x Coordenada X usada para centrar a caixa.
+ * @param width Largura mínima desejada para a caixa, em colunas.
+ * @param input_size Tamanho máximo do campo de entrada (inclui o terminador '\0').
