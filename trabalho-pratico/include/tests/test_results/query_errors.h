@@ -29,3 +29,11 @@ void destroy_query_error (QueryError query_error);
 
 /**
  * @brief Obtém o número da query a que o erro pertence.
+ * @param query_error Entidade alvo.
+ * @return Número da query.
+ */
+int get_query_error_number (QueryError query_error);
+
+/**
+ * @brief Obtém o número do comando em erro.
+ * @param query_error Entidade alvo.
