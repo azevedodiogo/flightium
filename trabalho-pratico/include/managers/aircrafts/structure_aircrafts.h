@@ -53,3 +53,12 @@ int check_aircraft (StorageAircrafts storage_aircrafts, const char *identifier);
  * @param index Índice da aeronave.
  */
 void update_aircraft (StorageAircrafts storage_aircrafts, int index);
+
+/**
+ * @brief Organiza as aeronaves para otimizar queries subsequentes.
+ * @param storage_aircrafts Estrutura a preparar.
+ */
+void prepare_aircrafts (StorageAircrafts storage_aircrafts);
+
+/**
+ * @brief Determina as N aeronaves com mais voos para um fabricante.
