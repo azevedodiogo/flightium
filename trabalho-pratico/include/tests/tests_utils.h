@@ -46,3 +46,11 @@ void print_prepare_time (struct timespec start_time, struct timespec end_time);
  * @brief Imprime o resumo global dos testes (tempo e memória).
  * @param start_time Instante inicial.
  * @param end_time Instante final.
+ * @param r_usage Estatísticas de recursos obtidas via `getrusage`.
+ */
+void print_test_summary (struct timespec start_time, struct timespec end_time, struct rusage r_usage);
+
+/**
+ * @brief Atualiza estatísticas temporais de uma query.
+ * @param stats Estrutura de resultados.
+ * @param index Índice da query.
