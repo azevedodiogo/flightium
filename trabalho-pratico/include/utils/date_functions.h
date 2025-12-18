@@ -22,3 +22,11 @@ typedef short week_index;
  * @brief Retorna a hora de um `date`.
  */
 #define GET_HOUR(d) (((d) >> 6) & 0x1F)
+
+/**
+ * @brief Retorna o dia de um `date`.
+ */
+#define GET_DAY(d) (((d) >> 11) & 0x1F)
+
+/**
+ * @brief Retorna o mês de um `date`.
