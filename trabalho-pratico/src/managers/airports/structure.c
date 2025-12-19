@@ -29,3 +29,12 @@ StorageAirports create_storage_airports (int inicial_capacity) {
     storage_airports -> matrix_nationalities = create_storage_generic (N_EXPECTED_NATIONALITIES, g_free, 1);
     storage_airports -> matrix_flights = g_malloc (N_EXPECTED_DAYS * sizeof (int *));
     storage_airports -> len_flights = N_EXPECTED_DAYS; storage_airports -> offset_flights = 0;
+
+    // Cria a linha das matriz dos voos
+    for (int i = 0; i < N_EXPECTED_DAYS; i++) storage_airports -> matrix_flights [i] = g_malloc0 (inicial_capacity * sizeof (int));
+
+    // Retorna a estrutura de armazenamento
+    return storage_airports;
+}
+
+// Elimina a estrutura de armazenamento dos aeroportos
