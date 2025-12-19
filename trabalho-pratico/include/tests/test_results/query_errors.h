@@ -37,3 +37,11 @@ int get_query_error_number (QueryError query_error);
 /**
  * @brief Obtém o número do comando em erro.
  * @param query_error Entidade alvo.
+ * @return Número do comando.
+ */
+int get_query_error_command (QueryError query_error);
+
+/**
+ * @brief Obtém o número da linha do ficheiro de resultados.
+ * @param query_error Entidade alvo.
+ * @return Número da linha.
