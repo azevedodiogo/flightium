@@ -54,3 +54,11 @@ void print_test_summary (struct timespec start_time, struct timespec end_time, s
  * @brief Atualiza estatísticas temporais de uma query.
  * @param stats Estrutura de resultados.
  * @param index Índice da query.
+ * @param start Instante de início.
+ * @param end Instante de fim.
+ * @param total_query_time Acumulador de tempo total de queries.
+ * @param total_queries Contador de queries executadas.
+ */
+void update_query_timing (StorageQueryResults stats, int index, struct timespec start, struct timespec end, double *total_query_time, int *total_queries);
+
+/**
