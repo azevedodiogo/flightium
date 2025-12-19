@@ -62,3 +62,11 @@ int load_datasets (Database database, const char *directory) {
 
     // Declara o input
     char input [BUFFER];
+
+    // Processa cada dataset
+    for (int i = 0; i < N_DATASETS; i++) {
+
+        // Processa o dataset
+        generic_load_dataset (read_files [i], write_files [i], input, database, load_line [i]);
+
+        // Fecha os ficheiros
