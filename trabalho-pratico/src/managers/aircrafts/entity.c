@@ -66,3 +66,11 @@ int compare_aircrafts (gconstpointer aircraft1_pointer, gconstpointer aircraft2_
     // Converte os ponteiros
     const struct entity_aircraft *aircraft1 = *((const struct entity_aircraft **) aircraft1_pointer);
     const struct entity_aircraft *aircraft2 = *((const struct entity_aircraft **) aircraft2_pointer);
+
+    // Compara o número de voos
+    if (aircraft1 -> flight_count > aircraft2 -> flight_count) return -1;
+    if (aircraft1 -> flight_count < aircraft2 -> flight_count) return 1;
+
+    // Compara os nomes
+    return strcmp (aircraft1 -> identifier, aircraft2 -> identifier);
+}
