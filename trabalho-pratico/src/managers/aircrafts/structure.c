@@ -74,3 +74,11 @@ int determine_most_flown_aircrafts_by_manufacturer (StorageAircrafts storage_air
 
         // Obtém o fabricante da aeronave
         const char *manufacturer = get_aircraft_manufacturer (aircraft);
+
+        // Verifica se a aeronave possui o fabricante desejado
+        if (wanted_manufacturer == NULL || strcmp (wanted_manufacturer, manufacturer) == 0) found [number_found++] = aircraft;
+    }
+
+    // Retorna o array
+    return number_found;
+}
