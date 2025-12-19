@@ -70,3 +70,11 @@ unsigned short get_airport_departure_count (const struct entity_airport *airport
 /**
  * @brief Obtém o país do aeroporto.
  * @param airport Registo alvo.
+ * @return String com o país.
+ */
+const char *get_airport_country (const struct entity_airport *airport);
+
+/**
+ * @brief Incrementa o número de chegadas do aeroporto.
+ * @param airport Registo a atualizar.
+ */
