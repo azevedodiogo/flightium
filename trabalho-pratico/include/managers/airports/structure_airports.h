@@ -45,3 +45,11 @@ void register_airport (StorageAirports storage_airports, const char *code, const
 
 /**
  * @brief Regista uma ocorrência do aeroporto na matriz de voos.
+ * @param storage_airports Estrutura de armazenamento.
+ * @param line Índice da linha no dataset.
+ * @param origin Código do aeroporto de origem.
+ */
+void register_airport_matrix_flights (StorageAirports storage_airports, int line, const char *origin);
+
+/**
+ * @brief Regista uma ocorrência do aeroporto na matriz de nacionalidades.
