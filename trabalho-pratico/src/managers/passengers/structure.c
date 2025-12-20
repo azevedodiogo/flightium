@@ -55,3 +55,11 @@ void destroy_storage_passengers (StoragePassengers storage_passengers) {
     destroy_storage_generic (storage_passengers -> data);
 
     // Elimina a estrutura
+    g_free (storage_passengers);
+}
+
+// Devolve um passageiro a partir do seu número de documento
+const struct entity_passenger *get_passenger_by_id (StoragePassengers storage_passengers, int document_number) {
+
+    // Determina o índice da ocorrência do registo
+    int index = get_index (storage_passengers -> data, GINT_TO_POINTER (document_number));
