@@ -45,3 +45,11 @@ int get_query_error_command (QueryError query_error);
  * @brief Obtém o número da linha do ficheiro de resultados.
  * @param query_error Entidade alvo.
  * @return Número da linha.
+ */
+int get_query_error_line (QueryError query_error);
+
+/**
+ * @brief Obtém a linha esperada registada para o erro.
+ * @param query_error Entidade alvo.
+ * @return String com a linha esperada.
+ */
