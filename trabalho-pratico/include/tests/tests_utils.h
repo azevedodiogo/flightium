@@ -62,3 +62,11 @@ void print_test_summary (struct timespec start_time, struct timespec end_time, s
 void update_query_timing (StorageQueryResults stats, int index, struct timespec start, struct timespec end, double *total_query_time, int *total_queries);
 
 /**
+ * @brief Imprime o cabeçalho inicial dos testes das queries.
+ */
+void print_start_text_queries ();
+
+/**
+ * @brief Imprime o texto final dos testes das queries.
+ * @param stats Estrutura de resultados das queries.
+ * @param errors Estrutura com erros encontrados.
