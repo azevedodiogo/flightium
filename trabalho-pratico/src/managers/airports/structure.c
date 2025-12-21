@@ -38,3 +38,11 @@ StorageAirports create_storage_airports (int inicial_capacity) {
 }
 
 // Elimina a estrutura de armazenamento dos aeroportos
+void destroy_storage_airports (StorageAirports storage_airports) {
+
+    // Elimina a linha das matriz dos voos
+    for (int i = 0; i < storage_airports -> len_flights; i++) g_free (storage_airports -> matrix_flights [i]);
+
+    // Elimina as sub-estruturas de armazenamento
+    destroy_storage_generic (storage_airports -> data);
+    destroy_storage_generic (storage_airports -> matrix_nationalities);
