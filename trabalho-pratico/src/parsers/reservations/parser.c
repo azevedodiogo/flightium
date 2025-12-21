@@ -46,3 +46,10 @@ static void update_database_reservation (Database database, const struct entity_
 
     // Atualiza os aeroportos e as nacionalidades
     if (get_flight_status (flight_outbound) != 'C') {
+        update_airports (airports, get_flight_origin (flight_outbound), get_flight_destination (flight_outbound));
+        register_airport_matrix_nationalities (airports, get_flight_destination (flight_outbound), nationality);
+    } if (flight_return && get_flight_status (flight_return) != 'C') {
+        update_airports (airports, get_flight_origin (flight_return), get_flight_destination (flight_return));
+        register_airport_matrix_nationalities (airports, get_flight_destination (flight_return), nationality);
+    }
+}
