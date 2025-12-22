@@ -70,3 +70,11 @@ void print_start_text_queries ();
  * @brief Imprime o texto final dos testes das queries.
  * @param stats Estrutura de resultados das queries.
  * @param errors Estrutura com erros encontrados.
+ * @param total_queries Número total de queries processadas.
+ * @param total_query_time Tempo total de execução das queries.
+ */
+void print_end_test_queries (StorageQueryResults stats, StorageQueryErrors errors, int total_queries, double total_query_time);
+
+/**
+ * @brief Imprime estatísticas agregadas das queries executadas.
+ * @param stats Estrutura de resultados.
