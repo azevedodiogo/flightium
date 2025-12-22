@@ -69,3 +69,10 @@ date validate_date (const char *string, int datetime) {
     // Verifica se a data é válida
     if (year > 2025 || (year == 2025 && month > 9) || (year == 2025 && month == 9 && day > 30)) return INVALID_DATE;
     if (month == 0 || month > 12 || day == 0 || day > 31) return INVALID_DATE;
+
+    // Retorna a data
+    return datetime ? convert_datetime (year, month, day, atoi (string + 11), atoi (string + 14)) : convert_date (year, month, day);
+}
+
+// Verifica se um input só contém digitos
+int validate_digits (const char *string) {
