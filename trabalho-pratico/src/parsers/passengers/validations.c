@@ -26,3 +26,10 @@ int validate_email (const char *string) {
     for (i++; string [i] && string [i] != '.'; i++) if (!islower (string [i])) return EXIT_FAILURE;
 
     // Verifica se a string terminou
+    if (string [i++] == 0) return EXIT_FAILURE;
+
+    // Verifica se o domínio é válido (depois do ponto)
+    if (!islower (string [i]) || !islower (string [i + 1])) return EXIT_FAILURE;
+
+    // Verifica se a string terminou
+    if (string [i + 2] == 0) return EXIT_SUCCESS;
