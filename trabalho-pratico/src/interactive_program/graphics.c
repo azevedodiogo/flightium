@@ -63,3 +63,10 @@ void draw_plane_with_clouds () {
 
     // Auxiliares para as nuvens
     int cloud_y = plane_y - 5, cloud_x = plane_x + 10;
+
+    // Desenha as nuvens
+    for (int i = 0; clouds_art[i]; i++) mvprintw(cloud_y + i, cloud_x, "%s", clouds_art[i]);
+
+    // Desenha o avião
+    for (int i = 0; plane_art[i]; i++) mvprintw(plane_y + i, plane_x, "%s", plane_art[i]);
+}
