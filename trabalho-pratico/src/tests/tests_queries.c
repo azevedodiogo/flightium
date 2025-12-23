@@ -22,3 +22,11 @@ int test_execute_queries (Database database, const char *directory, Tests tests)
     // Abre o ficheiro
     if (open_input_file (&read_file, directory)) {
         destroy_database (database); destroy_tests (tests);
+        return EXIT_FAILURE;
+    }
+
+    // Inicializa variáveis auxiliares
+    double total_query_time = 0.0f; int total_queries = 0;
+
+    // Indica o início da execução
+    print_start_text_queries ();
