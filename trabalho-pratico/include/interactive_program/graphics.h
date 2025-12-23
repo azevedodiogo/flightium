@@ -46,3 +46,12 @@ void modal_start (char text[], const char button[], int width, int screen_y_max,
  * @warning Não valida o conteúdo; o chamador deve garantir que o buffer é suficiente e que o contexto ncurses está inicializado.
  */
 int text_input_box (int pos_y, int pos_x, int width, int input_size, char* text, char* input, int can_exit);
+
+/**
+ * @brief Mostra uma janela com capacidade de scroll contendo a saída de uma query.
+ * @param pos_y Coordenada Y do canto superior da janela.
+ * @param pos_x Coordenada X do canto superior da janela.
+ * @param width Largura da janela, em colunas.
+ * @param height Altura da janela, em linhas.
+ * @param title Título apresentado na moldura.
+ * @param output Texto a apresentar, com linhas separadas por '\n'.
