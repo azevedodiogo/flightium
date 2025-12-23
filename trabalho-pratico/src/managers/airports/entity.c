@@ -82,3 +82,11 @@ const char *get_airport_country (const struct entity_airport *airport) {
 }
 
 // Incrementa o número de chegadas de um aeroporto
+void inc_airport_arrival_count (EntityAirport airport) {
+	airport -> arrival_count++;
+}
+
+// Incrementa o número de partidas de um aeroporto
+void inc_airport_departure_count (EntityAirport airport) {
+	airport -> departure_count++;
+}
