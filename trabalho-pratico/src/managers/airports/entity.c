@@ -74,3 +74,11 @@ unsigned short get_airport_arrival_count (const struct entity_airport *airport) 
 // Devolve o número de partidas de um aeroporto
 unsigned short get_airport_departure_count (const struct entity_airport *airport) {
 	return airport -> departure_count;
+}
+
+// Devolve o país de um aeroporto
+const char *get_airport_country (const struct entity_airport *airport) {
+	return airport -> country;
+}
+
+// Incrementa o número de chegadas de um aeroporto
