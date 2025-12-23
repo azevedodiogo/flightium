@@ -70,3 +70,10 @@ static int get_argument (int n_args, ArgControler ac [], int max_x, int max_y) {
         // Valida o argumento inserido pelo utilizador
         if (ac [i].validate_func && ac [i].validate_func (ac [i].arg) == EXIT_FAILURE) {
             modal_start (ac [i].text2, "Retry", 40, max_y, max_x);
+            memset (ac [i].arg, 0, ac [i].buffer * sizeof (char));
+        } else i++;
+    } return EXIT_SUCCESS;
+}
+
+// Obtém os argumentos para a query 1
+int get_query1_arguments (int max_y, int max_x, char *input) {
