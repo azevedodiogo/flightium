@@ -51,3 +51,11 @@ int determine_dataset (const char *directory, int *dataset) {
 
     // Número de linhas do ficheiro
     int lines; char aux [BUFFER];
+
+    // Calcula o número de linhas do ficheiro
+    for (lines = 0; fgets (aux, BUFFER * sizeof (char), file); lines++);
+
+    // Fecha o ficheiro
+    fclose (file);
+
+    // Define o tipo de dataset
