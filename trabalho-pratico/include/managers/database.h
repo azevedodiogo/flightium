@@ -71,3 +71,11 @@ StorageAirports get_database_airports (Database database);
  * @return Ponteiro para a estrutura interna de voos.
  * @warning O ponteiro refere-se a dados internos da base de dados e deixa de ser válido após `destroy_database()`.
  */
+StorageFlights get_database_flights (Database database);
+
+/**
+ * @brief Obtém a estrutura de armazenamento dos passageiros.
+ * @param database Base de dados em utilização.
+ * @return Ponteiro para a estrutura interna de passageiros.
+ * @warning O ponteiro refere-se a dados internos da base de dados e deixa de ser válido após `destroy_database()`.
+ */
