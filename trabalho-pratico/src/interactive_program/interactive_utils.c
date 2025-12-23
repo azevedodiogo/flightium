@@ -79,3 +79,11 @@ int menu_select_queries(int max_y, int max_x) {
 
     // Array com os números das queries
     char *queries[] = { "1", "2", "3", "4", "5", "6" };
+
+    // Determina a escolha do utilizador
+    int choice = menu_display (win, "Which query do you want to execute?", queries, NUM_QUERIES, 3);
+
+    // Elimina a janela após a seleção
+    delwin(win);
+
+    // Retorna a opção selecionada
