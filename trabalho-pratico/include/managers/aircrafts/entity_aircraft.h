@@ -60,3 +60,11 @@ unsigned short get_aircraft_flight_count (const struct entity_aircraft *aircraft
 void inc_aircraft_flight_count (EntityAircraft aircraft);
 
 /**
+ * @brief Compara duas aeronaves com base no seu número de voos (ou lexicograficamente pelo identificador em caso de empate).
+ * @param aircraft1_pointer Ponteiro para a primeira aeronave.
+ * @param aircraft2_pointer Ponteiro para a segunda aeronave.
+ * @return Valor negativo, zero ou positivo conforme a ordem pretendida.
+ */
+int compare_aircrafts (gconstpointer aircraft1_pointer, gconstpointer aircraft2_pointer);
+
+#endif
