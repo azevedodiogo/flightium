@@ -30,3 +30,10 @@ typedef short week_index;
 
 /**
  * @brief Retorna o mês de um `date`.
+ */
+#define GET_MONTH(d) (((d) >> 16) & 0xF)
+
+/**
+ * @brief Retorna o ano de um `date`.
+ */
+#define GET_YEAR(d) (((d) >> 20) & 0x7FF)
