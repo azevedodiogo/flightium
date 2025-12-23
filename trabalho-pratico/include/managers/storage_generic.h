@@ -64,3 +64,10 @@ gpointer get_generic_by_id (StorageGeneric storage_generic, gconstpointer key);
 gpointer get_generic_by_index (StorageGeneric storage_generic, int index);
 
 /**
+ * @brief Regista um novo elemento na estrutura genérica.
+ * @param storage_generic Estrutura alvo.
+ * @param key Chave identificadora do registo.
+ * @param value Valor associado à chave.
+ * @warning Chaves duplicadas não são validadas. Inserir a mesma chave sucessivas vezes substitui a referência anterior no índice.
+ */
+void register_generic (StorageGeneric storage_generic, gpointer key, gpointer value);
