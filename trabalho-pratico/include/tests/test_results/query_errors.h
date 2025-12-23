@@ -53,3 +53,10 @@ int get_query_error_line (QueryError query_error);
  * @param query_error Entidade alvo.
  * @return String com a linha esperada.
  */
+char *get_query_error_expected (QueryError query_error);
+
+/**
+ * @brief Obtém a linha obtida registada para o erro.
+ * @param query_error Entidade alvo.
+ * @return String com a linha obtida.
+ */
