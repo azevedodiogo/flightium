@@ -55,3 +55,11 @@ int text_input_box (int pos_y, int pos_x, int width, int input_size, char* text,
  * @param height Altura da janela, em linhas.
  * @param title Título apresentado na moldura.
  * @param output Texto a apresentar, com linhas separadas por '\n'.
+ * @warning A função suporta até 4096 linhas ao dividir o texto. É necessário garantir que o 'output' é uma sequência terminada por '\0'.
+ */
+void text_output_box (int pos_y, int pos_x, int width, int height, const char *title, const char *output);
+
+/**
+ * @brief Exibe um menu navegável com várias opções.
+ * @param win Janela ncurses previamente criada onde o menu é desenhado.
+ * @param instruction Texto de instrução apresentado na moldura.
