@@ -53,3 +53,11 @@ void register_airport_matrix_flights (StorageAirports storage_airports, int line
 
 /**
  * @brief Regista uma ocorrência do aeroporto na matriz de nacionalidades.
+ * @param storage_airports Estrutura de armazenamento.
+ * @param code Código do aeroporto.
+ * @param nationality Nacionalidade do passageiro associada ao registo.
+ */
+void register_airport_matrix_nationalities (StorageAirports storage_airports, const char *code, const char *nationality);
+
+/**
+ * @brief Atualiza contadores de chegadas e partidas entre dois aeroportos.
