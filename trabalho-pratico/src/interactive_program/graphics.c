@@ -70,3 +70,12 @@ void draw_plane_with_clouds () {
     // Desenha o avião
     for (int i = 0; plane_art[i]; i++) mvprintw(plane_y + i, plane_x, "%s", plane_art[i]);
 }
+
+// Desenha o relógio
+void draw_clock () {
+
+    // Espera 200 ms antes de desenhar
+    usleep (200 * 1000);
+
+    // Auxiliares para o relógio
+    int clock_y = 15, clock_x = 80;
