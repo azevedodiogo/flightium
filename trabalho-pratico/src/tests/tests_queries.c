@@ -30,3 +30,11 @@ int test_execute_queries (Database database, const char *directory, Tests tests)
 
     // Indica o início da execução
     print_start_text_queries ();
+
+    // Declara o input da leitura
+    char input [BUFFER], write_file_name [BUFFER] = "resultados/command";
+
+    // Lê o ficheiro linha a linha
+    for (int i = 1; fgets (input, BUFFER * sizeof (char), read_file); i++) {
+
+        // Remove o '\n' no final do input
