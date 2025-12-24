@@ -46,3 +46,11 @@ void destroy_storage_airports (StorageAirports storage_airports) {
     // Elimina as sub-estruturas de armazenamento
     destroy_storage_generic (storage_airports -> data);
     destroy_storage_generic (storage_airports -> matrix_nationalities);
+    g_free (storage_airports -> matrix_flights);
+
+    // Elimina a estrutura de armazenamento
+    g_free (storage_airports);
+}
+
+// Devolve um aeroporto a partir do seu código
+const struct entity_airport *get_airport_by_id (StorageAirports storage_airports, const char *code) {
