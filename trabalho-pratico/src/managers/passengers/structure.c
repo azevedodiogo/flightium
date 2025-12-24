@@ -63,3 +63,12 @@ const struct entity_passenger *get_passenger_by_id (StoragePassengers storage_pa
 
     // Determina o índice da ocorrência do registo
     int index = get_index (storage_passengers -> data, GINT_TO_POINTER (document_number));
+
+    // Retorna o registo
+    return index == INVALID_INDEX ? NULL : get_generic_by_index (storage_passengers -> data, index);
+}
+
+// Adiciona um novo registo de um passageiro
+void register_passenger (StoragePassengers storage_passengers, int document_number, const char *first_name, const char *last_name, const char *nationality, date dob) {
+    register_generic (storage_passengers -> data, GINT_TO_POINTER (document_number), create_passenger (first_name, last_name, nationality, document_number, dob));
+}
