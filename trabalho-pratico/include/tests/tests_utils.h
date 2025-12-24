@@ -78,3 +78,11 @@ void print_end_test_queries (StorageQueryResults stats, StorageQueryErrors error
 /**
  * @brief Imprime estatísticas agregadas das queries executadas.
  * @param stats Estrutura de resultados.
+ * @param total_queries Número total de queries.
+ * @param total_query_time Tempo total despendido.
+ */
+void print_query_stats (StorageQueryResults stats, int total_queries, double total_query_time);
+
+/**
+ * @brief Imprime os erros registados durante a execução das queries.
+ * @param errors Estrutura de erros.
