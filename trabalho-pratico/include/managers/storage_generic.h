@@ -71,3 +71,13 @@ gpointer get_generic_by_index (StorageGeneric storage_generic, int index);
  * @warning Chaves duplicadas não são validadas. Inserir a mesma chave sucessivas vezes substitui a referência anterior no índice.
  */
 void register_generic (StorageGeneric storage_generic, gpointer key, gpointer value);
+
+/**
+ * @brief Ordena a estrutura de armazenamento genérica conforme a função de comparação.
+ * @param storage_generic Estrutura alvo.
+ * @param compare_func Função usada para comparar os elementos.
+ * @warning A ordenação pode invalidar os resultados de `get_index()` e `get_generic_by_id()` após a sua execução.
+ */
+void sort_generic_structure (StorageGeneric storage_generic, GCompareFunc compare_func);
+
+#endif
