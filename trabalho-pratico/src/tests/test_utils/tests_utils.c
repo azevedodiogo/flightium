@@ -23,3 +23,11 @@ void print_start_text_parsers () {
 void print_end_text_parsers (double total_load_time) {
 
     // Imprime o tempo total
+    fprintf (stderr, "Total loading time: %.3f s\n", total_load_time);
+
+    // Imprime o texto de fim
+    printf ("\n=== DATASET LOADING COMPLETED ===\n\n");
+}
+
+// Atualiza o temporizador
+double update_load_timer (LoadTimer load_timer, int index, double elapsed) {
