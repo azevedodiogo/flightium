@@ -86,3 +86,11 @@ void print_query_stats (StorageQueryResults stats, int total_queries, double tot
 /**
  * @brief Imprime os erros registados durante a execução das queries.
  * @param errors Estrutura de erros.
+ */
+void print_query_errors (StorageQueryErrors errors);
+
+/**
+ * @brief Compara o resultado gerado com o ficheiro esperado.
+ * @param write_file_name Caminho do ficheiro gerado.
+ * @param query_num Número da query executada.
+ * @param command_num Número sequencial do comando.
