@@ -87,3 +87,12 @@ StoragePassengers get_database_passengers (Database database);
  * @return Ponteiro para a estrutura interna de reservas.
  * @warning Ponteiro não é de posse do chamador; fica inválido após `destroy_database()`.
  */
+StorageReservations get_database_reservations (Database database);
+
+/**
+ * @brief Realiza operações de preparação para otimizar a execução das queries.
+ * @param database Base de dados já carregada.
+ */
+void prepare_database (Database database);
+
+#endif
