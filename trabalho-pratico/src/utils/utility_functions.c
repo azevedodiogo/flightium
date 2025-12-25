@@ -59,3 +59,10 @@ int determine_dataset (const char *directory, int *dataset) {
     fclose (file);
 
     // Define o tipo de dataset
+    *dataset = lines > 2000;
+
+    // Retorna o número de linhas do ficheiro
+    return EXIT_SUCCESS;
+}
+
+// Ajusta índices limitantes
