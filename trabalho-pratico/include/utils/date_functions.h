@@ -37,3 +37,13 @@ typedef short week_index;
  * @brief Retorna o ano de um `date`.
  */
 #define GET_YEAR(d) (((d) >> 20) & 0x7FF)
+
+
+
+/**
+ * @brief Converte uma data em `date`, excluindo hora e minuto.
+ * @param year Ano.
+ * @param month Mês.
+ * @param day Dia.
+ * @return Valor compactado com horas e minutos definidos a zero.
+ * @warning Os limites dos parâmetros não são validados. o chamador deve garantir a coerência dos valores.
