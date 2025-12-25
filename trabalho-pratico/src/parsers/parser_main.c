@@ -70,3 +70,11 @@ int load_datasets (Database database, const char *directory) {
         generic_load_dataset (read_files [i], write_files [i], input, database, load_line [i]);
 
         // Fecha os ficheiros
+        fclose (read_files [i]); fclose (write_files [i]);
+    }
+
+    // Indica que a função correu corretamente
+    return EXIT_SUCCESS;
+}
+
+// Carrega um dataset genérico
