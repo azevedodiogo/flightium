@@ -62,3 +62,12 @@ void prepare_aircrafts (StorageAircrafts storage_aircrafts);
 
 /**
  * @brief Determina as N aeronaves com mais voos para um fabricante.
+ * @param storage_aircrafts Estrutura de armazenamento.
+ * @param wanted_manufacturer Fabricante alvo.
+ * @param N Número máximo de aeronaves pretendidas.
+ * @param found Array de saída onde são colocados os registos encontrados.
+ * @return Número de aeronaves guardadas no array `found`.
+ */
+int determine_most_flown_aircrafts_by_manufacturer (StorageAircrafts storage_aircrafts, const char *wanted_manufacturer, int N, const struct entity_aircraft *found []);
+
+#endif
