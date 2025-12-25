@@ -78,3 +78,11 @@ int load_datasets (Database database, const char *directory) {
 }
 
 // Carrega um dataset genérico
+void generic_load_dataset (FILE *read_file, FILE *write_file, char *input, Database database, int (*load_line) (char *, Database)) {
+
+    // Lê a primeira linha
+    if (fgets (input, BUFFER * sizeof (char), read_file)) fprintf (write_file, "%s", input);
+
+    // Lê o ficheiro linha a linha
+    while (fgets (input, BUFFER * sizeof (char), read_file)) {
+        
