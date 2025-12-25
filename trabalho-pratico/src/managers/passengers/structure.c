@@ -72,3 +72,11 @@ const struct entity_passenger *get_passenger_by_id (StoragePassengers storage_pa
 void register_passenger (StoragePassengers storage_passengers, int document_number, const char *first_name, const char *last_name, const char *nationality, date dob) {
     register_generic (storage_passengers -> data, GINT_TO_POINTER (document_number), create_passenger (first_name, last_name, nationality, document_number, dob));
 }
+
+// Adiciona um novo registo de um gasto
+void register_spending (StoragePassengers storage_passengers, int line, int document_number, int price) {
+
+    // Cria o gasto
+    Spending spending = (Spending) {get_index (storage_passengers -> data, GINT_TO_POINTER (document_number)), price};
+
+    // Verifica se a data é inferior a 01-01-2025
