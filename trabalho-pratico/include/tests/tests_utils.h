@@ -94,3 +94,11 @@ void print_query_errors (StorageQueryErrors errors);
  * @param write_file_name Caminho do ficheiro gerado.
  * @param query_num Número da query executada.
  * @param command_num Número sequencial do comando.
+ * @param expected_results_file Caminho do ficheiro de resultados esperados.
+ * @param stats Estrutura de resultados.
+ * @param errors Estrutura de erros.
+ * @return 0 se não ocorrerem erros, 1 se ocorrerem erros.
+ */
+int check_query_result (const char* write_file_name, int query_num, int command_num, const char* expected_results_file, StorageQueryResults stats, StorageQueryErrors errors);
+
+#endif
