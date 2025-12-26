@@ -86,3 +86,11 @@ void generic_load_dataset (FILE *read_file, FILE *write_file, char *input, Datab
     // Lê o ficheiro linha a linha
     while (fgets (input, BUFFER * sizeof (char), read_file)) {
         
+        // Copia a linha original
+        char original_line [BUFFER];
+        strcpy (original_line, input);
+
+        // Carrega a linha
+        if (load_line (input, database)) fprintf (write_file, "%s", original_line);
+    }
+}
