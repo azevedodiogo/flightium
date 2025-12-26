@@ -29,3 +29,12 @@ void destroy_query_result (QueryResult query_result);
  * @return Número de queries corretas.
  */
 int get_query_result_correct (QueryResult query_result);
+
+/**
+ * @brief Obtém o número de queries executadas registado.
+ * @param query_result Entidade alvo.
+ * @return Número de queries executadas.
+ */
+int get_query_result_executed (QueryResult query_result);
+
+/**
