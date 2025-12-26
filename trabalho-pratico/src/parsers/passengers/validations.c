@@ -33,3 +33,10 @@ int validate_email (const char *string) {
 
     // Verifica se a string terminou
     if (string [i + 2] == 0) return EXIT_SUCCESS;
+
+    // Verifica se o último caractere é válido
+    if (!islower (string [i + 2])) return EXIT_FAILURE;
+
+    // Verifica se a string terminou
+    return string [i + 3] == 0 ? EXIT_SUCCESS : EXIT_FAILURE;
+}
