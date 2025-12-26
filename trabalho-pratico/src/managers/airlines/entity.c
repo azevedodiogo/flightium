@@ -68,3 +68,11 @@ int compare_airlines (gconstpointer airline1_pointer, gconstpointer airline2_poi
     // Calcula o tempo de atraso médio das companhias aéreas
     long long avg1 = round (1000.0L * (long double) airline1 -> total_delay / airline1 -> delay_count);
     long long avg2 = round (1000.0L * (long double) airline2 -> total_delay / airline2 -> delay_count);
+
+    // Compara os atrasos médios
+    if (avg1 > avg2) return -1;
+    if (avg1 < avg2) return 1;
+
+    // Compara os nomes
+    return strcmp (airline1 -> name, airline2 -> name);
+}
