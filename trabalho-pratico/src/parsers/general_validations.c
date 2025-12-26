@@ -76,3 +76,12 @@ date validate_date (const char *string, int datetime) {
 
 // Verifica se um input só contém digitos
 int validate_digits (const char *string) {
+
+    // Verifica se o formato é válido
+    for (int i = 0; string [i]; i++) if (!isdigit (string [i])) return EXIT_FAILURE;
+    
+    // O input é válido
+    return EXIT_SUCCESS;
+}
+
+// Verifica se a nacionalidade é válida
