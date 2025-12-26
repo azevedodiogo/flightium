@@ -31,3 +31,11 @@ void print_end_text_parsers (double total_load_time) {
 
 // Atualiza o temporizador
 double update_load_timer (LoadTimer load_timer, int index, double elapsed) {
+
+    // Define o tempo de processamento do dataset
+    set_dataset_time (load_timer, index, elapsed);
+
+    // Imprime o tempo do processamento do dataset
+    fprintf (stderr, "Dataset %s: %.3f s\n", dataset_names [index], get_dataset_time (load_timer, index));
+
+    // Retorna o tempo de processamento do dataset
