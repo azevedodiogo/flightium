@@ -38,3 +38,12 @@ int test_execute_queries (Database database, const char *directory, Tests tests)
     for (int i = 1; fgets (input, BUFFER * sizeof (char), read_file); i++) {
 
         // Remove o '\n' no final do input
+        input [strcspn (input, "\n")] = 0;
+
+        // Define o nome do ficheiro
+        sprintf (write_file_name + 18, "%d_output.txt", i);
+
+        // Abre o ficheiro de escrita
+        FILE *write_file = fopen (write_file_name, "w");
+
+        // Resultado da query
