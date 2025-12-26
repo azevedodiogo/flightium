@@ -36,3 +36,10 @@ int days_since_origin (date date) {
     int days = 0;
 
     // Soma dias dos anos anteriores
+    for (int y = 1; y < year; y++) days += is_leap_year (y) ? 366 : 365;
+
+    // Soma dias dos meses anteriores no mesmo ano
+    for (int m = 1; m < month; m++) days += n_days_in_month (year, m);
+
+    // Soma dias do mês atual
+    days += (day - 1);
