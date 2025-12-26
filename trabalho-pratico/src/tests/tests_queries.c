@@ -47,3 +47,11 @@ int test_execute_queries (Database database, const char *directory, Tests tests)
         FILE *write_file = fopen (write_file_name, "w");
 
         // Resultado da query
+        char output [LARGE_BUFFER] = "\n", delimiter = input [1] == 'S' ? '=' : ';', skips = 2 + (input [1] == 'S');
+
+        // Inicializa a contabilização para a query
+        struct timespec start, end; clock_gettime (CLOCK_REALTIME, &start);
+
+        // Realiza a query
+        switch (input [0]) {
+            case '1': execute_query1 (database, input + skips, output, delimiter); break;
