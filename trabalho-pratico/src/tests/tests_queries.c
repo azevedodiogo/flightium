@@ -55,3 +55,11 @@ int test_execute_queries (Database database, const char *directory, Tests tests)
         // Realiza a query
         switch (input [0]) {
             case '1': execute_query1 (database, input + skips, output, delimiter); break;
+            case '2': execute_query2 (database, input + skips, output, delimiter); break;
+            case '3': execute_query3 (database, input + skips, output, delimiter); break;
+            case '4': execute_query4 (database, input + skips, output, delimiter); break;
+            case '5': execute_query5 (database, input + skips, output, delimiter); break;
+            case '6': execute_query6 (database, input + skips, output, delimiter); break;
+        }
+
+        // Atualiza o tempo de execução da query
