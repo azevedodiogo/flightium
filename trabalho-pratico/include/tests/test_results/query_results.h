@@ -38,3 +38,11 @@ int get_query_result_correct (QueryResult query_result);
 int get_query_result_executed (QueryResult query_result);
 
 /**
+ * @brief Obtém o tempo total de execução registado.
+ * @param query_result Entidade alvo.
+ * @return Tempo total em segundos.
+ */
+double get_query_result_total_time (QueryResult query_result);
+
+/**
+ * @brief Define o número de queries corretas.
