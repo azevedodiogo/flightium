@@ -77,3 +77,12 @@ static int get_argument (int n_args, ArgControler ac [], int max_x, int max_y) {
 
 // Obtém os argumentos para a query 1
 int get_query1_arguments (int max_y, int max_x, char *input) {
+
+    // Buffer para armazenar o código do aeroporto 
+    char code[10] = {0}; 
+
+    // Recebe o argumento
+    ArgControler ac = (ArgControler) {code, 10, "airport_code", validate_code, "", ""};
+    if (get_argument (1, &ac, max_x, max_y)) return EXIT_FAILURE;
+
+    // Copia o código validado para o input
