@@ -79,3 +79,11 @@ void draw_clock () {
 
     // Auxiliares para o relógio
     int clock_y = 15, clock_x = 80;
+
+    // Desenha o relógio
+    for (int i = 0; clock_art[i]; i++) mvprintw(clock_y + i, clock_x, "%s", clock_art[i]);
+    
+    refresh ();
+}
+
+// Conta o número de quebras de linha numa string
