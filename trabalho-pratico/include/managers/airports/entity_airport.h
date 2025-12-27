@@ -78,3 +78,12 @@ const char *get_airport_country (const struct entity_airport *airport);
  * @brief Incrementa o número de chegadas do aeroporto.
  * @param airport Registo a atualizar.
  */
+void inc_airport_arrival_count (EntityAirport airport);
+
+/**
+ * @brief Incrementa o número de partidas do aeroporto.
+ * @param airport Registo a atualizar.
+ */
+void inc_airport_departure_count (EntityAirport airport);
+
+#endif
