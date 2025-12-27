@@ -39,3 +39,12 @@ double update_load_timer (LoadTimer load_timer, int index, double elapsed) {
     fprintf (stderr, "Dataset %s: %.3f s\n", dataset_names [index], get_dataset_time (load_timer, index));
 
     // Retorna o tempo de processamento do dataset
+    return elapsed;
+}
+
+// Imprime o tempo de execução da preparação da base de dados
+void print_prepare_time (struct timespec start_time, struct timespec end_time) {
+    printf ("Preparing database time: %.3f ms\n", 1000.0f * (double) ((end_time.tv_sec - start_time.tv_sec) + (end_time.tv_nsec - start_time.tv_nsec) / 1e9));
+}
+
+// Imprime o resumo dos testes
