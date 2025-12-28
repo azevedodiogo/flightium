@@ -60,3 +60,11 @@ char *get_query_error_expected (QueryError query_error);
  * @param query_error Entidade alvo.
  * @return String com a linha obtida.
  */
+char *get_query_error_actual (QueryError query_error);
+
+/**
+ * @brief Define o número da linha associada ao erro.
+ * @param query_error Entidade alvo.
+ * @param line Número da linha.
+ */
+void set_query_error_line (QueryError query_error, int line);
