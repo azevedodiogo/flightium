@@ -63,3 +63,12 @@ void text_output_box (int pos_y, int pos_x, int width, int height, const char *t
  * @brief Exibe um menu navegável com várias opções.
  * @param win Janela ncurses previamente criada onde o menu é desenhado.
  * @param instruction Texto de instrução apresentado na moldura.
+ * @param texts Lista de opções a mostrar.
+ * @param num_options Número de opções disponíveis.
+ * @param cols Número de colunas a usar na grelha.
+ * @return Índice da opção escolhida ou -1 se o utilizador premir ESC.
+ * @warning Requer que os pares de cores 1 e 2 estejam configurados para o destaque das opções.
+ */
+int menu_display (WINDOW *win, const char *instruction, char *texts[], int num_options, int cols);
+
+#endif
