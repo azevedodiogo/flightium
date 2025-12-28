@@ -43,3 +43,12 @@ int days_since_origin (date date) {
 
     // Soma dias do mês atual
     days += (day - 1);
+
+    // Retorna o número de dias
+    return days;
+}
+
+// Calcula a diferença, em minutos, entre duas datas
+int date_diff (date date1, date date2) {
+
+    // Obtém as componentes das datas
