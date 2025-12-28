@@ -52,3 +52,9 @@ int days_since_origin (date date) {
 int date_diff (date date1, date date2) {
 
     // Obtém as componentes das datas
+    int hour1 = GET_HOUR (date1), minute1 = GET_MINUTE (date1);
+    int hour2 = GET_HOUR (date2), minute2 = GET_MINUTE (date2);
+
+    // Retorna a diferença
+    return days_since_jan_first (date2) * NUMBER_MINUTES_IN_ONE_DAY + hour2 * 60 + minute2 - (days_since_jan_first (date1) * NUMBER_MINUTES_IN_ONE_DAY + hour1 * 60 + minute1);
+}
