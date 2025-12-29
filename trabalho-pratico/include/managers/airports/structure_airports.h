@@ -61,3 +61,11 @@ void register_airport_matrix_nationalities (StorageAirports storage_airports, co
 
 /**
  * @brief Atualiza contadores de chegadas e partidas entre dois aeroportos.
+ * @param airports Estrutura de armazenamento.
+ * @param origin Código do aeroporto de origem.
+ * @param destination Código do aeroporto de destino.
+ */
+void update_airports (StorageAirports airports, const char *origin, const char *destination);
+
+/**
+ * @brief Prepara a estrutura de aeroportos para execução eficiente de queries.
