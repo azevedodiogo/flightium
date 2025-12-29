@@ -56,3 +56,11 @@ void print_test_summary (struct timespec start_time, struct timespec end_time, s
 
 // Atualiza estatísticas da query
 void update_query_timing (StorageQueryResults stats, int index, struct timespec start, struct timespec end, double *total_query_time, int *total_queries) {
+    
+    // Calcula tempo decorrido em segundos
+    double elapsed = (end.tv_sec - start.tv_sec) + (end.tv_nsec - start.tv_nsec) / 1e9;
+    
+    // Atualiza as estatísticas
+    update_query_result (get_query_result_by_index (stats, index), elapsed);
+
+    // Atualiza o total
