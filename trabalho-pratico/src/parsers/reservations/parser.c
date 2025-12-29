@@ -62,3 +62,10 @@ int load_line_reservations (char *input, Database database) {
     if (reservation_id == NO_VALUE) return EXIT_FAILURE;
 
     // Carrega o id de voos de voo
+    const struct entity_flight *flight_outbound, *flight_return = NULL;
+    if (validate_reservation_flights (separate_block (&input, '"'), (gconstpointer *) &flight_outbound, (gconstpointer *) &flight_return, get_database_flights (database))) return EXIT_FAILURE;
+
+    // Carrega o número de documento
+    int document_number = atoi (separate_block (&input, '"'));
+    const struct entity_passenger *passenger = get_passenger_by_id (get_database_passengers (database), document_number);
+    if (passenger == NULL) return EXIT_FAILURE;
