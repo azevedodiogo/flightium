@@ -53,3 +53,12 @@ static void update_database_reservation (Database database, const struct entity_
         register_airport_matrix_nationalities (airports, get_flight_destination (flight_return), nationality);
     }
 }
+
+// Carrega uma linha do dataset das reservas
+int load_line_reservations (char *input, Database database) {
+
+    // Carrega o id da reserva
+    int reservation_id = (validate_reservation_id (separate_block (&input, '"')));
+    if (reservation_id == NO_VALUE) return EXIT_FAILURE;
+
+    // Carrega o id de voos de voo
