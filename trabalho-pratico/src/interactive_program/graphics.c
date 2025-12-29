@@ -87,3 +87,12 @@ void draw_clock () {
 }
 
 // Conta o número de quebras de linha numa string
+int get_newlines (char text[]) {
+    int newlines = 0;
+    for (int i = 0; text[i] != '\0'; i++) if (text[i] == '\n') newlines++;
+    return newlines;
+}
+
+// Imprime uma caixa com texto e um botão
+void modal_start (char text[], const char button[], int width, int screen_y_max, int screen_x_max) {
+    
