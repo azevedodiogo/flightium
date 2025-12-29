@@ -104,3 +104,10 @@ void modal_start (char text[], const char button[], int width, int screen_y_max,
 
     // Cria a janela centralizada
     WINDOW* window = newwin(necessary_lines, width, posY, posX);
+    box(window, 0, 0); refresh();
+    wrefresh(window); keypad(window, true);
+
+    // Centraliza o texto
+    int text_len = strlen(text);
+    int text_x = (width - text_len) / 2;
+    mvwprintw(window, necessary_lines / 2 - 1, text_x, "%s", text);
