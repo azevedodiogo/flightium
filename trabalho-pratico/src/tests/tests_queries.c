@@ -71,3 +71,10 @@ int test_execute_queries (Database database, const char *directory, Tests tests)
 
         // Fecha o ficheiro de escrita
         fclose (write_file);
+
+        // Verifica o resultado da query
+        if (check_query_result (write_file_name, input [0] - '0', i, get_tests_expected_results (tests), get_tests_query_results (tests), get_tests_query_errors (tests))) {
+            destroy_database (database); destroy_tests (tests);
+            return EXIT_FAILURE;
+        }
+    }
