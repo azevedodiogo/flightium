@@ -68,3 +68,11 @@ char *get_query_error_actual (QueryError query_error);
  * @param line Número da linha.
  */
 void set_query_error_line (QueryError query_error, int line);
+
+
+
+// {- Structure -}
+
+/**
+ * @brief Cria a estrutura de armazenamento de erros de query.
+ * @return Estrutura inicializada ou NULL em caso de falha.
