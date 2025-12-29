@@ -63,3 +63,11 @@ int test_execute_queries (Database database, const char *directory, Tests tests)
         }
 
         // Atualiza o tempo de execução da query
+        clock_gettime (CLOCK_REALTIME, &end);
+        update_query_timing (get_tests_query_results (tests), input [0] - '0' - 1, start, end, &total_query_time, &total_queries);
+
+        // Escreve o resultado da query
+        fprintf (write_file, "%s", output);
+
+        // Fecha o ficheiro de escrita
+        fclose (write_file);
