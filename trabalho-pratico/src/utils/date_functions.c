@@ -58,3 +58,12 @@ int date_diff (date date1, date date2) {
     // Retorna a diferença
     return days_since_jan_first (date2) * NUMBER_MINUTES_IN_ONE_DAY + hour2 * 60 + minute2 - (days_since_jan_first (date1) * NUMBER_MINUTES_IN_ONE_DAY + hour1 * 60 + minute1);
 }
+
+// Calcula o número de dias decorridos desde 1 de janeiro até uma data
+int days_since_jan_first (date date) {
+
+    // Determina as componentes da data
+    int year = GET_YEAR (date), month = GET_MONTH (date), day = GET_DAY (date);
+
+    // Verifica se o ano não é 2025
+    if (year != 2025) return days_since_origin (date) - NUMBER_DAYS_SINCE_ORIGIN_START_2025;
