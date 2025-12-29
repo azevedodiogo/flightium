@@ -54,3 +54,10 @@ void destroy_storage_airports (StorageAirports storage_airports) {
 
 // Devolve um aeroporto a partir do seu código
 const struct entity_airport *get_airport_by_id (StorageAirports storage_airports, const char *code) {
+    return get_generic_by_id (storage_airports -> data, code);
+}
+
+// Adiciona um novo registo de um aeroporto
+void register_airport (StorageAirports storage_airports, const char *code, const char *name, const char *city, const char *type, const char *country) {
+    register_generic (storage_airports -> data, g_strdup (code), create_airport (code, name, city, type, country));
+}
