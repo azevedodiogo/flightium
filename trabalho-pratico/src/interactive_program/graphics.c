@@ -96,3 +96,11 @@ int get_newlines (char text[]) {
 // Imprime uma caixa com texto e um botão
 void modal_start (char text[], const char button[], int width, int screen_y_max, int screen_x_max) {
     
+    int key = 0;
+    
+    // Definições da janela
+    int necessary_lines = get_newlines(text) + 1 + 4;  
+    int posY = (screen_y_max - necessary_lines) / 2, posX = (screen_x_max - width) / 2;
+
+    // Cria a janela centralizada
+    WINDOW* window = newwin(necessary_lines, width, posY, posX);
