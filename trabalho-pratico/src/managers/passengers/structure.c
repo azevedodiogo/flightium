@@ -88,3 +88,11 @@ void register_spending (StoragePassengers storage_passengers, int line, int docu
 
         // Aloca memória para o novo array
         WeeklySpendings *new_array = g_malloc0 (new_len * sizeof (WeeklySpendings));
+
+        // Cria os novos arrays
+        for (int i = 0; i < diff; i++) new_array [i].array = g_array_new (FALSE, FALSE, sizeof (Spending));
+
+        // Copia os elementos antigos
+        memcpy (new_array + diff, storage_passengers -> weekly_spendings, storage_passengers -> len * sizeof (WeeklySpendings));
+
+        // Define a nova matriz
