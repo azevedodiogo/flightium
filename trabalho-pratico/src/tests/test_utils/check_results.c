@@ -55,3 +55,12 @@ static int find_error_line (char *content_write_file, int len_write_file, char *
         }
 
         // Passa para a linha seguinte
+        if (content_write_file [i] == '\n') linha++;
+    }
+
+    // Verifica se os tamanhos são iguais
+    if (len_write_file != len_expected) {
+        extract_line_from_content (content_expected, linha, expected_line);
+        extract_line_from_content (content_write_file, linha, actual_line);
+        return linha;
+    }
