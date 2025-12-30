@@ -46,3 +46,12 @@ static int find_error_line (char *content_write_file, int len_write_file, char *
 
     // Percorre o ficheiro até ao limite
     for (int i = 0; i < limite; i++) {
+
+        // Encontrou um erro
+        if (content_write_file [i] != content_expected [i]) {
+            extract_line_from_content (content_expected, linha, expected_line);
+            extract_line_from_content (content_write_file, linha, actual_line);
+            return linha;
+        }
+
+        // Passa para a linha seguinte
