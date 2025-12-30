@@ -47,3 +47,11 @@ typedef short week_index;
  * @param day Dia.
  * @return Valor compactado com horas e minutos definidos a zero.
  * @warning Os limites dos parâmetros não são validados. o chamador deve garantir a coerência dos valores.
+ */
+date convert_date (int year, int month, int day);
+
+/**
+ * @brief Converte data e hora num valor `date`.
+ * @param year Ano.
+ * @param month Mês.
+ * @param day Dia.
