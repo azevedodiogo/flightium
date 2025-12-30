@@ -80,3 +80,11 @@ void register_spending (StoragePassengers storage_passengers, int line, int docu
     Spending spending = (Spending) {get_index (storage_passengers -> data, GINT_TO_POINTER (document_number)), price};
 
     // Verifica se a data é inferior a 01-01-2025
+    if (line < storage_passengers -> offset) {
+
+        // Calcula variáveis auxiliares
+        int diff = storage_passengers -> offset - line;
+        int new_len = storage_passengers -> len + diff;
+
+        // Aloca memória para o novo array
+        WeeklySpendings *new_array = g_malloc0 (new_len * sizeof (WeeklySpendings));
