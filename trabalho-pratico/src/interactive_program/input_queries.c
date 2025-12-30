@@ -86,3 +86,10 @@ int get_query1_arguments (int max_y, int max_x, char *input) {
     if (get_argument (1, &ac, max_x, max_y)) return EXIT_FAILURE;
 
     // Copia o código validado para o input
+    snprintf(input, 10, "%s", code);
+
+    return EXIT_SUCCESS;
+}
+
+// Obtém os argumentos para a query 2
+int get_query2_arguments (int max_y, int max_x, char *input) {
