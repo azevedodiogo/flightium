@@ -87,3 +87,11 @@ int menu_select_queries(int max_y, int max_x) {
     delwin(win);
 
     // Retorna a opção selecionada
+    return choice + 1; 
+}
+
+// Apresenta o menu dos delimiters e retorna a escolha do utilizador
+int menu_select_delimiters (int max_y, int max_x) {
+
+    // Definições da janela
+    int width = 50, height = 6, y = max_y / 2 - height/2, x = max_x / 2 - width/2;
