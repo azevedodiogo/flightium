@@ -69,3 +69,12 @@ int load_line_reservations (char *input, Database database) {
     int document_number = atoi (separate_block (&input, '"'));
     const struct entity_passenger *passenger = get_passenger_by_id (get_database_passengers (database), document_number);
     if (passenger == NULL) return EXIT_FAILURE;
+
+    // Carrega o preço
+    separate_block (&input, '"');
+    int price = round (atof (separate_block (&input, '"')) * 100.0f);
+
+    // Verifica se os aeroportos não correspodem
+    if (flight_return && strcmp (get_flight_destination (flight_outbound), get_flight_origin (flight_return))) return EXIT_FAILURE;
+
+    // Adiciona o registo do id da reserva
