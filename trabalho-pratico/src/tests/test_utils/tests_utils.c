@@ -64,3 +64,11 @@ void update_query_timing (StorageQueryResults stats, int index, struct timespec 
     update_query_result (get_query_result_by_index (stats, index), elapsed);
 
     // Atualiza o total
+    *total_query_time += elapsed;
+    (*total_queries)++;
+}
+
+// Imprime o texto de início dos testes das queries
+void print_start_text_queries () {
+    printf ("\n=== QUERY EXECUTION STARTED ===\n\n");
+}
