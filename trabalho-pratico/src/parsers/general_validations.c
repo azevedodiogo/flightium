@@ -85,3 +85,11 @@ int validate_digits (const char *string) {
 }
 
 // Verifica se a nacionalidade é válida
+int validate_nacionality (const char *string) {
+
+    // Verifica se o formato é válido
+    for (int i = 0; string [i]; i++) if (!isalpha ((unsigned char) string [i]) && string [i] != ' ' && string [i] != '-') return EXIT_FAILURE;
+
+    // O input é válido
+    return EXIT_SUCCESS;
+}
