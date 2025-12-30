@@ -69,3 +69,11 @@ void update_airports (StorageAirports airports, const char *origin, const char *
 
 /**
  * @brief Prepara a estrutura de aeroportos para execução eficiente de queries.
+ * @param storage_airports Estrutura a preparar.
+ */
+void prepare_airports (StorageAirports storage_airports);
+
+/**
+ * @brief Determina o aeroporto mais visitado num intervalo temporal.
+ * @param storage_airports Estrutura de armazenamento.
+ * @param min_date Data mínima.
