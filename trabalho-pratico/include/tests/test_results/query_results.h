@@ -46,3 +46,11 @@ double get_query_result_total_time (QueryResult query_result);
 
 /**
  * @brief Define o número de queries corretas.
+ * @param query_result Entidade alvo.
+ * @param number_correct Valor a definir.
+ */
+void set_query_result_correct (QueryResult query_result, int number_correct);
+
+
+
+// {- Structure -}
