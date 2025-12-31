@@ -76,3 +76,11 @@ void set_query_error_line (QueryError query_error, int line);
 /**
  * @brief Cria a estrutura de armazenamento de erros de query.
  * @return Estrutura inicializada ou NULL em caso de falha.
+ */
+StorageQueryErrors create_storage_query_errors ();
+
+/**
+ * @brief Liberta todos os recursos associados à estrutura de erros.
+ * @param storage_query_errors Estrutura a eliminar.
+ */
+void destroy_storage_query_errors (StorageQueryErrors storage_query_errors);
