@@ -78,3 +78,11 @@ int load_line_reservations (char *input, Database database) {
     if (flight_return && strcmp (get_flight_destination (flight_outbound), get_flight_origin (flight_return))) return EXIT_FAILURE;
 
     // Adiciona o registo do id da reserva
+    if (register_reservation (get_database_reservations (database), reservation_id)) return EXIT_FAILURE;
+
+    // Atualiza a base de dados
+    update_database_reservation (database, flight_outbound, flight_return, get_passenger_nationality (passenger), document_number, price);
+
+    // O aeroporto é válido
+    return EXIT_SUCCESS;
+}
