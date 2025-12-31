@@ -61,3 +61,13 @@ const struct entity_airport *get_airport_by_id (StorageAirports storage_airports
 void register_airport (StorageAirports storage_airports, const char *code, const char *name, const char *city, const char *type, const char *country) {
     register_generic (storage_airports -> data, g_strdup (code), create_airport (code, name, city, type, country));
 }
+
+// Regista uma ocorrência do aeroporto na matriz dos voos
+void register_airport_matrix_flights (StorageAirports storage_airports, int line, const char *origin) {
+
+    // Verifica se a data é anteiror a 01-01-2025
+    if (line < storage_airports -> offset_flights) {
+
+        // Calcula variáveis auxiliares
+        int diff = storage_airports -> offset_flights - line;
+        int new_len = storage_airports -> len_flights + diff;
