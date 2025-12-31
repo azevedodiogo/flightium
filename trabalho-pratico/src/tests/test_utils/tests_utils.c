@@ -72,3 +72,12 @@ void update_query_timing (StorageQueryResults stats, int index, struct timespec 
 void print_start_text_queries () {
     printf ("\n=== QUERY EXECUTION STARTED ===\n\n");
 }
+
+// Imprime o testo de fim dos testes das queries
+void print_end_test_queries (StorageQueryResults stats, StorageQueryErrors errors, int total_queries, double total_query_time) {
+    print_query_stats (stats, total_queries, total_query_time);
+    print_query_errors (errors);
+}
+
+// Imprime os resultados das queries
+void print_query_stats (StorageQueryResults stats, int total_queries, double total_query_time) {
