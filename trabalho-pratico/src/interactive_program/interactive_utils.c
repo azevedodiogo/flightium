@@ -95,3 +95,11 @@ int menu_select_delimiters (int max_y, int max_x) {
 
     // Definições da janela
     int width = 50, height = 6, y = max_y / 2 - height/2, x = max_x / 2 - width/2;
+
+    // Cria a janela do menu
+    WINDOW *win = newwin (height, width, y, x); keypad(win, TRUE);
+
+    // Array com os números das queries
+    char *delimiters[] = { ";", "="};
+
+    // Determina a escolha do utilizador
