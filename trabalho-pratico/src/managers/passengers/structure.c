@@ -96,3 +96,11 @@ void register_spending (StoragePassengers storage_passengers, int line, int docu
         memcpy (new_array + diff, storage_passengers -> weekly_spendings, storage_passengers -> len * sizeof (WeeklySpendings));
 
         // Define a nova matriz
+        g_free (storage_passengers -> weekly_spendings);
+        storage_passengers -> weekly_spendings = new_array;
+        storage_passengers -> len = new_len;
+        storage_passengers -> offset = line;
+    }
+
+    // Adiciona o registo
+    g_array_append_val (storage_passengers -> weekly_spendings [line - storage_passengers -> offset].array, spending);
