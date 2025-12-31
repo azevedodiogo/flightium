@@ -104,3 +104,12 @@ void register_spending (StoragePassengers storage_passengers, int line, int docu
 
     // Adiciona o registo
     g_array_append_val (storage_passengers -> weekly_spendings [line - storage_passengers -> offset].array, spending);
+}
+
+// Cria o array dos gastos por passageiro
+static void create_spending_per_passenger (int spending_per_passenger [], GArray *spendings) {
+
+    // Percorre o array dos gastos
+    for (int i = 0, len = spendings -> len; i < len; i++) {
+        
+        // Obtém o gasto
