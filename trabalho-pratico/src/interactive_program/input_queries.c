@@ -93,3 +93,12 @@ int get_query1_arguments (int max_y, int max_x, char *input) {
 
 // Obtém os argumentos para a query 2
 int get_query2_arguments (int max_y, int max_x, char *input) {
+
+    // Buffers para número de aeronaves e fabricante
+    char n_aircrafts[6] = {0}, manufacturer[20] = {0};
+
+    // Recebe os argumentos
+    ArgControler ac [2] = {(ArgControler) {n_aircrafts, 6, "number of aircrafts", validate_digits, "", ""}, (ArgControler) {manufacturer, 20, "manufacturer", NULL, "", ""}};
+    if (get_argument (2, ac, max_x, max_y)) return EXIT_FAILURE;
+
+    // Caso não haja fabricante, copia o número de aeronaves para o input    
