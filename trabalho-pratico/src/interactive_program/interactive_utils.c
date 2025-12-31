@@ -103,3 +103,11 @@ int menu_select_delimiters (int max_y, int max_x) {
     char *delimiters[] = { ";", "="};
 
     // Determina a escolha do utilizador
+    int choice = menu_display (win, "Which delimiter do you want?", delimiters, 2, 2);
+
+    // Elimina a janela após a seleção
+    delwin(win);
+
+    // Retorna a opção selecionada
+    return choice; 
+}
