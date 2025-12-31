@@ -67,3 +67,10 @@ int days_since_jan_first (date date) {
 
     // Verifica se o ano não é 2025
     if (year != 2025) return days_since_origin (date) - NUMBER_DAYS_SINCE_ORIGIN_START_2025;
+
+    // Número de dias desde 1 de janeiro
+    int days = 0;
+
+    // Calcula o número de dias desde 1 de janeiro
+    for (int m = 1; m < month; m++) days += days_in_month [m - 1];
+    days += day - 1;
