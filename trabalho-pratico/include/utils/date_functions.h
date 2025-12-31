@@ -55,3 +55,11 @@ date convert_date (int year, int month, int day);
  * @param year Ano.
  * @param month Mês.
  * @param day Dia.
+ * @param hour Hora.
+ * @param minute Minuto.
+ * @return Valor compactado com data e tempo.
+ * @warning Os valores fornecidos não são validados; fornecer parâmetros fora dos limites ocasiona comportamentos incorretos silenciosos.
+ */
+date convert_datetime (int year, int month, int day, int hour, int minute);
+
+/**
