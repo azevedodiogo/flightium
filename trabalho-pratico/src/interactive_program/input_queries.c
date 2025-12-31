@@ -102,3 +102,10 @@ int get_query2_arguments (int max_y, int max_x, char *input) {
     if (get_argument (2, ac, max_x, max_y)) return EXIT_FAILURE;
 
     // Caso não haja fabricante, copia o número de aeronaves para o input    
+    if (strlen(manufacturer) == 0) snprintf(input, 30, "%s", n_aircrafts);
+
+    // Combina e copia os dois argumentos para o input
+    else snprintf(input, 30, "%s %s", n_aircrafts, manufacturer);
+
+    return EXIT_SUCCESS;
+}
