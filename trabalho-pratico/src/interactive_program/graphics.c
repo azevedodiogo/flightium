@@ -111,3 +111,12 @@ void modal_start (char text[], const char button[], int width, int screen_y_max,
     int text_len = strlen(text);
     int text_x = (width - text_len) / 2;
     mvwprintw(window, necessary_lines / 2 - 1, text_x, "%s", text);
+
+    // Centraliza o botão
+    int button_x = (width - strlen(button)) / 2, button_y = necessary_lines - 2;
+    wattron(window, COLOR_PAIR(2) | A_BOLD);
+    mvwprintw(window, button_y, button_x, "%s", button);
+    wattroff(window, COLOR_PAIR(2) | A_BOLD);
+
+    // Fica à espera de ENTER
+    while (key != 10) key = wgetch(window);
