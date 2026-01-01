@@ -74,3 +74,12 @@ int days_since_jan_first (date date) {
     // Calcula o número de dias desde 1 de janeiro
     for (int m = 1; m < month; m++) days += days_in_month [m - 1];
     days += day - 1;
+
+    // Retorna o número de dias deste 1 de janeiro
+    return days;
+}
+
+// Calcula o número da semana de uma data
+week_index date_to_week (date date) {
+    return (days_since_jan_first (date) + 3) / 7;
+}
