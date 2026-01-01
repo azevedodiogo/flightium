@@ -66,3 +66,11 @@ int determine_dataset (const char *directory, int *dataset) {
 }
 
 // Ajusta índices limitantes
+int adjust_limits (int len, int offset, int *min, int *max) {
+
+    // Ajusta os índices pelo offset
+    *min -= offset;
+    *max -= offset;
+
+    // Verifica se o intervalo é vazio
+    if (*min > *max || *min >= len || *max < 0) return EXIT_FAILURE;
