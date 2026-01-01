@@ -127,3 +127,11 @@ int execute_query (int query_number, int delimiter, Database database, char *inp
     switch (query_number) {
         case 1: execute_query1 (database, input, output, chosen_delimiter); break;
         case 2: execute_query2 (database, input, output, chosen_delimiter); break;
+        case 3: execute_query3 (database, input, output, chosen_delimiter); break;
+        case 4: execute_query4 (database, input, output, chosen_delimiter); break;
+        case 5: execute_query5 (database, input, output, chosen_delimiter); break;
+        case 6: execute_query6 (database, input, output, chosen_delimiter); break;
+    }
+
+    // Caso não haja output imprime uma mensagem
+    if (output[0] == '\n' && output[1] == '\0') modal_start("Unfortunately, with the values provided, there is no answer.", "OK", 70, max_y, max_x);
