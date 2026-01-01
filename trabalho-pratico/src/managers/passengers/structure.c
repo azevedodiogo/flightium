@@ -113,3 +113,11 @@ static void create_spending_per_passenger (int spending_per_passenger [], GArray
     for (int i = 0, len = spendings -> len; i < len; i++) {
         
         // Obtém o gasto
+        Spending spending = g_array_index (spendings, Spending, i);
+
+        // Incrementa o preço
+        spending_per_passenger [spending.index] += spending.price;
+    }
+}
+
+// Torna um array numa min-heap caso um dado índice seja menor que o pai
