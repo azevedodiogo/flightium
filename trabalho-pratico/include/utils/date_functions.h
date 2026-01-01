@@ -63,3 +63,11 @@ date convert_date (int year, int month, int day);
 date convert_datetime (int year, int month, int day, int hour, int minute);
 
 /**
+ * @brief Converte a data para o número total de dias decorridos desde 01-01-0001.
+ * @param date Valor compactado a converter.
+ * @return Quantidade de dias decorridos desde a origem.
+ * @warning Assume que a data é válida e pertence ao calendário gregoriano simplificado utilizado neste módulo.
+ */
+int days_since_origin (date date);
+
+/**
