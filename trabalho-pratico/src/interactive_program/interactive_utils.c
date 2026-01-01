@@ -118,3 +118,12 @@ int execute_query (int query_number, int delimiter, Database database, char *inp
     // Define as variáveis auxiliares
     char chosen_delimiter;
     char output [LARGE_BUFFER] = "\n";
+
+    // Define o delimitador escolhido
+    if (delimiter == 0) chosen_delimiter = ';'; 
+    else chosen_delimiter = '=';
+
+    // Seleciona a função de acordo com o número da query
+    switch (query_number) {
+        case 1: execute_query1 (database, input, output, chosen_delimiter); break;
+        case 2: execute_query2 (database, input, output, chosen_delimiter); break;
