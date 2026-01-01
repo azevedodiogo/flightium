@@ -78,3 +78,13 @@ int test_execute_queries (Database database, const char *directory, Tests tests)
             return EXIT_FAILURE;
         }
     }
+
+    // Indica o fim da execução
+    print_end_test_queries (get_tests_query_results (tests), get_tests_query_errors (tests), total_queries, total_query_time);
+
+    // Fecha o ficheiro
+    fclose (read_file);
+
+    // Indica que a função correu corretamente
+    return EXIT_SUCCESS;
+}
