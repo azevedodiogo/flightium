@@ -84,3 +84,11 @@ StorageQueryErrors create_storage_query_errors ();
  * @param storage_query_errors Estrutura a eliminar.
  */
 void destroy_storage_query_errors (StorageQueryErrors storage_query_errors);
+
+/**
+ * @brief Obtém um erro pelo índice interno.
+ * @param storage_query_errors Estrutura de armazenamento.
+ * @param index Índice pretendido.
+ * @return Registo correspondente ou NULL se fora dos limites.
+ */
+QueryError get_query_error_by_index (StorageQueryErrors storage_query_errors, int index);
