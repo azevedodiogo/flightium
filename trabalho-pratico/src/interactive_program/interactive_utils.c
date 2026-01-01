@@ -111,3 +111,10 @@ int menu_select_delimiters (int max_y, int max_x) {
     // Retorna a opção selecionada
     return choice; 
 }
+
+// Executa a query selecionada
+int execute_query (int query_number, int delimiter, Database database, char *input, int max_y, int max_x) {
+
+    // Define as variáveis auxiliares
+    char chosen_delimiter;
+    char output [LARGE_BUFFER] = "\n";
