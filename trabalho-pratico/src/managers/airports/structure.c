@@ -71,3 +71,11 @@ void register_airport_matrix_flights (StorageAirports storage_airports, int line
         // Calcula variáveis auxiliares
         int diff = storage_airports -> offset_flights - line;
         int new_len = storage_airports -> len_flights + diff;
+
+        // Aloca memória para a nova matriz
+        int **new_matrix = g_malloc (new_len * sizeof (int *));
+
+        // Inicializa as linhas novas
+        for (int i = 0; i < diff; i++) new_matrix [i] = g_malloc0 (get_generic_len (storage_airports -> data) * sizeof (int));
+
+        // Copia as linhas antigas
