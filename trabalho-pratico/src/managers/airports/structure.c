@@ -79,3 +79,11 @@ void register_airport_matrix_flights (StorageAirports storage_airports, int line
         for (int i = 0; i < diff; i++) new_matrix [i] = g_malloc0 (get_generic_len (storage_airports -> data) * sizeof (int));
 
         // Copia as linhas antigas
+        memcpy (new_matrix + diff, storage_airports -> matrix_flights, storage_airports -> len_flights * sizeof (int *));
+
+        // Define a nova matriz
+        g_free (storage_airports -> matrix_flights);
+        storage_airports -> matrix_flights = new_matrix;
+        storage_airports -> len_flights = new_len;
+        storage_airports -> offset_flights = line;
+    }
