@@ -109,3 +109,12 @@ int get_query2_arguments (int max_y, int max_x, char *input) {
 
     return EXIT_SUCCESS;
 }
+
+// Obtém os argumentos para a query 3
+int get_query3_arguments (int max_y, int max_x, char *input) {
+
+    // Buffers para as datas iniciais e finais
+    char initial_date[12] = {0}, final_date[12] = {0};
+
+    // Recebe os argumentos
+    ArgControler ac [2] = {(ArgControler) {initial_date, 12, "initial date (yyyy-mm-dd)", validate_date_no_datetime, "", ""},
