@@ -64,3 +64,10 @@ static int find_error_line (char *content_write_file, int len_write_file, char *
         extract_line_from_content (content_write_file, linha, actual_line);
         return linha;
     }
+
+    // Não há erro
+    return 0;
+}
+
+// Compara dois ficheiros, indicando se estes são ou não iguais
+static int compare_files (const char *write_file_name, const char *expected_results_file_name, QueryError query_error) {
