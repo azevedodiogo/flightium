@@ -121,3 +121,10 @@ static void create_spending_per_passenger (int spending_per_passenger [], GArray
 }
 
 // Torna um array numa min-heap caso um dado índice seja menor que o pai
+static void heapify_up (Spending heap [], int index) {
+
+    // Realiza a operação até alcançar o pai
+    while (index > 0) {
+
+        // Obtém o índice do pai
+        int parent = (index - 1) / 2;
