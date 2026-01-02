@@ -127,3 +127,12 @@ void modal_start (char text[], const char button[], int width, int screen_y_max,
 
 // Imprime uma caixa de input e lê o texto do utilizador
 int text_input_box (int pos_y, int pos_x, int width, int input_size, char* text, char* input, int can_exit) {
+
+    // Centraliza a janela
+    if (can_exit && width < 32) {
+        pos_x = pos_x + width / 2 - (32 / 2); width = 32;
+    }
+    pos_y -= 3;
+
+    // Cria a janela de input
+    WINDOW* window = newwin(6, width, pos_y, pos_x);
