@@ -87,3 +87,10 @@ void register_airport_matrix_flights (StorageAirports storage_airports, int line
         storage_airports -> len_flights = new_len;
         storage_airports -> offset_flights = line;
     }
+
+    // Atualiza o contador
+    storage_airports -> matrix_flights [line - storage_airports -> offset_flights][get_index (storage_airports -> data, origin)]++;
+}
+
+// Regista uma ocorrência do aeroporto na matriz das nacionalidades
+void register_airport_matrix_nationalities (StorageAirports storage_airports, const char *code, const char *nationality) {
