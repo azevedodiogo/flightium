@@ -71,3 +71,10 @@ date convert_datetime (int year, int month, int day, int hour, int minute);
 int days_since_origin (date date);
 
 /**
+ * @brief Calcula a diferença em minutos entre duas datas.
+ * @param date1 Data de referência.
+ * @param date2 Data contra a qual se compara.
+ * @return Número de minutos que devem ser adicionados a `date1` para atingir `date2` (pode ser negativo).
+ * @warning O resultado pode ser negativo se `date2` preceder `date1`.
+ */
+int date_diff (date date1, date date2);
