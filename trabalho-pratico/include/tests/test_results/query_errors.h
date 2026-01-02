@@ -92,3 +92,10 @@ void destroy_storage_query_errors (StorageQueryErrors storage_query_errors);
  * @return Registo correspondente ou NULL se fora dos limites.
  */
 QueryError get_query_error_by_index (StorageQueryErrors storage_query_errors, int index);
+
+/**
+ * @brief Devolve o número total de erros registados.
+ * @param storage_query_errors Estrutura de armazenamento.
+ * @return Contagem de erros.
+ */
+int get_number_errors (StorageQueryErrors storage_query_errors);
