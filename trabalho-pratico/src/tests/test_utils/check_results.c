@@ -71,3 +71,12 @@ static int find_error_line (char *content_write_file, int len_write_file, char *
 
 // Compara dois ficheiros, indicando se estes são ou não iguais
 static int compare_files (const char *write_file_name, const char *expected_results_file_name, QueryError query_error) {
+
+    // Inicializa variáveis auxiliares
+    gchar *content_write_file = NULL, *content_expected = NULL;
+    gsize len_write_file = 0, len_expected = 0;
+    GError *error = NULL;
+    
+    // Lê o conteúdo do ficheiro dos resultados para a memória e obtém o seu tamanho
+    if (g_file_get_contents (write_file_name, &content_write_file, &len_write_file, &error) == FALSE) {
+        fprintf (stderr, "Falha ao ler '%s': %s\n", write_file_name, error -> message);
