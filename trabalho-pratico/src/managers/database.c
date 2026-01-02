@@ -80,3 +80,12 @@ StorageAirports get_database_airports (Database database) {
 StorageFlights get_database_flights (Database database) {
     return database -> flights;
 }
+
+// Devolve a estrutura de armazenamento dos passageiros
+StoragePassengers get_database_passengers (Database database) {
+    return database -> passengers;
+}
+
+// Devolve a estrutura de armazenameto das reservas
+StorageReservations get_database_reservations (Database database) {
+    return database -> reservations;
