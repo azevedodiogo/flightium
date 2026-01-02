@@ -99,3 +99,12 @@ QueryError get_query_error_by_index (StorageQueryErrors storage_query_errors, in
  * @return Contagem de erros.
  */
 int get_number_errors (StorageQueryErrors storage_query_errors);
+
+/**
+ * @brief Adiciona um novo erro à estrutura.
+ * @param storage_query_errors Estrutura de armazenamento.
+ * @param error Erro a registar.
+ */
+void register_query_error (StorageQueryErrors storage_query_errors, QueryError error);
+
+#endif
