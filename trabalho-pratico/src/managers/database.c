@@ -73,3 +73,10 @@ StorageAirlines get_database_airlines (Database database) {
 
 // Devolve a estrutura de armazenamento dos aeroportos
 StorageAirports get_database_airports (Database database) {
+    return database -> airports;
+}
+
+// Devolve a estrutura de armazenamento dos voos
+StorageFlights get_database_flights (Database database) {
+    return database -> flights;
+}
