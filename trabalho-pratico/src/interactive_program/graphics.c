@@ -120,3 +120,10 @@ void modal_start (char text[], const char button[], int width, int screen_y_max,
 
     // Fica à espera de ENTER
     while (key != 10) key = wgetch(window);
+
+    // Destrói a janela
+    wclear(window); wrefresh(window); delwin(window);
+}
+
+// Imprime uma caixa de input e lê o texto do utilizador
+int text_input_box (int pos_y, int pos_x, int width, int input_size, char* text, char* input, int can_exit) {
