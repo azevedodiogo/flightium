@@ -54,3 +54,10 @@ void set_query_result_correct (QueryResult query_result, int number_correct);
 
 
 // {- Structure -}
+
+/**
+ * @brief Cria a estrutura de armazenamento de resultados de query.
+ * @param expected_results Caminho para o ficheiro de resultados esperados.
+ * @return Estrutura inicializada ou NULL em caso de falha.
+ */
+StorageQueryResults create_storage_query_results (char *expected_results);
