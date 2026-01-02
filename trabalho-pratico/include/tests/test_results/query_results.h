@@ -61,3 +61,12 @@ void set_query_result_correct (QueryResult query_result, int number_correct);
  * @return Estrutura inicializada ou NULL em caso de falha.
  */
 StorageQueryResults create_storage_query_results (char *expected_results);
+
+/**
+ * @brief Liberta todos os recursos associados à estrutura de resultados.
+ * @param storage_query_results Estrutura a eliminar.
+ */
+void destroy_storage_query_results (StorageQueryResults storage_query_results);
+
+/**
+ * @brief Obtém o caminho do ficheiro de resultados esperados.
