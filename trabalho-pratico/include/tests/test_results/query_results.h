@@ -70,3 +70,11 @@ void destroy_storage_query_results (StorageQueryResults storage_query_results);
 
 /**
  * @brief Obtém o caminho do ficheiro de resultados esperados.
+ * @param storage_query_results Estrutura de resultados.
+ * @return String com o caminho configurado.
+ */
+const char *get_expected_results (StorageQueryResults storage_query_results);
+
+/**
+ * @brief Obtém os resultados de uma query pelo índice.
+ * @param storage_query_results Estrutura de armazenamento.
