@@ -77,3 +77,11 @@ void prepare_airports (StorageAirports storage_airports);
  * @brief Determina o aeroporto mais visitado num intervalo temporal.
  * @param storage_airports Estrutura de armazenamento.
  * @param min_date Data mínima.
+ * @param max_date Data máxima.
+ * @param max_count Ponteiro para armazenar o número máximo de visitas encontradas.
+ * @return Registo do aeroporto mais visitado ou NULL se não existir.
+ */
+const struct entity_airport *most_visited_airport_by_timespan (StorageAirports storage_airports, date min_date, date max_date, int *max_count);
+
+/**
+ * @brief Determina o aeroporto mais visitado por passageiros de uma nacionalidade.
