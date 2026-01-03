@@ -136,3 +136,11 @@ int text_input_box (int pos_y, int pos_x, int width, int input_size, char* text,
 
     // Cria a janela de input
     WINDOW* window = newwin(6, width, pos_y, pos_x);
+
+    box(window, 0, 0); refresh(); wrefresh(window);
+
+    // Apresenta o texto da instrução
+    wattron(window, COLOR_PAIR(1)); mvwprintw(window, 0, 2, "%s", text); wattroff(window, COLOR_PAIR(1));
+
+    // Apresenta o prompt ">" para digitar
+    mvwprintw(window, 3, 1, ">");
