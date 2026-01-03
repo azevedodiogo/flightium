@@ -94,3 +94,12 @@ void register_airport_matrix_flights (StorageAirports storage_airports, int line
 
 // Regista uma ocorrência do aeroporto na matriz das nacionalidades
 void register_airport_matrix_nationalities (StorageAirports storage_airports, const char *code, const char *nationality) {
+
+    // Obtém a data
+    StorageGeneric data = storage_airports -> data;
+
+    // Determina a coluna
+    int column = get_index (data, code);
+
+    // Obtém a linha
+    int *line = get_generic_by_id (storage_airports -> matrix_nationalities, nationality);
