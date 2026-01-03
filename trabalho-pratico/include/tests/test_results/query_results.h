@@ -78,3 +78,11 @@ const char *get_expected_results (StorageQueryResults storage_query_results);
 /**
  * @brief Obtém os resultados de uma query pelo índice.
  * @param storage_query_results Estrutura de armazenamento.
+ * @param index Índice pretendido.
+ * @return Registo correspondente ou NULL se fora dos limites.
+ */
+QueryResult get_query_result_by_index (StorageQueryResults storage_query_results, int index);
+
+
+
+// {- Utils -}
