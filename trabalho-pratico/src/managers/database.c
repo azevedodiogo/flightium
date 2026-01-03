@@ -89,3 +89,12 @@ StoragePassengers get_database_passengers (Database database) {
 // Devolve a estrutura de armazenameto das reservas
 StorageReservations get_database_reservations (Database database) {
     return database -> reservations;
+}
+
+// Prepara a base de dados para as queries
+void prepare_database (Database database) {
+    prepare_aircrafts (database -> aircrafts);
+    prepare_airlines (database -> airlines);
+    prepare_airports (database -> airports);
+    prepare_passengers (database -> passengers);
+}
