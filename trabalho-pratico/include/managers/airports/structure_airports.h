@@ -85,3 +85,11 @@ const struct entity_airport *most_visited_airport_by_timespan (StorageAirports s
 
 /**
  * @brief Determina o aeroporto mais visitado por passageiros de uma nacionalidade.
+ * @param storage_airports Estrutura de armazenamento.
+ * @param nationality Nacionalidade alvo.
+ * @param arrival_count Ponteiro para guardar o número de chegadas encontradas.
+ * @return Registo do aeroporto mais visitado ou NULL se não existir.
+ */
+const struct entity_airport *most_visited_airport_by_nationality (StorageAirports storage_airports, const char *nationality, int *arrival_count);
+
+#endif
