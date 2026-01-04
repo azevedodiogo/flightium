@@ -128,3 +128,12 @@ static void heapify_up (Spending heap [], int index) {
 
         // Obtém o índice do pai
         int parent = (index - 1) / 2;
+
+        // Verifica se o elemento é maior que o seu pai
+        if (heap [index].price < heap [parent].price || (heap [index].price == heap [parent].price && heap [index].index > heap [parent].index)) {
+
+            // Realiza a troca
+            Spending temp = heap [index]; heap [index] = heap [parent]; heap [parent] = temp;
+            
+            // Atualiza o índice
+            index = parent;
