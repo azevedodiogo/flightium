@@ -81,3 +81,11 @@ void print_end_test_queries (StorageQueryResults stats, StorageQueryErrors error
 
 // Imprime os resultados das queries
 void print_query_stats (StorageQueryResults stats, int total_queries, double total_query_time) {
+
+    // Variáveis auxiliares
+    int total_correct_sum = 0;
+    double total_query_ms = total_query_time * 1000;
+    double avg_query_ms = total_queries > 0 ? total_query_ms / total_queries : 0.0f;
+
+    // Imprime o cabeçalho inicial
+    printf("Query  Executions  Correct  Total Time (ms)  Average (ms)\n");
