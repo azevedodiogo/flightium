@@ -78,3 +78,11 @@ int days_since_origin (date date);
  * @warning O resultado pode ser negativo se `date2` preceder `date1`.
  */
 int date_diff (date date1, date date2);
+
+/**
+ * @brief Calcula quantos dias decorreram desde 1 de janeiro do ano correspondente à data.
+ * @param date Data compactada em análise.
+ * @return Dias completos decorridos dentro do ano.
+ * @warning Para anos diferentes de 2025, recorre a uma origem interna fixa. Deve ser utilizada apenas com datas válidas.
+ */
+int days_since_jan_first (date date);
