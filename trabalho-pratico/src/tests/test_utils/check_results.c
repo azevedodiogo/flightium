@@ -80,3 +80,11 @@ static int compare_files (const char *write_file_name, const char *expected_resu
     // Lê o conteúdo do ficheiro dos resultados para a memória e obtém o seu tamanho
     if (g_file_get_contents (write_file_name, &content_write_file, &len_write_file, &error) == FALSE) {
         fprintf (stderr, "Falha ao ler '%s': %s\n", write_file_name, error -> message);
+        g_clear_error (&error);
+        return TEST_ERROR;
+    }
+
+    // Lê o conteúdo do ficheiro dos resultados esperados para a memória e obtém o seu tamanho
+    if (!g_file_get_contents (expected_results_file_name, &content_expected, &len_expected, &error)) {
+        fprintf (stderr, "Falha ao ler '%s': %s\n", expected_results_file_name, error -> message);
+        g_clear_error (&error);
