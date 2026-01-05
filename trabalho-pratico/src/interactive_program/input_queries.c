@@ -118,3 +118,11 @@ int get_query3_arguments (int max_y, int max_x, char *input) {
 
     // Recebe os argumentos
     ArgControler ac [2] = {(ArgControler) {initial_date, 12, "initial date (yyyy-mm-dd)", validate_date_no_datetime, "", ""},
+                           (ArgControler) {final_date, 12, "final date (yyyy-mm-dd)", validate_date_no_datetime, "", ""}};
+    if (get_argument (2, ac, max_x, max_y)) return EXIT_FAILURE;
+
+    // Combina e copia os dois argumentos para o input
+    snprintf(input, 30, "%s %s", initial_date, final_date);
+
+    return EXIT_SUCCESS;
+}
