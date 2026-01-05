@@ -103,3 +103,11 @@ void register_airport_matrix_nationalities (StorageAirports storage_airports, co
 
     // Obtém a linha
     int *line = get_generic_by_id (storage_airports -> matrix_nationalities, nationality);
+    
+    // Verifica se a linha ainda não existe
+    if (line == NULL) {
+
+        // Regista a nova linha
+        register_generic (storage_airports -> matrix_nationalities, g_strdup (nationality), g_malloc0 (get_generic_len (data) * sizeof (int)));
+
+        // Inicia o contador
