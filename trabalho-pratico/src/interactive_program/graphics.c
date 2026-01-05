@@ -144,3 +144,12 @@ int text_input_box (int pos_y, int pos_x, int width, int input_size, char* text,
 
     // Apresenta o prompt ">" para digitar
     mvwprintw(window, 3, 1, ">");
+
+    // Apresenta a mensagem de instruções
+    wattron(window, A_DIM);
+    if (can_exit == 1) mvwprintw(window, 4, 1, "[ENTER] for default || [ESC] to Cancel");
+    else if (can_exit == 2) mvwprintw(window, 4, 1, "[ESC] to Cancel");
+    else mvwprintw(window, 4, 1, "[ENTER] Confirm");
+    wattroff(window, A_DIM);
+
+    // Mostra o cursor durante o input
