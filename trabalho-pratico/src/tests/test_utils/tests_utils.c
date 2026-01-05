@@ -106,3 +106,11 @@ void print_query_stats (StorageQueryResults stats, int total_queries, double tot
 
 // Imprime os erros das queries
 void print_query_errors (StorageQueryErrors errors) {
+
+    // Obtém o número de erros
+    int count = get_number_errors (errors);
+
+    // Verifica se não houve nenhum erro
+    if (count == 0) return;
+    
+    // Imprime o cabeçalho
