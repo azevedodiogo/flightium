@@ -89,3 +89,12 @@ void print_query_stats (StorageQueryResults stats, int total_queries, double tot
 
     // Imprime o cabeçalho inicial
     printf("Query  Executions  Correct  Total Time (ms)  Average (ms)\n");
+    printf("-----  ----------  -------  ---------------  ------------\n");
+    
+    // Imprime os resultados de cada query
+    for (int i = 0; i < N_QUERIES; i++) {
+        QueryResult result = get_query_result_by_index (stats, i);
+        double total_ms = get_query_result_total_time (result) * 1000, avg_ms = total_ms / get_query_result_executed (result);
+        total_correct_sum += get_query_result_correct (result);
+        printf ("Q%-2d    %10d     %3d    %14.3f  %12.3f\n", i + 1, get_query_result_executed (result), get_query_result_correct (result), total_ms, avg_ms);
+    }
