@@ -153,3 +153,11 @@ int text_input_box (int pos_y, int pos_x, int width, int input_size, char* text,
     wattroff(window, A_DIM);
 
     // Mostra o cursor durante o input
+    int cursor = 0, ch;
+    wmove(window, 3, 3); curs_set(1);
+
+    // Loop para ler cada tecla até ENTER ou tamanho máximo
+    while ((ch = wgetch(window)) != '\n' && cursor < input_size - 1) {
+
+        // Se o utilizador carregar no ESC, a janela fecha
+        if (can_exit && ch == 27) {  
