@@ -143,3 +143,12 @@ int execute_query (int query_number, int delimiter, Database database, char *inp
         // Ajusta o tamanho da janela ao tamanho da tela
         if (box_width > max_x - 4) box_width = max_x - 4;
         if (box_height > max_y - 4) box_height = max_y - 4;
+
+        // Imprime o output centralizado na tela
+        text_output_box (max_y / 2 - box_height / 2, max_x / 2 - box_width / 2, box_width, box_height, "Query Output", output);
+    }
+    // Mensagem final para o utilizador voltar ao menu de queries
+    modal_start("Press OK to return to the queries menu", "OK", 50, max_y, max_x);
+
+    return EXIT_SUCCESS;
+}
