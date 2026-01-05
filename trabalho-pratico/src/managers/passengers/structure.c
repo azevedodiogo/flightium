@@ -146,3 +146,11 @@ static void heapify_up (Spending heap [], int index) {
 }
 
 // Torna um array numa min-heap caso o pai seja maior que um dado índice
+static void heapify_down (Spending heap [], int size, int index) {
+
+    // Realiza a operação até alcançar as folhas da árvore
+    while (1) {
+
+        // Calcula os índices
+        int left = 2 * index + 1;
+        int right = 2 * index + 2;
