@@ -86,3 +86,12 @@ QueryResult get_query_result_by_index (StorageQueryResults storage_query_results
 
 
 // {- Utils -}
+
+/**
+ * @brief Atualiza um resultado de query com o tempo decorrido.
+ * @param query_result Entidade alvo.
+ * @param elapsed Tempo decorrido a adicionar.
+ */
+void update_query_result (QueryResult query_result, double elapsed);
+
+#endif
