@@ -154,3 +154,11 @@ static void heapify_down (Spending heap [], int size, int index) {
         // Calcula os índices
         int left = 2 * index + 1;
         int right = 2 * index + 2;
+        int smallest = index;
+        
+        // Encontra o menor entre o pai e os filhos
+        if (left < size) {
+            if (heap [left].price < heap [smallest].price || (heap [left].price == heap [smallest].price && heap [left].index > heap [smallest].index)) {
+                smallest = left;
+            }
+        } if (right < size) {
