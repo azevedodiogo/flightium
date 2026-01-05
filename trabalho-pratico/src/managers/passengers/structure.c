@@ -137,3 +137,12 @@ static void heapify_up (Spending heap [], int index) {
             
             // Atualiza o índice
             index = parent;
+        
+        }
+        
+        // Nenhuma troca deve ser feita
+        else break;
+    }
+}
+
+// Torna um array numa min-heap caso o pai seja maior que um dado índice
