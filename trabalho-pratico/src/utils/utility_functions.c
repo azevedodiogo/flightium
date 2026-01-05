@@ -74,3 +74,11 @@ int adjust_limits (int len, int offset, int *min, int *max) {
 
     // Verifica se o intervalo é vazio
     if (*min > *max || *min >= len || *max < 0) return EXIT_FAILURE;
+
+    // Verifica os limites
+    if (*min < 0) *min = 0;
+    if (*max >= len) *max = len - 1;
+
+    // Indica que o intervalo não é vazio
+    return EXIT_SUCCESS;
+}
