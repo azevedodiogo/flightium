@@ -98,3 +98,11 @@ void print_query_stats (StorageQueryResults stats, int total_queries, double tot
         total_correct_sum += get_query_result_correct (result);
         printf ("Q%-2d    %10d     %3d    %14.3f  %12.3f\n", i + 1, get_query_result_executed (result), get_query_result_correct (result), total_ms, avg_ms);
     }
+
+    // Imprime o cabeçalho final
+    printf("-----  ----------  -------  ---------------  ------------\n");
+    printf("Total  %10d     %3d    %14.3f  %12.3f (avg)\n", total_queries, total_correct_sum, total_query_ms, avg_query_ms);
+}
+
+// Imprime os erros das queries
+void print_query_errors (StorageQueryErrors errors) {
