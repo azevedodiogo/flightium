@@ -111,3 +111,11 @@ void register_airport_matrix_nationalities (StorageAirports storage_airports, co
         register_generic (storage_airports -> matrix_nationalities, g_strdup (nationality), g_malloc0 (get_generic_len (data) * sizeof (int)));
 
         // Inicia o contador
+        line = get_generic_by_index (storage_airports -> matrix_nationalities, get_generic_len (storage_airports -> matrix_nationalities) - 1);
+        line [column] = 1;
+
+    } else line [column]++;
+}
+
+// Atualiza os contadores dos aeroportos
+void update_airports (StorageAirports storage_airports, const char *origin, const char *destination) {
