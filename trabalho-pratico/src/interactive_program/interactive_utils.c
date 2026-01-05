@@ -135,3 +135,11 @@ int execute_query (int query_number, int delimiter, Database database, char *inp
 
     // Caso não haja output imprime uma mensagem
     if (output[0] == '\n' && output[1] == '\0') modal_start("Unfortunately, with the values provided, there is no answer.", "OK", 70, max_y, max_x);
+
+    else {
+        // Calcula as dimensões
+        int box_height = 20, box_width = 90;
+        
+        // Ajusta o tamanho da janela ao tamanho da tela
+        if (box_width > max_x - 4) box_width = max_x - 4;
+        if (box_height > max_y - 4) box_height = max_y - 4;
