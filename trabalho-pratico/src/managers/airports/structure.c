@@ -143,3 +143,12 @@ void prepare_airports (StorageAirports storage_airports) {
         for (int j = 0; j < len; j++)
             matrix [i][j] += matrix [i - 1][j];
 }
+
+// Encontra o máximo de uma linha de contadores de aeroportos (desempatando pelo código)
+static int max_line_matrix_airports (StorageAirports storage_airports, int line [], int len, int *max_count) {
+
+    // Informação sobre o máximo
+    int max_index = 0; *max_count = line [0];
+    const char *max_code = get_airport_code (get_generic_by_index (storage_airports -> data, 0));
+
+    // Percorre a linha
