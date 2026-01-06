@@ -114,3 +114,12 @@ void print_query_errors (StorageQueryErrors errors) {
     if (count == 0) return;
     
     // Imprime o cabeçalho
+    printf ("\n\n=== QUERY ERRORS (%d) ===\n\n", count);
+    
+    // Imprime cada erro
+    for (int i = 0; i < count; i++) {
+        QueryError error = get_query_error_by_index (errors, i);
+        printf ("Query %d (command%d) differs on line %d\n", get_query_error_number (error), get_query_error_command (error), get_query_error_line (error)); 
+        printf ("Expected: %s || Actual: %s\n\n", get_query_error_expected (error), get_query_error_actual (error)); 
+    }
+}
