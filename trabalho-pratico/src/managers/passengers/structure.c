@@ -169,3 +169,12 @@ static void heapify_down (Spending heap [], int size, int index) {
 
         // Verifica se é necessário realizar a troca
         if (smallest != index) {
+
+            // Realiza a troca
+            Spending temp = heap [index];
+            heap [index] = heap [smallest];
+            heap [smallest] = temp;
+            index = smallest;
+        }
+
+        // Nenhuma troca deve ser feita
