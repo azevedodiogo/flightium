@@ -119,3 +119,10 @@ void register_airport_matrix_nationalities (StorageAirports storage_airports, co
 
 // Atualiza os contadores dos aeroportos
 void update_airports (StorageAirports storage_airports, const char *origin, const char *destination) {
+
+    // Obtém a data
+    StorageGeneric data = storage_airports -> data;
+
+    // Determina os índices dos aeroportos
+    int index_origin = get_index (data, origin);
+    int index_destination = get_index (data, destination);
