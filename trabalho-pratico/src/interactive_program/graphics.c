@@ -161,3 +161,11 @@ int text_input_box (int pos_y, int pos_x, int width, int input_size, char* text,
 
         // Se o utilizador carregar no ESC, a janela fecha
         if (can_exit && ch == 27) {  
+            wclear(window); wrefresh(window); delwin(window); return 1;
+        } 
+        // Apaga o último caractere
+        else if (ch == KEY_BACKSPACE || ch == 127) {
+            if (cursor > 0) {
+                cursor--; input[cursor] = ' '; mvwprintw(window, 3, 3, "%s", input); input[cursor] = '\0'; wmove(window, 3, 3 + cursor); wrefresh(window);
+            }
+        } 
