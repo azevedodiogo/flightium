@@ -136,3 +136,10 @@ void update_airports (StorageAirports storage_airports, const char *origin, cons
 void prepare_airports (StorageAirports storage_airports) {
 
     // Obtém a matriz e o número de colunas
+    int **matrix = storage_airports -> matrix_flights, len = get_generic_len (storage_airports -> data);
+
+    // Torna a matriz numa matriz acumulada
+    for (int i = 1; i < storage_airports -> len_flights; i++)
+        for (int j = 0; j < len; j++)
+            matrix [i][j] += matrix [i - 1][j];
+}
