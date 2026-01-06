@@ -126,3 +126,11 @@ int get_query3_arguments (int max_y, int max_x, char *input) {
 
     return EXIT_SUCCESS;
 }
+
+// Obtém os argumentos para a query 4
+int get_query4_arguments (int max_y, int max_x, char *input) {
+
+    // Buffers para as datas iniciais e finais
+    char initial_date[12] = {0}, final_date[12] = {0};
+
+    // Recebe os argumentos
