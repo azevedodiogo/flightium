@@ -169,3 +169,11 @@ int text_input_box (int pos_y, int pos_x, int width, int input_size, char* text,
                 cursor--; input[cursor] = ' '; mvwprintw(window, 3, 3, "%s", input); input[cursor] = '\0'; wmove(window, 3, 3 + cursor); wrefresh(window);
             }
         } 
+        // Adiciona o '\0' ao input
+        else {
+            input[cursor] = ch; input[cursor + 1] = '\0'; mvwprintw(window, 3, 3, "%s", input);
+            cursor++; wmove(window, 3, 3 + cursor); wrefresh(window);
+        }
+    }
+    // esconde cursor
+    curs_set(0);
