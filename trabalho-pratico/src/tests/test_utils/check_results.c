@@ -88,3 +88,12 @@ static int compare_files (const char *write_file_name, const char *expected_resu
     if (!g_file_get_contents (expected_results_file_name, &content_expected, &len_expected, &error)) {
         fprintf (stderr, "Falha ao ler '%s': %s\n", expected_results_file_name, error -> message);
         g_clear_error (&error);
+        g_free (content_write_file);
+        return TEST_ERROR;
+    }
+
+    // Calcula a linha de erro
+    set_query_error_line (query_error, find_error_line (content_write_file, len_write_file, content_expected, len_expected, get_query_error_expected (query_error), get_query_error_actual (query_error)));
+
+    // Liberta o conteúdo dos ficheiros
+    g_free (content_write_file); g_free (content_expected);
