@@ -186,3 +186,10 @@ int text_input_box (int pos_y, int pos_x, int width, int input_size, char* text,
 
 // Imprime o output de uma query
 void text_output_box (int pos_y, int pos_x, int width, int height, const char *title, const char *output) {
+
+    // Cria a janela
+    WINDOW *window = newwin(height, width, pos_y, pos_x); keypad(window, TRUE);
+
+    // Variáveis auxiliares
+    char *lines[LARGE_BUFFER], buffer[LARGE_BUFFER]; strcpy(buffer, output);
+    int ch, start_line = 0, total_lines = 0; char *token = strtok(buffer, "\n");
