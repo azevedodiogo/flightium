@@ -177,3 +177,12 @@ int text_input_box (int pos_y, int pos_x, int width, int input_size, char* text,
     }
     // esconde cursor
     curs_set(0);
+
+    // Destrói a janela
+    wclear(window); wrefresh(window); delwin(window);
+
+    return 0;
+}
+
+// Imprime o output de uma query
+void text_output_box (int pos_y, int pos_x, int width, int height, const char *title, const char *output) {
