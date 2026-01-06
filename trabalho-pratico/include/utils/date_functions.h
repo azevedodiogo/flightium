@@ -86,3 +86,13 @@ int date_diff (date date1, date date2);
  * @warning Para anos diferentes de 2025, recorre a uma origem interna fixa. Deve ser utilizada apenas com datas válidas.
  */
 int days_since_jan_first (date date);
+
+/**
+ * @brief Determina o índice da semana do ano para a data fornecida.
+ * @param date Valor compactado a avaliar.
+ * @return Índice da semana dentro do ano (base 0).
+ * @warning Assume que a data obedece ao calendário gregoriano simplificado utilizado neste módulo.
+ */
+week_index date_to_week (date date);
+
+#endif
