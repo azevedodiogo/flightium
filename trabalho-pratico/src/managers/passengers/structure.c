@@ -162,3 +162,10 @@ static void heapify_down (Spending heap [], int size, int index) {
                 smallest = left;
             }
         } if (right < size) {
+            if (heap [right].price < heap [smallest].price || (heap [right].price == heap [smallest].price && heap [right].index > heap [smallest].index)) {
+                smallest = right;
+            }
+        }
+
+        // Verifica se é necessário realizar a troca
+        if (smallest != index) {
