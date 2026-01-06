@@ -126,3 +126,13 @@ void update_airports (StorageAirports storage_airports, const char *origin, cons
     // Determina os índices dos aeroportos
     int index_origin = get_index (data, origin);
     int index_destination = get_index (data, destination);
+
+    // Atualiza os contadores dos aeroportos
+    inc_airport_departure_count (get_generic_by_index (storage_airports -> data, index_origin));
+    inc_airport_arrival_count (get_generic_by_index (storage_airports -> data, index_destination));
+}
+
+// Prepara a estrutura de armazenamento dos aeroportos para as queries
+void prepare_airports (StorageAirports storage_airports) {
+
+    // Obtém a matriz e o número de colunas
