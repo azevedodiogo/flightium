@@ -178,3 +178,12 @@ static void heapify_down (Spending heap [], int size, int index) {
         }
 
         // Nenhuma troca deve ser feita
+        else break;
+    }
+}
+
+// Cria o top 10 de uma semana
+static void create_week_top10 (StorageGeneric passengers, int top10 [], int *top10_len, int spending_per_passenger [], int total_passengers) {
+
+    // Inicializa a min-heap
+    Spending heap [10]; int heap_len = 0;
