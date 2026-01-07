@@ -218,3 +218,11 @@ void text_output_box (int pos_y, int pos_x, int width, int height, const char *t
             if (start_line + i >= total_lines) break;
             mvwprintw(window, 2 + i, 2, "%s", lines[start_line + i]);
         }
+        // Lê a tecla do utilizador
+        wrefresh(window); ch = wgetch(window);
+        if (ch == KEY_DOWN && start_line + max_visible_lines < total_lines) start_line++;
+        else if (ch == KEY_UP && start_line > 0) start_line--;
+        else if (ch == 10) break;
+    }
+    // Destrói a janela
+    wclear(window); wrefresh(window); delwin(window);
