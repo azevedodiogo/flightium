@@ -187,3 +187,11 @@ static void create_week_top10 (StorageGeneric passengers, int top10 [], int *top
 
     // Inicializa a min-heap
     Spending heap [10]; int heap_len = 0;
+
+    // Percorre todos os gastos para fomar a min-heap
+    for (int i = 0; i < total_passengers; i++) {
+
+        // Verifica se o passageiro realizou alguma reserva
+        if (spending_per_passenger [i]) {
+
+            // Verifica se a min-heap ainda não está cheia
