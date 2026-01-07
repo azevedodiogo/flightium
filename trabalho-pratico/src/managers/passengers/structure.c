@@ -195,3 +195,11 @@ static void create_week_top10 (StorageGeneric passengers, int top10 [], int *top
         if (spending_per_passenger [i]) {
 
             // Verifica se a min-heap ainda não está cheia
+            if (heap_len < 10) {
+                heap [heap_len].index = get_passenger_document_number (get_generic_by_index (passengers, i));
+                heap [heap_len].price = spending_per_passenger [i];
+                heapify_up (heap, heap_len++);
+            }
+
+            // Verifica se o novo elemento deve ser adicionado à min-heap
+            else if (spending_per_passenger [i] > heap [0].price || (spending_per_passenger [i] == heap [0].price && heap [0].index > get_passenger_document_number (get_generic_by_index (passengers, i)))) {
