@@ -105,3 +105,11 @@ static int compare_files (const char *write_file_name, const char *expected_resu
 // Verifica o resultado comparando com o ficheiro esperado
 int check_query_result (const char* write_file_name, int query_num, int command_num, const char* expected_results_file, StorageQueryResults stats, StorageQueryErrors errors) {
     
+    // Constrói o caminho para o ficheiro esperado
+    char expected_file [BUFFER];
+    snprintf (expected_file, BUFFER, "%s/command%d_output.txt", expected_results_file, command_num);
+    
+    // Cria e inicializa uma estrutura para o erro
+    QueryError error_info = create_query_error (query_num, command_num);
+
+    // Compara o ficheiro gerado com o ficheiro esperado
