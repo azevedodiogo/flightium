@@ -152,3 +152,11 @@ static int max_line_matrix_airports (StorageAirports storage_airports, int line 
     const char *max_code = get_airport_code (get_generic_by_index (storage_airports -> data, 0));
 
     // Percorre a linha
+    for (int i = 1; i < len; i++)
+        if (line [i] > *max_count || (line [i] == *max_count && strcmp (max_code, get_airport_code (get_generic_by_index (storage_airports -> data, i))) > 0)) {
+            max_index = i; *max_count = line [i]; max_code = get_airport_code (get_generic_by_index (storage_airports -> data, i));
+        }
+
+    // Retorna o índice encontrado
+    return max_index;
+}
