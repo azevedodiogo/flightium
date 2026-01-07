@@ -193,3 +193,11 @@ void text_output_box (int pos_y, int pos_x, int width, int height, const char *t
     // Variáveis auxiliares
     char *lines[LARGE_BUFFER], buffer[LARGE_BUFFER]; strcpy(buffer, output);
     int ch, start_line = 0, total_lines = 0; char *token = strtok(buffer, "\n");
+
+    // Quebra o output em linhas individuais
+    while (token && total_lines < LARGE_BUFFER) {
+        lines[total_lines++] = token; token = strtok(NULL, "\n");
+    }
+
+    // Espaço para mostrar as linhas
+    int max_visible_lines = height - 4; 
