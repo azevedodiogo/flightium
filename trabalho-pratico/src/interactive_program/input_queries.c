@@ -141,3 +141,12 @@ int get_query4_arguments (int max_y, int max_x, char *input) {
 
     // Combina e copia os dois argumentos para o input
     if (ac [1].arg [0]) snprintf(input, 30, "%s %s", initial_date, final_date);
+
+    return EXIT_SUCCESS;
+}
+
+// Obtém os argumentos para a query 5
+int get_query5_arguments (int max_y, int max_x, char *input) {
+
+    // Buffer para número de companhias aéreas
+    char n_airlines[6] = {0};
