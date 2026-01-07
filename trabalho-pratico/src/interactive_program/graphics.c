@@ -226,3 +226,12 @@ void text_output_box (int pos_y, int pos_x, int width, int height, const char *t
     }
     // Destrói a janela
     wclear(window); wrefresh(window); delwin(window);
+
+}
+
+// Exibe um menu de opções
+int menu_display (WINDOW *win, const char *instruction, char *texts[], int num_options, int cols) {
+
+    // Variáveis auxiliares
+    int selection = 0, key = 0, width = getmaxx(win);
+    
