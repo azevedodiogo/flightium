@@ -97,3 +97,11 @@ static int compare_files (const char *write_file_name, const char *expected_resu
 
     // Liberta o conteúdo dos ficheiros
     g_free (content_write_file); g_free (content_expected);
+
+    // Verifica se o comando foi bem executado
+    return get_query_error_line (query_error) == 0 ? TEST_CORRECT : TEST_INCORRECT;
+}
+
+// Verifica o resultado comparando com o ficheiro esperado
+int check_query_result (const char* write_file_name, int query_num, int command_num, const char* expected_results_file, StorageQueryResults stats, StorageQueryErrors errors) {
+    
