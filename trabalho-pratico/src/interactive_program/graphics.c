@@ -201,3 +201,11 @@ void text_output_box (int pos_y, int pos_x, int width, int height, const char *t
 
     // Espaço para mostrar as linhas
     int max_visible_lines = height - 4; 
+
+    while (1) {
+
+        // limpa a janela
+        werase(window); box(window, 0, 0);
+
+        // Apresenta o título
+        wattron(window, COLOR_PAIR(1)); mvwprintw(window, 0, 2, "%s", title); wattroff(window, COLOR_PAIR(1));
