@@ -209,3 +209,12 @@ void text_output_box (int pos_y, int pos_x, int width, int height, const char *t
 
         // Apresenta o título
         wattron(window, COLOR_PAIR(1)); mvwprintw(window, 0, 2, "%s", title); wattroff(window, COLOR_PAIR(1));
+
+        // Apresenta a mensagem de instruções
+        wattron(window, A_DIM); mvwprintw(window, height - 2, width - strlen ("Use UP/DOWN to scroll") - 2, "Use UP/DOWN to scroll"); wattroff(window, A_DIM);
+        
+        // Mostra as linhas visíveis
+        for (int i = 0; i < max_visible_lines; i++) {
+            if (start_line + i >= total_lines) break;
+            mvwprintw(window, 2 + i, 2, "%s", lines[start_line + i]);
+        }
