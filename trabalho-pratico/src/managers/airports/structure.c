@@ -160,3 +160,11 @@ static int max_line_matrix_airports (StorageAirports storage_airports, int line 
     // Retorna o índice encontrado
     return max_index;
 }
+
+// Determina o aeroporto mais visitado num intervalo de tempo
+const struct entity_airport *most_visited_airport_by_timespan (StorageAirports storage_airports, date min_date, date max_date, int *max_count) {
+
+    // Mínimo e máximo
+    int min = days_since_jan_first (min_date), max = days_since_jan_first (max_date);
+
+    // Verifica se o intervalo é inválido
