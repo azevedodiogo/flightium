@@ -113,3 +113,10 @@ int check_query_result (const char* write_file_name, int query_num, int command_
     QueryError error_info = create_query_error (query_num, command_num);
 
     // Compara o ficheiro gerado com o ficheiro esperado
+    int result = compare_files (write_file_name, expected_file, error_info);
+
+    // Se a query estiver correta atualiza o número de queries corretas
+    if (stats && result == TEST_CORRECT) {
+        int query_index = query_num - 1; QueryResult result = get_query_result_by_index (stats, query_index);
+        set_query_result_correct (result, get_query_result_correct (result) + 1);
+    }
