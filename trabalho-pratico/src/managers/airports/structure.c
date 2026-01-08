@@ -175,3 +175,12 @@ const struct entity_airport *most_visited_airport_by_timespan (StorageAirports s
 
     // Determina o comprimento do array
     int len = get_generic_len (data), diff [len]; min--;
+
+    // Calcula a linha diferença
+    if (min > 0) for (int i = 0; i < len; i++) diff [i] = storage_airports -> matrix_flights [max][i] - storage_airports -> matrix_flights [min][i];
+
+    // Encontra o máximo da linha
+    return get_generic_by_index (storage_airports -> data, max_line_matrix_airports (storage_airports, min > 0 ? diff : storage_airports -> matrix_flights [max], len, max_count));
+}
+
+// Determina o aeroporto mais visitado por passageiros de uma determinada nacionalidade
