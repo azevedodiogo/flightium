@@ -168,3 +168,10 @@ const struct entity_airport *most_visited_airport_by_timespan (StorageAirports s
     int min = days_since_jan_first (min_date), max = days_since_jan_first (max_date);
 
     // Verifica se o intervalo é inválido
+    if (adjust_limits (storage_airports -> len_flights, storage_airports -> offset_flights, &min, &max)) return NULL;
+
+    // Obtém a data
+    StorageGeneric data = storage_airports -> data;
+
+    // Determina o comprimento do array
+    int len = get_generic_len (data), diff [len]; min--;
