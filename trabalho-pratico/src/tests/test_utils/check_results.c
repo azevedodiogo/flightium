@@ -120,3 +120,13 @@ int check_query_result (const char* write_file_name, int query_num, int command_
         int query_index = query_num - 1; QueryResult result = get_query_result_by_index (stats, query_index);
         set_query_result_correct (result, get_query_result_correct (result) + 1);
     }
+
+    // Se a query estiver incorreta, adiciona à lista de erros
+    else if (result == TEST_INCORRECT) register_query_error (errors, error_info);
+
+    // Elimina o erro se não existe
+    if (result != TEST_INCORRECT) destroy_query_error (error_info);
+
+    // Retorna um indicador de erro
+    return result == TEST_ERROR ? EXIT_FAILURE : EXIT_SUCCESS;
+}
