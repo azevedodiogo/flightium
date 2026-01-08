@@ -150,3 +150,11 @@ int get_query5_arguments (int max_y, int max_x, char *input) {
 
     // Buffer para número de companhias aéreas
     char n_airlines[6] = {0};
+
+    // Recebe o argumento
+    ArgControler ac = (ArgControler) {n_airlines, 6, "number of airlines", validate_digits, "", ""};
+    if (get_argument (1, &ac, max_x, max_y)) return EXIT_FAILURE;
+
+    // Copia o argumento para o input
+    snprintf (input, 6, "%s", n_airlines);
+    return EXIT_SUCCESS;
