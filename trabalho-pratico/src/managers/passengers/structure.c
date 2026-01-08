@@ -211,3 +211,12 @@ static void create_week_top10 (StorageGeneric passengers, int top10 [], int *top
     }
 
     // Copia o top 10
+    for (int i = 0; i < heap_len; i++) top10 [i] = heap [i].index;
+    *top10_len = heap_len;
+}
+
+// Prepara a estrutura de armazenamento dos passageiros para as queries
+void prepare_passengers (StoragePassengers storage_passengers) {
+
+    // Obtém o número de passageiros armazenados
+    int total_passengers = get_generic_len (storage_passengers -> data);
