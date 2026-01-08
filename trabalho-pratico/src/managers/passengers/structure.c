@@ -228,3 +228,11 @@ void prepare_passengers (StoragePassengers storage_passengers) {
     for (int i = 0; i < storage_passengers -> len; i++) {
 
         // Zera os preços do array dos gastos por passageiro
+        memset (spending_per_passenger, 0, total_passengers * sizeof (int));
+
+        // Forma o array dos gastos por passageiro
+        create_spending_per_passenger (spending_per_passenger, storage_passengers -> weekly_spendings [i].array);
+
+        // Encontra o top 10
+        create_week_top10 (storage_passengers -> data, storage_passengers -> weekly_spendings [i].top10, &storage_passengers -> weekly_spendings [i].top10_len, spending_per_passenger, total_passengers);
+    }
