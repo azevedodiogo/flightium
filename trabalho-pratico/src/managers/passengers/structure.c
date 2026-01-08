@@ -220,3 +220,11 @@ void prepare_passengers (StoragePassengers storage_passengers) {
 
     // Obtém o número de passageiros armazenados
     int total_passengers = get_generic_len (storage_passengers -> data);
+
+    // Cria um array com os gastos por passageiro
+    int *spending_per_passenger = g_malloc (total_passengers * sizeof (int));
+
+    // Percorre o array dos gastos semanais
+    for (int i = 0; i < storage_passengers -> len; i++) {
+
+        // Zera os preços do array dos gastos por passageiro
