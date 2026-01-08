@@ -235,3 +235,10 @@ int menu_display (WINDOW *win, const char *instruction, char *texts[], int num_o
     // Variáveis auxiliares
     int selection = 0, key = 0, width = getmaxx(win);
     
+    // Repete até o utilizador pressionar ENTER
+    while (key != 10) { 
+
+        werase(win); box(win, 0, 0);
+
+        // Mostra o texto da instrução
+        wattron(win, COLOR_PAIR(1)); mvwprintw(win, 0, 2, "%s", instruction); wattroff(win, COLOR_PAIR(1));
