@@ -165,3 +165,12 @@ int get_query6_arguments (int max_y, int max_x, char *input) {
 
     // Buffer para a nacionalidade
     char nationality[30] = {0};
+
+    // Recebe o argumento
+    ArgControler ac = (ArgControler) {nationality, 30, "nationality", validate_nacionality, "", ""};
+    if (get_argument (1, &ac, max_x, max_y)) return EXIT_FAILURE;
+
+    // Copia o argumento para o input
+    snprintf(input, 30, "%s", nationality);
+    return EXIT_SUCCESS;    
+}
