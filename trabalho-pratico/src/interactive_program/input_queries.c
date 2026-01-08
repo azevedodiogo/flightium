@@ -158,3 +158,10 @@ int get_query5_arguments (int max_y, int max_x, char *input) {
     // Copia o argumento para o input
     snprintf (input, 6, "%s", n_airlines);
     return EXIT_SUCCESS;
+}
+
+// Obtém os argumentos para a query 6
+int get_query6_arguments (int max_y, int max_x, char *input) {
+
+    // Buffer para a nacionalidade
+    char nationality[30] = {0};
