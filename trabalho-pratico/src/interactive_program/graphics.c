@@ -259,3 +259,11 @@ int menu_display (WINDOW *win, const char *instruction, char *texts[], int num_o
             else mvwprintw(win, pos_y, pos_x, "%s", texts[i]);
         }
         // Atualiza a janela
+        wrefresh(win);
+
+        // Lê a tecla pressionada pelo utilizador
+        key = wgetch(win);
+
+        // Atualiza a seleção com base na tecla pressionada
+        switch (key) {
+            case 27: wclear(win); wrefresh(win); return -1; 
