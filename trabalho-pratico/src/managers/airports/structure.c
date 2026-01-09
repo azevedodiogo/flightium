@@ -191,3 +191,13 @@ const struct entity_airport *most_visited_airport_by_nationality (StorageAirport
 
     // Obtém o número de aeroportos
     int len = get_generic_len (data);
+
+    // Determina a linha da nacionalidade
+    int i = get_index (storage_airports -> matrix_nationalities, nationality);
+
+    // Verifica se a nacionalide não existe
+    if (i == INVALID_INDEX) return NULL;
+
+    // Encontra o máximo da linha
+    return get_generic_by_index (storage_airports -> data, max_line_matrix_airports (storage_airports, get_generic_by_index (storage_airports -> matrix_nationalities, i), len, arrival_count));
+}
