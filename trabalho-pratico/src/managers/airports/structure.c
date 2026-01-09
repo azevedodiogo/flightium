@@ -184,3 +184,10 @@ const struct entity_airport *most_visited_airport_by_timespan (StorageAirports s
 }
 
 // Determina o aeroporto mais visitado por passageiros de uma determinada nacionalidade
+const struct entity_airport *most_visited_airport_by_nationality (StorageAirports storage_airports, const char *nationality, int *arrival_count) {
+
+    // Obtém a data
+    StorageGeneric data = storage_airports -> data;
+
+    // Obtém o número de aeroportos
+    int len = get_generic_len (data);
