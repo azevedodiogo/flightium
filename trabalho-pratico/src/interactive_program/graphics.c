@@ -242,3 +242,12 @@ int menu_display (WINDOW *win, const char *instruction, char *texts[], int num_o
 
         // Mostra o texto da instrução
         wattron(win, COLOR_PAIR(1)); mvwprintw(win, 0, 2, "%s", instruction); wattroff(win, COLOR_PAIR(1));
+
+        // Desenha todas as opções
+        for (int i = 0; i < num_options; i++) {
+
+            // Define as dimensões
+            int row = i / cols, col = i % cols, spacing = width / cols, pos_x = col * spacing + spacing/2 - 1, pos_y = 2 + row;
+
+            // Destaca a opção atualmente selecionada
+            if (i == selection) {
