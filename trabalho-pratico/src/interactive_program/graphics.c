@@ -251,3 +251,11 @@ int menu_display (WINDOW *win, const char *instruction, char *texts[], int num_o
 
             // Destaca a opção atualmente selecionada
             if (i == selection) {
+                wattron(win, A_BOLD | COLOR_PAIR(2));
+                mvwprintw(win, pos_y, pos_x, "%s", texts[i]);
+                wattroff(win, A_BOLD | COLOR_PAIR(2));
+            } 
+            // Mostra sem destaque opções não selecionadas
+            else mvwprintw(win, pos_y, pos_x, "%s", texts[i]);
+        }
+        // Atualiza a janela
