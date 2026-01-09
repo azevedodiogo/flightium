@@ -236,3 +236,10 @@ void prepare_passengers (StoragePassengers storage_passengers) {
         // Encontra o top 10
         create_week_top10 (storage_passengers -> data, storage_passengers -> weekly_spendings [i].top10, &storage_passengers -> weekly_spendings [i].top10_len, spending_per_passenger, total_passengers);
     }
+
+    // Elimina o array dos gastos por passageiro
+    g_free (spending_per_passenger);
+}
+
+// Determina o passageiro que gastou mais entre duas semanas
+const struct entity_passenger *determine_most_expensive_passenger (StoragePassengers storage_passengers, date min_date, date max_date, int *n) {
