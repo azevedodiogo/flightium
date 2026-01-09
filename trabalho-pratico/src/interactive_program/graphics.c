@@ -267,3 +267,12 @@ int menu_display (WINDOW *win, const char *instruction, char *texts[], int num_o
         // Atualiza a seleção com base na tecla pressionada
         switch (key) {
             case 27: wclear(win); wrefresh(win); return -1; 
+            case KEY_UP: if (selection >= cols) selection -= cols; break;
+            case KEY_DOWN: if (selection + cols < num_options) selection += cols; break;
+            case KEY_LEFT: if (selection % cols != 0) selection--; break;
+            case KEY_RIGHT: if ((selection % cols) != (cols-1) && selection+1 < num_options) selection++; break;
+        }
+    }
+    // Retorna a opção selecionada
+    return selection;
+}
