@@ -243,3 +243,12 @@ void prepare_passengers (StoragePassengers storage_passengers) {
 
 // Determina o passageiro que gastou mais entre duas semanas
 const struct entity_passenger *determine_most_expensive_passenger (StoragePassengers storage_passengers, date min_date, date max_date, int *n) {
+
+    // Índices das semanas
+    int min_week = date_to_week (min_date), max_week = date_to_week (max_date);
+
+    // Determina os índices das semanas
+    if (adjust_limits (storage_passengers -> len, storage_passengers -> offset, &min_week, &max_week)) return NULL;
+
+    // Cria uma hash-table para contabilizar as ocorrências dos passageiros
+    GHashTable *passenger_occorrences = g_hash_table_new_full (g_direct_hash, g_direct_equal, NULL, NULL);
