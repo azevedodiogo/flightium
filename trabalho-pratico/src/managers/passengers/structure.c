@@ -284,3 +284,13 @@ const struct entity_passenger *determine_most_expensive_passenger (StoragePassen
             }
         }
     }
+
+    // Elimina a hash-table
+    g_hash_table_destroy (passenger_occorrences);
+
+    // Atualiza o número de ocorrências do passageiro
+    *n = max_count;
+
+    // Retorna o passageiro
+    return max_dc == -1 ? NULL : get_passenger_by_id (storage_passengers, max_dc);
+}
