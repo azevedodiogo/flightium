@@ -261,3 +261,10 @@ const struct entity_passenger *determine_most_expensive_passenger (StoragePassen
 
         // Obtém o top 10 da semana
         int *top10 = storage_passengers -> weekly_spendings [i].top10, len = storage_passengers -> weekly_spendings [i].top10_len;
+
+        // Percorre o top 10 da semana
+        for (int j = 0, count; j < len; j++) {
+
+            // Obtém a chave e o valor
+            gpointer key = GINT_TO_POINTER (top10 [j]);
+            gpointer value = g_hash_table_lookup (passenger_occorrences, key);
