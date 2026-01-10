@@ -252,3 +252,12 @@ const struct entity_passenger *determine_most_expensive_passenger (StoragePassen
 
     // Cria uma hash-table para contabilizar as ocorrências dos passageiros
     GHashTable *passenger_occorrences = g_hash_table_new_full (g_direct_hash, g_direct_equal, NULL, NULL);
+
+    // Máximo até ao momento
+    int max_dc = -1, max_count = -1;
+
+    // Contabiliza as ocorrências dos passageiros
+    for (int i = min_week; i <= max_week; i++) {
+
+        // Obtém o top 10 da semana
+        int *top10 = storage_passengers -> weekly_spendings [i].top10, len = storage_passengers -> weekly_spendings [i].top10_len;
