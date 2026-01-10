@@ -277,3 +277,10 @@ const struct entity_passenger *determine_most_expensive_passenger (StoragePassen
 
             // Armazena o novo valor na hash-table
             g_hash_table_insert (passenger_occorrences, key, GINT_TO_POINTER (count));
+
+            // Verifica se o novo elemento é maior que o máximo atual
+            if (count > max_count || (count == max_count && top10 [j] < max_dc)) {
+                max_dc = top10 [j]; max_count = count;
+            }
+        }
+    }
