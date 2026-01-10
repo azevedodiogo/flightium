@@ -268,3 +268,12 @@ const struct entity_passenger *determine_most_expensive_passenger (StoragePassen
             // Obtém a chave e o valor
             gpointer key = GINT_TO_POINTER (top10 [j]);
             gpointer value = g_hash_table_lookup (passenger_occorrences, key);
+
+            // Verifica se o passageiro ainda não estava na hash-table
+            if (value == NULL) count = 1;
+
+            // O passageiro já estava na hash-table
+            else count = 1 + GPOINTER_TO_INT (value);
+
+            // Armazena o novo valor na hash-table
+            g_hash_table_insert (passenger_occorrences, key, GINT_TO_POINTER (count));
