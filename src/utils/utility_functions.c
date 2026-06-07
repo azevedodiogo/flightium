@@ -27,6 +27,7 @@ char *our_strsep (char **str, char stop_character) {
 
 // Separa uma string por um caractere e avança até à próxima ocorrência do mesmo
 char* separate_block (char **str, char stop_character) {
+    if (!str || !*str) return NULL;
 
     // Avança a primeira vez
     our_strsep (str, stop_character);
