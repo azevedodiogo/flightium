@@ -41,6 +41,7 @@ char* separate_block (char **str, char stop_character) {
 
 // Determina o tipo de dataset
 int determine_dataset (const char *directory, int *dataset) {
+    if (!directory || !dataset) return NO_VALUE;
 
     // Nome do ficheiro
     char file_name [BUFFER]; snprintf (file_name, BUFFER, "%s/aircrafts.csv", directory);
