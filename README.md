@@ -87,7 +87,7 @@ O projeto dispõe de três executáveis correspondentes a três modos distintos 
 ./programa-principal <pasta_de_dados_csv> <ficheiro_de_queries.txt>
 ```
 
-Exemplo de ficheiro de queries (queries.txt):
+Exemplo do ficheiro de queries (queries.txt):
 ```text
 1 LIS
 1S OPO
