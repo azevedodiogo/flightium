@@ -5,7 +5,10 @@
 #define NO_VALUE -1
 #define BUFFER 1024
 
-// Separa uma string por um caractere
+/**
+ * @brief Separa uma string por um caractere delimitador.
+ * @note Adicionada verificação de ponteiro nulo para robustez.
+ */
 char *our_strsep (char **str, char stop_character) {
     if (!str || !*str) return NULL;
 
