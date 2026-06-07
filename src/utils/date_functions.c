@@ -7,7 +7,7 @@
 static const int days_in_month [] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
 // Verifica se o ano é bissexto
-static int is_leap_year (int year) {
+static inline int is_leap_year (int year) {
     return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
 }
 
