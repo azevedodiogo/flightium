@@ -7,6 +7,7 @@
 
 // Separa uma string por um caractere
 char *our_strsep (char **str, char stop_character) {
+    if (!str || !*str) return NULL;
 
     // Guarda o endereço inicial
     char *r = *str;
