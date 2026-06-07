@@ -53,4 +53,14 @@ dkms.conf
 
 # Ignore CSV files
 *.csv
-.vscode/c_cpp_properties.json
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+._*
+Thumbs.db
