@@ -3,7 +3,12 @@
 
 /**
  * @brief Data compactada num inteiro de 32 bits.
- * @details Data será representada no formato.
+ * @details Representação em bits:
+ *          Bits 0-5   : Minuto (6 bits)
+ *          Bits 6-10  : Hora (5 bits)
+ *          Bits 11-15 : Dia (5 bits)
+ *          Bits 16-19 : Mês (4 bits)
+ *          Bits 20-30 : Ano (11 bits)
  */
 typedef unsigned int date;
 
