@@ -31,9 +31,9 @@ int determine_dataset (const char *directory, int *dataset);
  * @brief Ajusta índices limitantes garantindo que permanecem dentro dos limites válidos.
  * @param len Comprimento total do vetor de destino.
  * @param offset Deslocamento base aplicado.
- * @param min Ponteiro para o índice mínimo (atualizado).
- * @param max Ponteiro para o índice máximo (atualizado).
- * @return 0 em caso de sucesso. Caso contrário, devolve-se um valor não nulo se os limites forem inválidos.
+ * @param min Ponteiro para o índice mínimo (atualizado). Deve ser diferente de NULL.
+ * @param max Ponteiro para o índice máximo (atualizado). Deve ser diferente de NULL.
+ * @return 0 em caso de sucesso. Caso contrário, devolve-se um valor não nulo se os limites forem inválidos ou ponteiros nulos.
  */
 int adjust_limits (int len, int offset, int *min, int *max);
 
