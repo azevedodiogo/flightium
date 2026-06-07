@@ -66,7 +66,7 @@ int days_since_jan_first (date date) {
     // Determina as componentes da data
     int year = GET_YEAR (date), month = GET_MONTH (date), day = GET_DAY (date);
 
-    // Verifica se o ano não é 2025
+    // Verifica se o ano não é 2025 (Epoch shift optimization para evitar loops pesados)
     if (year != 2025) return days_since_origin (date) - NUMBER_DAYS_SINCE_ORIGIN_START_2025;
 
     // Número de dias desde 1 de janeiro
