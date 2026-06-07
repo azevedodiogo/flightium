@@ -61,6 +61,7 @@ int date_diff (date date1, date date2) {
 
 // Calcula o número de dias decorridos desde 1 de janeiro até uma data
 int days_since_jan_first (date date) {
+    if (date == 0) return 0;
 
     // Determina as componentes da data
     int year = GET_YEAR (date), month = GET_MONTH (date), day = GET_DAY (date);
