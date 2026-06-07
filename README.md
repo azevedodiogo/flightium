@@ -6,55 +6,25 @@
 
 Este repositório destina-se à plataforma de gestão e análise de tráfego aéreo Flightium, desenvolvida no âmbito da unidade curricular “Laboratórios de Informática III”. Esta aplicação interativa por terminal e em modo batch foi concebida para processar, indexar e consultar grandes volumes de dados da indústria de aviação, abrangendo passageiros, voos, aeroportos, companhias aéreas e reservas de viagens. O sistema aplica conceitos avançados de estruturação de dados em memória, algoritmos de ordenação eficientes e técnicas de indexação em linguagem C para processar e analisar milhões de registos com alta performance.
 
-A integridade do ecossistema assenta num subsistema de parsing robusto que valida e processa ficheiros CSV de grande escala. Cada entidade — como passageiros (perfis de utilizadores), voos (origem, destino, companhia aérea, aeronave e horários) e reservas (datas, preços e classificações) — é submetida a validações estritas de formato de datas, integridade de referências e consistência de dados. A arquitetura de armazenamento utiliza tabelas de dispersão (hash tables) e estruturas genéricas da biblioteca GLib, garantindo tempos de procura próximos de $O(1)$ para pesquisas chave-valor e travessias rápidas sobre os registos associados.
+A integridade do ecossistema assenta num subsistema de parsing robusto que valida e processa ficheiros CSV de grande escala. Cada entidade, como passageiros que representam perfis de utilizadores, voos com origem, destino, companhia aérea, aeronave e horários, e reservas que guardam informações sobre hotéis e custos, é submetida a validações estritas de formato de datas, integridade de referências e consistência de dados. A arquitetura de armazenamento utiliza tabelas de dispersão e estruturas da biblioteca GLib, garantindo tempos de procura próximos de O(1) para pesquisas chave-valor e travessias rápidas sobre os registos associados.
 
-### Funcionalidades e Motor de Queries (Queries Engine)
+As consultas sobre a base de dados são disponibilizadas através de um motor de interrogações otimizado que executa seis tipos de queries. A Query 1 identifica um aeroporto pelo seu código IATA e retorna a sua localização e volume acumulado de tráfego. A Query 2 lista as N aeronaves mais ativas com maior registo de voos efetuados, permitindo um filtro opcional por fabricante. A Query 3 encontra o aeroporto que obteve o maior número de visitas totais durante um intervalo de datas. A Query 4 determina o passageiro que gastou a quantia mais elevada no acumulado de voos e reservas no período temporal fornecido. A Query 5 identifica as N companhias aéreas com o maior atraso médio nos seus voos. A Query 6 determina qual o aeroporto que recebeu o maior número de voos de passageiros de uma determinada nacionalidade. Todas as queries suportam uma variação de sintaxe onde o caracter S após o identificador altera o delimitador padrão de ponto e vírgula para o símbolo de igualdade no ficheiro de saída.
 
-O motor de pesquisa disponibiliza 6 queries essenciais para extração de estatísticas e inteligência de dados sobre a base de dados de aviação carregada:
-
-* Query 1 (Informação de Aeroporto): Identifica um aeroporto pelo seu código IATA (ex: `LIS`) e retorna os dados de localização (nome, cidade, país e tipo) juntamente com o volume acumulado de tráfego (voos de partida e voos de chegada).
-* Query 2 (Aeronaves mais Ativas): Lista as `N` aeronaves com maior registo de voos efetuados. O utilizador pode opcionalmente aplicar um filtro por fabricante (ex: `Boeing`). Retorna a lista ordenada decrescentemente por voos contendo ID da aeronave, fabricante, modelo e número de voos.
-* Query 3 (Aeroporto com Maior Tráfego Temporal): Encontra o aeroporto que obteve o maior número de visitas totais (chegadas + partidas) durante um intervalo de datas específico (formato `YYYY-MM-DD YYYY-MM-DD`). Retorna os dados do aeroporto e o número total de voos.
-* Query 4 (Passageiro com Maior Despesa): Determina o utilizador/passageiro que gastou a quantia mais elevada no acumulado de voos e reservas no período temporal fornecido (formato `YYYY-MM-DD YYYY-MM-DD`). Devolve o documento do passageiro, nome, apelido, data de nascimento, nacionalidade e o valor total em formato financeiro.
-* Query 5 (Companhias com Maiores Atrasos Médios): Identifica as `N` companhias aéreas (airlines) com o maior atraso médio nos seus voos (calculado a partir dos minutos de atraso à partida). Retorna a listagem ordenada contendo o nome da companhia aérea, quantidade de voos com atraso e média exata de atraso.
-* Query 6 (Aeroporto Predileto por Nacionalidade): Recebe uma nacionalidade (ex: `Portugal`) e determina qual o aeroporto que recebeu o maior número de voos onde passageiros dessa nacionalidade viajaram. Devolve o código IATA do aeroporto e o contador correspondente.
-
-### Sintaxe de Comando (Formatos de Output)
-
-Ao executar as queries, a aplicação suporta duas variações de formatação de resultados baseadas no comando fornecido:
-1. Formato Padrão (Sem Suffix): Os comandos são representados apenas pelo número da query (ex: `1 LIS`). O output gerado separa os campos usando o delimitador ponto e vírgula (`;`).
-2. Formato Alternativo (Com Suffix `S`): Os comandos incluem um `S` após o identificador (ex: `1S LIS`). O output correspondente formata as respostas separando os campos com o símbolo de igualdade (`=`).
+Para facilitar a utilização, o sistema divide-se em três programas executáveis principais. O programa-principal funciona em modo batch e processa consultas a partir de um ficheiro de comandos gerando outputs na pasta de resultados. O programa-interativo oferece uma interface textual TUI baseada em ncurses onde a navegação de menus é feita com as setas direcionais e ENTER, os parâmetros são inseridos numa caixa de texto e o ecrã de resultados suporta scroll vertical e horizontal com as setas ou Page Up e Page Down, regressando com a tecla q. O programa-testes executa de forma automática as queries de teste e compara os ficheiros gerados com respostas esperadas de referência para validar a corretidão e medir o tempo de execução exato.
 
 Made with ❤️ by Diogo Azevedo, Bruno Magalhães & Vera Almeida
-
----
 
 ## English
 
 This repository is intended for the air traffic management and analysis platform Flightium, developed as part of the academic course “Software Labs III”. This interactive terminal and batch-mode application was designed to process, index, and query massive volumes of aviation industry datasets, covering passengers, flights, airports, airlines, and travel reservations. The system applies advanced concepts of in-memory data structures, efficient sorting algorithms, and indexing techniques in C to process and analyze millions of records with high performance.
 
-The integrity of the ecosystem relies on a robust parsing subsystem that validates and processes large-scale CSV files. Each entity—such as passengers (user profiles), flights (origin, destination, airline, aircraft, and schedules), and reservations (dates, prices, and ratings)—is subjected to strict validation of date formats, reference integrity, and data consistency. The storage architecture utilizes hash tables and search structures from the GLib library, guaranteeing lookup times close to $O(1)$ for key-value searches and rapid traversals over associated records.
+The integrity of the ecosystem relies on a robust parsing subsystem that validates and processes large-scale CSV files. Each entity, such as passengers representing user profiles, flights with origin, destination, airline, aircraft, and schedules, and reservations storing hotel and cost details, is subjected to strict validation of date formats, reference integrity, and data consistency. The storage architecture utilizes hash tables and search structures from the GLib library, guaranteeing lookup times close to O(1) for key-value searches and rapid traversals over associated records.
 
-### Features and Queries Engine
+Queries on the database are made available through an optimized query engine that runs six core queries. Query 1 looks up an airport by its IATA code and returns its location and accumulated traffic volume. Query 2 lists the top N aircraft with the highest count of registered flights, allowing an optional filter by manufacturer name. Query 3 finds the airport with the highest total visits within a specified date range. Query 4 determines the passenger who spent the most overall on flights and reservations during a given time window. Query 5 lists the top N airlines with the largest average flight delays. Query 6 calculates which airport received the most flights carrying passengers of a given nationality. All queries support a syntax variant where an S character after the query number changes the standard semicolon separator to an equals separator in the output files.
 
-The search core implements 6 essential queries designed to extract statistics and data insights from the loaded aviation database:
-
-* Query 1 (Airport Information): Looks up an airport by its IATA code (e.g., `LIS`) and returns its localization details (name, city, country, and type) alongside the total accumulated volume of departure and arrival flights.
-* Query 2 (Most Active Aircraft): Lists the top `N` aircraft with the highest count of registered flights. Users can optionally filter by manufacturer name (e.g., `Boeing`). Returns the list sorted in descending order of flights containing the aircraft ID, manufacturer, model, and flight count.
-* Query 3 (Most Visited Airport in Time Range): Finds the airport with the highest total visits (arrivals + departures) within a specified date range (format `YYYY-MM-DD YYYY-MM-DD`). Returns the airport info and flight counter.
-* Query 4 (Highest Spending Passenger): Determines the passenger/user who spent the most money overall on flights and reservations during a given time window (format `YYYY-MM-DD YYYY-MM-DD`). Returns the document number, name, surname, date of birth, nationality, and total expenditure.
-* Query 5 (Airlines with Highest Average Delays): Lists the top `N` airlines with the largest average flight delays (calculated from departure delay minutes). Returns the sorted list including the airline name, count of delayed flights, and average delay.
-* Query 6 (Favorite Airport by Nationality): Takes a nationality (e.g., `Portugal`) and calculates which airport received the most flights carrying passengers of that nationality. Returns the airport IATA code and passenger count.
-
-### Command Syntax (Output Formatting)
-
-When executing queries, the application supports two output formatting variations depending on the command syntax:
-1. Standard Format (No Suffix): Command is specified with only the query number (e.g., `1 LIS`). The output file separates values using the semicolon (`;`) delimiter.
-2. Alternative Format (With `S` Suffix): Command includes an `S` after the number (e.g., `1S LIS`). The output file separates values using the equals (`=`) delimiter.
+To facilitate usage, the system is divided into three main executable programs. The programa-principal works in batch mode and processes input query files, generating formatted output text in the results directory. The programa-interativo offers an interactive terminal user interface powered by ncurses where menus are navigated using arrow keys and ENTER, parameters are typed into a text box, and the results view supports scrolling with arrow keys or Page Up and Page Down, returning with the q key. The programa-testes automatically executes test inputs and compares the outputs with expected reference files to validate correctness and measure exact execution times.
 
 Made with ❤️ by Diogo Azevedo, Bruno Magalhães & Vera Almeida
-
----
 
 ## Comandos - Commands
 
@@ -106,13 +76,6 @@ O projeto dispõe de três executáveis correspondentes a três modos distintos 
 ```bash
 ./programa-interativo <pasta_de_dados_csv>
 ```
-
-Controlos da Interface (TUI Controls):
-* Navegação de Menus: Utilize as setas direcionais (Cima / Baixo) para navegar pelas opções do menu principal e das queries. Pressione ENTER para confirmar a seleção.
-* Seleção de Delimitadores: Escolha interativamente entre o delimitador `;` ou `=` para ver os resultados.
-* Caixa de Texto Interativa: Digite os parâmetros da query (ex: datas ou códigos de aeroportos) diretamente na caixa de entrada de texto e prima ENTER para executar.
-* Visualizador de Resultados: O ecrã de resultados suporta scroll vertical e horizontal. Use as setas direcionais (Cima / Baixo / Esquerda / Direita) ou as teclas Page Up / Page Down para navegar por outputs longos.
-* Sair / Voltar: Pressione a tecla `q` para sair do visualizador de resultados e voltar ao menu anterior, ou para fechar a aplicação interativa.
 
 #### 3. Programa de Testes (Testing Suite)
 
